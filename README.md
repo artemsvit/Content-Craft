@@ -6,10 +6,16 @@
 
 ### 🎨 Потужний Figma плагін для генерації реалістичного контенту
 
-[![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-orange.svg)](https://www.figma.com/community/plugin/your-plugin-id)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-[![Ukrainian](https://img.shields.io/badge/Language-Ukrainian-yellow.svg)](README.md)
-[![English](https://img.shields.io/badge/Language-English-red.svg)](README_EN.md)
+[![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-FF69B4?style=for-the-badge&logo=figma)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
+![Version](https://img.shields.io/badge/version-8.0.0-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
+[![Downloads](https://img.shields.io/badge/downloads-1k+-green?style=for-the-badge)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
+
+**🌍 Available Languages:**
+[![Ukrainian](https://img.shields.io/badge/UA-Ukrainian-FFD700?style=flat-square)](README.md)
+[![English](https://img.shields.io/badge/EN-English-red?style=flat-square)](README_EN.md)
+[![French](https://img.shields.io/badge/FR-French-blue?style=flat-square)](README_FR.md)
+[![Polish](https://img.shields.io/badge/PL-Polish-white?style=flat-square)](README_PL.md)
 
 </div>
 
