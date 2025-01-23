@@ -4,7 +4,7 @@
 
 # Content Craft
 
-### Інструмент для швидкого наповнення ваших макетів реалістичними даними
+### 🎨 Інструмент для швидкого наповнення ваших макетів реалістичними даними
 
 [![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-FF69B4?style=for-the-badge&logo=figma)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
 ![Version](https://img.shields.io/badge/version-8.0.0-blue?style=for-the-badge)
@@ -13,9 +13,11 @@
 
 </div>
 
-### <img src="assets/icons/target.svg" width="20" height="20" style="vertical-align: middle"> Можливості
+## ✨ Особливості
 
-| <img src="assets/icons/user.svg" width="16" height="16" style="vertical-align: middle"> Персональні Дані | <img src="assets/icons/map-pin.svg" width="16" height="16" style="vertical-align: middle"> Локації | <img src="assets/icons/briefcase.svg" width="16" height="16" style="vertical-align: middle"> Бізнес | <img src="assets/icons/article.svg" width="16" height="16" style="vertical-align: middle"> Контент | <img src="assets/icons/puzzle.svg" width="16" height="16" style="vertical-align: middle"> Інше |
+### 🎯 Можливості
+
+| 🧑‍💼 Персональні Дані | 📍 Локації | 💼 Бізнес | 📝 Контент | 🎲 Інше |
 |-------------------|-----------|-----------|------------|---------|
 | Імена | Міста | Компанії | Заголовки | UUID |
 | Прізвища | Вулиці | Посади | Речення | Дати |
