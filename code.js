@@ -1540,9 +1540,7 @@ function formatPrice(number, lang) {
     const parts = number.toFixed(2).split('.');
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, format.separator);
     
-    return lang === 'fr' || lang === 'de' 
-        ? parts.join(format.decimal) + ' ' + format.currency
-        : format.currency + parts.join(format.decimal);
+    return lang === 'uk' ? `${parts.join(format.decimal)} ${format.currency}` : format.currency + parts.join(format.decimal);
 }
 
 function formatDate(date, lang) {
