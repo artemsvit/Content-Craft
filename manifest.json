@@ -1,0 +1,12 @@
+{
+  "name": "Content Craft",
+  "id": "1463946490049005195",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}

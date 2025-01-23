@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Content Craft</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --hover-color: #1976D2;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --section-bg: #F5F5F5;
+            --radius: 6px;
+            --spacing: 8px;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --active-shadow: 0 2px 4px rgba(33, 150, 243, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: var(--spacing);
+            color: var(--text-color);
+            background: var(--bg-color);
+            font-size: 13px;
+            box-sizing: border-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            gap: var(--spacing);
+            width: 100%;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: var(--spacing);
+            border-bottom: 1px solid var(--border-color);
+            gap: var(--spacing);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .language-switcher {
+            display: flex;
+            background: var(--section-bg);
+            border-radius: var(--radius);
+            padding: 2px;
+            gap: 2px;
+            min-width: 120px;
+        }
+
+        .language-switcher button {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .language-switcher button:hover {
+            opacity: 1;
+        }
+
+        .language-switcher button.active {
+            background: var(--primary-color);
+            color: white;
+            opacity: 1;
+            box-shadow: 0 2px 4px rgba(33, 150, 243, 0.25);
+        }
+
+        .content-type {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing);
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+        }
+
+        .content-type h3 {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0 0 var(--spacing);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-color);
+            flex-shrink: 0;
+        }
+
+        .content-type h3 svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .content-type h3 svg path {
+            fill: currentColor;
+        }
+
+        .options {
+            display: -ms-grid;
+            display: grid;
+            gap: 6px;
+            -ms-grid-columns: 1fr 6px 1fr;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .option {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 4px 6px;
+            font-size: 12px;
+            cursor: pointer;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            line-height: 1.2;
+            height: 28px;
+        }
+
+        .option:hover {
+            border-color: var(--primary-color);
+            background: var(--section-bg);
+        }
+
+        .option.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(33, 150, 243, 0.25);
+        }
+
+        .gender-switcher {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: var(--section-bg);
+            border-radius: var(--radius);
+            padding: 2px;
+            gap: 2px;
+            margin-bottom: 16px;
+        }
+
+        .gender-switcher button {
+            background: none;
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            white-space: nowrap;
+            opacity: 0.7;
+        }
+
+        .gender-switcher button:hover {
+            opacity: 1;
+        }
+
+        .gender-switcher button.active {
+            background: var(--primary-color);
+            color: white;
+            opacity: 1;
+            box-shadow: 0 2px 4px rgba(33, 150, 243, 0.25);
+        }
+
+        .preview {
+            font-size: 11px;
+            color: #666;
+            margin-top: var(--spacing);
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+        }
+
+        .preview:not(:empty) {
+            display: block;
+        }
+
+        .settings {
+            background: var(--section-bg);
+            border-radius: var(--radius);
+            padding: 6px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 6px 0;
+        }
+
+        .settings label {
+            font-size: 12px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .number-control {
+            display: flex;
+            align-items: center;
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 2px;
+            border: 1px solid var(--border-color);
+        }
+
+        input[type="number"] {
+            width: 40px;
+            height: 24px;
+            padding: 0;
+            border: none;
+            font-size: 13px;
+            background: transparent;
+            color: var(--text-color);
+            text-align: center;
+            font-weight: 500;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            margin: 0;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+        }
+
+        /* Приховуємо стрілки для number input */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .number-btn {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--text-color);
+            opacity: 0.8;
+            transition: all 0.2s ease;
+        }
+
+        .number-btn:hover {
+            background: var(--section-bg);
+            opacity: 1;
+        }
+
+        .number-btn:active {
+            background: var(--border-color);
+        }
+
+        .selected-info {
+            font-size: 12px;
+            color: var(--text-color);
+            opacity: 0.6;
+            padding: 8px;
+            text-align: center;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button.generate {
+            width: 100%;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            gap: 6px;
+            -webkit-transition: background-color 0.2s ease;
+            transition: background-color 0.2s ease;
+            margin: var(--spacing) 0 0 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        button.generate svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        button.generate:hover {
+            background: var(--hover-color);
+        }
+
+        .emoji-text {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .emoji-text:hover {
+            opacity: 1;
+        }
+
+        @supports not (gap: var(--spacing)) {
+            .container > * + * {
+                margin-top: var(--spacing);
+            }
+            
+            .options > * + * {
+                margin-left: 6px;
+            }
+        }
+
+        @supports not (height: fit-content) {
+            .content-type {
+                height: auto;
+                min-height: min-content;
+            }
+            
+            .preview {
+                height: auto;
+                min-height: min-content;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1E1E1E;
+                --text-color: #FFFFFF;
+                --border-color: #333333;
+                --section-bg: #252525;
+                --shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                --active-shadow: 0 2px 4px rgba(33, 150, 243, 0.3);
+            }
+
+            .option.active {
+                background: var(--primary-color);
+                box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+            }
+
+            .language-switcher button.active,
+            .gender-switcher button.active {
+                box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher">
+                <button onclick="switchLanguage('uk')" id="ukBtn" class="active">UA</button>
+                <button onclick="switchLanguage('en')" id="enBtn">EN</button>
+            </div>
+            <div class="header-right">
+                <span>🇺🇦</span><span data-i18n="glory" style="color: #666;">Слава Україні!</span>
+            </div>
+        </div>
+
+        <div class="selected-info">
+            <span id="selectionText" data-i18n="noSelection">Виберіть текст для генерації</span>
+        </div>
+
+        <div class="content-type">
+            <h3>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 1.9a3.1 3.1 0 0 0-3.1 3.1c0 1.7 1.4 3 3.1 3a3.1 3.1 0 0 0 0-6.2zM8 9.1C6 9.1 2 10.1 2 12v1.9h12V12c0-1.9-4-2.9-6-2.9z" fill="currentColor"/>
+                </svg>
+                <span data-i18n="personal">Персональні дані</span>
+            </h3>
+            <div class="gender-switcher">
+                <button onclick="switchGender('all')" id="allBtn" class="active">
+                    <span data-i18n="all">Усі</span>
+                </button>
+                <button onclick="switchGender('male')" id="maleBtn">
+                    <span data-i18n="male">Він</span>
+                </button>
+                <button onclick="switchGender('female')" id="femaleBtn">
+                    <span data-i18n="female">Вона</span>
+                </button>
+            </div>
+            <div class="options">
+                <div class="option" data-type="name" data-preview="true">
+                    <span data-i18n="name">Ім'я</span>
+                </div>
+                <div class="option" data-type="fullName" data-preview="true">
+                    <span data-i18n="fullName">Повне ім'я</span>
+                </div>
+                <div class="option" data-type="nickname" data-preview="true">
+                    <span data-i18n="nickname">Нікнейм</span>
+                </div>
+                <div class="option" data-type="jobTitle" data-preview="true">
+                    <span data-i18n="jobTitle">Посада</span>
+                </div>
+            </div>
+            <div class="preview" id="previewName"></div>
+        </div>
+
+        <div class="content-type">
+            <h3>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M12 1H4C3.4 1 3 1.4 3 2V14C3 14.6 3.4 15 4 15H12C12.6 15 13 14.6 13 14V2C13 1.4 12.6 1 12 1ZM12 14H4V2H12V14Z" fill="currentColor"/>
+                    <path d="M7 5H5V7H7V5Z" fill="currentColor"/>
+                    <path d="M11 5H9V7H11V5Z" fill="currentColor"/>
+                    <path d="M7 9H5V11H7V9Z" fill="currentColor"/>
+                    <path d="M11 9H9V11H11V9Z" fill="currentColor"/>
+                </svg>
+                <span data-i18n="contacts">Контакти</span>
+            </h3>
+            <div class="options">
+                <div class="option" data-type="city" data-i18n="city">Місто</div>
+                <div class="option" data-type="street" data-i18n="street">Вулиця</div>
+                <div class="option" data-type="phone" data-i18n="phone">Телефон</div>
+                <div class="option" data-type="email" data-i18n="email">Email</div>
+                <div class="option" data-type="postalCode" data-i18n="postalCode">Індекс</div>
+                <div class="option" data-type="fullAddress" data-i18n="fullAddress">Повна адреса</div>
+            </div>
+            <div class="preview" id="contactsPreview"></div>
+        </div>
+
+        <div class="content-type">
+            <h3>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 4H14M2 8H14M2 12H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span data-i18n="text">Текст</span>
+            </h3>
+            <div class="options">
+                <div class="option" data-type="words" data-i18n="words">Слова</div>
+                <div class="option" data-type="sentence" data-i18n="sentence">Речення</div>
+                <div class="option" data-type="paragraph" data-i18n="paragraph">Параграф</div>
+                <div class="option" data-type="headline" data-i18n="headline">Заголовок</div>
+            </div>
+            <div class="settings" id="textSettings">
+                <label data-i18n="count">Кількість:</label>
+                <div class="number-control">
+                    <button class="number-btn" onclick="decrementCount()">-</button>
+                    <input type="number" id="textCount" value="1" min="1" max="100">
+                    <button class="number-btn" onclick="incrementCount()">+</button>
+                </div>
+            </div>
+            <div class="preview" id="textPreview"></div>
+        </div>
+
+        <div class="content-type">
+            <h3>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M13 2H3C2.45 2 2 2.45 2 3V13C2 13.55 2.45 14 3 14H13C13.55 14 14 13.55 14 13V3C14 2.45 13.55 2 13 2ZM13 13H3V3H13V13Z" fill="currentColor"/>
+                    <path d="M7 5H5V7H7V5Z" fill="currentColor"/>
+                    <path d="M11 5H9V7H11V5Z" fill="currentColor"/>
+                    <path d="M7 9H5V11H7V9Z" fill="currentColor"/>
+                    <path d="M11 9H9V11H11V9Z" fill="currentColor"/>
+                </svg>
+                <span data-i18n="other">Інше</span>
+            </h3>
+            <div class="options">
+                <div class="option" data-type="date">
+                    <span data-i18n="date">Дата</span>
+                </div>
+                <div class="option" data-type="price">
+                    <span data-i18n="price">Ціна</span>
+                </div>
+                <div class="option" data-type="company">
+                    <span data-i18n="company">Компанія</span>
+                </div>
+                <div class="option" data-type="uuid">
+                    <span data-i18n="uuid">UUID</span>
+                </div>
+                <div class="option" data-type="iban">
+                    <span data-i18n="iban">IBAN</span>
+                </div>
+                <div class="option" data-type="website">
+                    <span data-i18n="website">Веб-сайт</span>
+                </div>
+            </div>
+            <div class="preview" id="otherPreview"></div>
+        </div>
+
+        <button class="generate" onclick="generate()">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M9 1L3 9H8L7 15L13 7H8L9 1Z" fill="currentColor"/>
+            </svg>
+            <span data-i18n="generate">Згенерувати</span>
+        </button>
+
+        <script>
+            // Оновлюємо функцію для розрахунку висоти вікна
+            function updatePluginSize() {
+                requestAnimationFrame(() => {
+                    const container = document.querySelector('.container');
+                    const computedStyle = window.getComputedStyle(document.body);
+                    const padding = parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+                    
+                    // Чекаємо поки всі зміни в DOM застосуються
+                    const height = Math.ceil(container.getBoundingClientRect().height + padding);
+                    
+                    parent.postMessage({ 
+                        pluginMessage: { 
+                            type: 'resize',
+                            height: height
+                        } 
+                    }, '*');
+                });
+            }
+
+            const translations = {
+                uk: {
+                    personal: 'Персональні дані',
+                    contacts: 'Контакти',
+                    text: 'Текст',
+                    other: 'Інше',
+                    noSelection: 'Виберіть текст для генерації',
+                    selectedLayers: 'Обрано текстових шарів: {count}',
+                    all: 'Усі',
+                    male: 'Він',
+                    female: 'Вона',
+                    name: 'Ім\'я',
+                    fullName: 'Повне ім\'я',
+                    nickname: 'Нікнейм',
+                    email: 'Email',
+                    phone: 'Телефон',
+                    date: 'Дата',
+                    price: 'Ціна',
+                    address: 'Адреса',
+                    fullAddress: 'Повна адреса',
+                    postalCode: 'Індекс',
+                    sentence: 'Речення',
+                    paragraph: 'Параграф',
+                    words: 'Слова',
+                    city: 'Місто',
+                    street: 'Вулиця',
+                    company: 'Компанія',
+                    jobTitle: 'Посада',
+                    uuid: 'UUID',
+                    headline: 'Заголовок',
+                    glory: 'Слава Україні!',
+                    iban: 'IBAN',
+                    website: 'Веб-сайт',
+                    generate: 'Згенерувати',
+                    quantity: 'Кількість'
+                },
+                en: {
+                    personal: 'Personal Data',
+                    contacts: 'Contacts',
+                    text: 'Text',
+                    other: 'Other',
+                    noSelection: 'Select text to generate',
+                    selectedLayers: 'Selected text layers: {count}',
+                    all: 'All',
+                    male: 'He',
+                    female: 'She',
+                    name: 'Name',
+                    fullName: 'Full Name',
+                    nickname: 'Nickname',
+                    email: 'Email',
+                    phone: 'Phone',
+                    date: 'Date',
+                    price: 'Price',
+                    address: 'Address',
+                    fullAddress: 'Full Address',
+                    postalCode: 'Postal Code',
+                    sentence: 'Sentence',
+                    paragraph: 'Paragraph',
+                    words: 'Words',
+                    city: 'City',
+                    street: 'Street',
+                    company: 'Company',
+                    jobTitle: 'Job Title',
+                    uuid: 'UUID',
+                    headline: 'Headline',
+                    glory: 'Glory to Ukraine!',
+                    iban: 'IBAN',
+                    website: 'Website',
+                    generate: 'Generate',
+                    quantity: 'Quantity'
+                }
+            };
+
+            let currentLang = 'uk';
+            let currentGender = 'all'; 
+            let hasTextSelection = false;
+
+            // Оновлення інформації про вибрані елементи
+            window.onmessage = (event) => {
+                const msg = event.data.pluginMessage;
+                if (msg.type === 'selectionChange') {
+                    hasTextSelection = msg.hasTextNodes;
+                    const selectionText = document.getElementById('selectionText');
+                    if (selectionText) {
+                        const key = hasTextSelection ? 'selectedLayers' : 'noSelection';
+                        const text = translations[currentLang][key].replace('{count}', msg.textNodesCount);
+                        selectionText.textContent = text;
+                        selectionText.setAttribute('data-i18n', key);
+                    }
+                }
+            };
+
+            // Обробка кліків по опціях
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', () => {
+                    if (hasTextSelection) {
+                        // Якщо є виділений текст - тільки одна опція
+                        document.querySelectorAll('.option').forEach(opt => {
+                            opt.classList.remove('active');
+                        });
+                        option.classList.add('active');
+                    } else {
+                        // Якщо немає виділення - множинний вибір
+                        option.classList.toggle('active');
+                    }
+                    refreshPreviews();
+                });
+            });
+
+            function switchLanguage(lang) {
+                if (!['uk', 'en'].includes(lang)) {
+                    console.error('Invalid language:', lang);
+                    return;
+                }
+                
+                document.querySelectorAll('.language-switcher button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById(lang + 'Btn').classList.add('active');
+                currentLang = lang;
+                
+                // Оновлюємо всі переклади на сторінці
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    element.textContent = translations[currentLang][key];
+                });
+                
+                refreshPreviews();
+            }
+
+            function switchGender(gender) {
+                if (!['all', 'male', 'female'].includes(gender)) {
+                    console.error('Invalid gender value:', gender);
+                    return;
+                }
+                
+                document.querySelectorAll('.gender-switcher button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById(gender + 'Btn').classList.add('active');
+                currentGender = gender;
+                console.log('Gender switched to:', currentGender); 
+                refreshPreviews();
+            }
+
+            function incrementCount() {
+                const input = document.getElementById('textCount');
+                const currentValue = parseInt(input.value) || 1;
+                input.value = Math.min(100, currentValue + 1);
+                refreshPreviews();
+            }
+
+            function decrementCount() {
+                const input = document.getElementById('textCount');
+                const currentValue = parseInt(input.value) || 1;
+                input.value = Math.max(1, currentValue - 1);
+                refreshPreviews();
+            }
+
+            document.getElementById('textCount').addEventListener('change', function() {
+                const value = parseInt(this.value) || 1;
+                this.value = Math.max(1, Math.min(100, value));
+                refreshPreviews();
+            });
+
+            function refreshPreviews() {
+                const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
+                const count = parseInt(document.getElementById('textCount').value) || 1;
+                
+                parent.postMessage({ 
+                    pluginMessage: { 
+                        type: 'preview', 
+                        options: selectedOptions,
+                        language: currentLang,
+                        gender: currentGender,
+                        count: count
+                    } 
+                }, '*');
+            }
+
+            function generate() {
+                const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
+                const count = parseInt(document.getElementById('textCount').value) || 1;
+                
+                parent.postMessage({ 
+                    pluginMessage: { 
+                        type: 'generate', 
+                        options: selectedOptions,
+                        language: currentLang,
+                        gender: currentGender,
+                        count: count
+                    } 
+                }, '*');
+            }
+
+            // Оновлюємо попередній перегляд при завантаженні
+            window.addEventListener('load', () => {
+                refreshPreviews();
+                updatePluginSize();
+            });
+
+            // Оновлюємо попередній перегляд при зміні кількості
+            document.getElementById('textCount').addEventListener('input', refreshPreviews);
+
+            // Спостерігаємо за змінами в DOM для оновлення розміру
+            const observer = new MutationObserver(updatePluginSize);
+            observer.observe(document.querySelector('.container'), { 
+                childList: true, 
+                subtree: true, 
+                attributes: true 
+            });
+        </script>
+    </div>
+</body>
+</html>
