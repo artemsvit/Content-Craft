@@ -53,6 +53,8 @@
             width: 100%;
             -webkit-flex: 1;
             flex: 1;
+            padding-bottom: 60px; /* Додаємо відступ для кнопки */
+            position: relative; /* Для позиціонування кнопки */
         }
 
         .header {
@@ -73,12 +75,13 @@
         }
 
         .language-switcher {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             background: var(--section-bg);
             border-radius: var(--radius);
             padding: 2px;
             gap: 2px;
-            min-width: 120px;
+            min-width: 160px;
         }
 
         .language-switcher button {
@@ -188,7 +191,7 @@
         .gender-switcher button {
             background: none;
             border: none;
-            padding: 8px;
+            padding: 8px 12px;
             border-radius: var(--radius);
             cursor: pointer;
             font-weight: 500;
@@ -199,8 +202,7 @@
             align-items: center;
             justify-content: center;
             gap: 4px;
-            white-space: nowrap;
-            opacity: 0.7;
+            min-height: 36px;
         }
 
         .gender-switcher button:hover {
@@ -318,6 +320,17 @@
             justify-content: center;
         }
 
+        .button-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--spacing);
+            background: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
         button.generate {
             width: 100%;
             height: 40px;
@@ -424,6 +437,8 @@
             <div class="language-switcher">
                 <button onclick="switchLanguage('uk')" id="ukBtn" class="active">UA</button>
                 <button onclick="switchLanguage('en')" id="enBtn">EN</button>
+                <button onclick="switchLanguage('fr')" id="frBtn">FR</button>
+                <button onclick="switchLanguage('de')" id="deBtn">DE</button>
             </div>
             <div class="header-right">
                 <span>🇺🇦</span><span data-i18n="glory" style="color: #666;">Слава Україні!</span>
@@ -513,7 +528,7 @@
                 <div class="option" data-type="headline" data-i18n="headline">Заголовок</div>
             </div>
             <div class="settings" id="textSettings">
-                <label data-i18n="count">Кількість:</label>
+                <label data-i18n="quantity">Кількість:</label>
                 <div class="number-control">
                     <button class="number-btn" onclick="decrementCount()">-</button>
                     <input type="number" id="textCount" value="1" min="1" max="100">
@@ -556,252 +571,329 @@
             </div>
             <div class="preview" id="otherPreview"></div>
         </div>
-
+    </div>
+    <div class="button-container">
         <button class="generate" onclick="generate()">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M9 1L3 9H8L7 15L13 7H8L9 1Z" fill="currentColor"/>
             </svg>
-            <span data-i18n="generate">Згенерувати</span>
+            <span id="generateButtonText" data-i18n="generate">Згенерувати</span>
         </button>
-
-        <script>
-            // Оновлюємо функцію для розрахунку висоти вікна
-            function updatePluginSize() {
-                requestAnimationFrame(() => {
-                    const container = document.querySelector('.container');
-                    const computedStyle = window.getComputedStyle(document.body);
-                    const padding = parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
-                    
-                    // Чекаємо поки всі зміни в DOM застосуються
-                    const height = Math.ceil(container.getBoundingClientRect().height + padding);
-                    
-                    parent.postMessage({ 
-                        pluginMessage: { 
-                            type: 'resize',
-                            height: height
-                        } 
-                    }, '*');
-                });
-            }
-
-            const translations = {
-                uk: {
-                    personal: 'Персональні дані',
-                    contacts: 'Контакти',
-                    text: 'Текст',
-                    other: 'Інше',
-                    noSelection: 'Виберіть текст для генерації',
-                    selectedLayers: 'Обрано текстових шарів: {count}',
-                    all: 'Усі',
-                    male: 'Він',
-                    female: 'Вона',
-                    name: 'Ім\'я',
-                    fullName: 'Повне ім\'я',
-                    nickname: 'Нікнейм',
-                    email: 'Email',
-                    phone: 'Телефон',
-                    date: 'Дата',
-                    price: 'Ціна',
-                    address: 'Адреса',
-                    fullAddress: 'Повна адреса',
-                    postalCode: 'Індекс',
-                    sentence: 'Речення',
-                    paragraph: 'Параграф',
-                    words: 'Слова',
-                    city: 'Місто',
-                    street: 'Вулиця',
-                    company: 'Компанія',
-                    jobTitle: 'Посада',
-                    uuid: 'UUID',
-                    headline: 'Заголовок',
-                    glory: 'Слава Україні!',
-                    iban: 'IBAN',
-                    website: 'Веб-сайт',
-                    generate: 'Згенерувати',
-                    quantity: 'Кількість',
-                    education: 'Освіта',
-                    quote: 'Цитата',
-                    review: 'Відгук'
-                },
-                en: {
-                    personal: 'Personal Data',
-                    contacts: 'Contacts',
-                    text: 'Text',
-                    other: 'Other',
-                    noSelection: 'Select text to generate',
-                    selectedLayers: 'Selected text layers: {count}',
-                    all: 'All',
-                    male: 'He',
-                    female: 'She',
-                    name: 'Name',
-                    fullName: 'Full Name',
-                    nickname: 'Nickname',
-                    email: 'Email',
-                    phone: 'Phone',
-                    date: 'Date',
-                    price: 'Price',
-                    address: 'Address',
-                    fullAddress: 'Full Address',
-                    postalCode: 'Postal Code',
-                    sentence: 'Sentence',
-                    paragraph: 'Paragraph',
-                    words: 'Words',
-                    city: 'City',
-                    street: 'Street',
-                    company: 'Company',
-                    jobTitle: 'Job Title',
-                    uuid: 'UUID',
-                    headline: 'Headline',
-                    glory: 'Glory to Ukraine!',
-                    iban: 'IBAN',
-                    website: 'Website',
-                    generate: 'Generate',
-                    quantity: 'Quantity',
-                    education: 'Education',
-                    quote: 'Quote',
-                    review: 'Review'
-                }
-            };
-
-            let currentLang = 'uk';
-            let currentGender = 'all'; 
-            let hasTextSelection = false;
-
-            // Оновлення інформації про вибрані елементи
-            window.onmessage = (event) => {
-                const msg = event.data.pluginMessage;
-                if (msg.type === 'selectionChange') {
-                    hasTextSelection = msg.hasTextNodes;
-                    const selectionText = document.getElementById('selectionText');
-                    if (selectionText) {
-                        const key = hasTextSelection ? 'selectedLayers' : 'noSelection';
-                        const text = translations[currentLang][key].replace('{count}', msg.textNodesCount);
-                        selectionText.textContent = text;
-                        selectionText.setAttribute('data-i18n', key);
-                    }
-                }
-            };
-
-            // Обробка кліків по опціях
-            document.querySelectorAll('.option').forEach(option => {
-                option.addEventListener('click', () => {
-                    if (hasTextSelection) {
-                        // Якщо є виділений текст - тільки одна опція
-                        document.querySelectorAll('.option').forEach(opt => {
-                            opt.classList.remove('active');
-                        });
-                        option.classList.add('active');
-                    } else {
-                        // Якщо немає виділення - множинний вибір
-                        option.classList.toggle('active');
-                    }
-                    refreshPreviews();
-                });
-            });
-
-            function switchLanguage(lang) {
-                if (!['uk', 'en'].includes(lang)) {
-                    console.error('Invalid language:', lang);
-                    return;
-                }
-                
-                document.querySelectorAll('.language-switcher button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                document.getElementById(lang + 'Btn').classList.add('active');
-                currentLang = lang;
-                
-                // Оновлюємо всі переклади на сторінці
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    element.textContent = translations[currentLang][key];
-                });
-                
-                refreshPreviews();
-            }
-
-            function switchGender(gender) {
-                if (!['all', 'male', 'female'].includes(gender)) {
-                    console.error('Invalid gender value:', gender);
-                    return;
-                }
-                
-                document.querySelectorAll('.gender-switcher button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                document.getElementById(gender + 'Btn').classList.add('active');
-                currentGender = gender;
-                console.log('Gender switched to:', currentGender); 
-                refreshPreviews();
-            }
-
-            function incrementCount() {
-                const input = document.getElementById('textCount');
-                const currentValue = parseInt(input.value) || 1;
-                input.value = Math.min(100, currentValue + 1);
-                refreshPreviews();
-            }
-
-            function decrementCount() {
-                const input = document.getElementById('textCount');
-                const currentValue = parseInt(input.value) || 1;
-                input.value = Math.max(1, currentValue - 1);
-                refreshPreviews();
-            }
-
-            document.getElementById('textCount').addEventListener('change', function() {
-                const value = parseInt(this.value) || 1;
-                this.value = Math.max(1, Math.min(100, value));
-                refreshPreviews();
-            });
-
-            function refreshPreviews() {
-                const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
-                const count = parseInt(document.getElementById('textCount').value) || 1;
-                
-                parent.postMessage({ 
-                    pluginMessage: { 
-                        type: 'preview', 
-                        options: selectedOptions,
-                        language: currentLang,
-                        gender: currentGender,
-                        count: count
-                    } 
-                }, '*');
-            }
-
-            function generate() {
-                const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
-                const count = parseInt(document.getElementById('textCount').value) || 1;
-                
-                parent.postMessage({ 
-                    pluginMessage: { 
-                        type: 'generate', 
-                        options: selectedOptions,
-                        language: currentLang,
-                        gender: currentGender,
-                        count: count
-                    } 
-                }, '*');
-            }
-
-            // Оновлюємо попередній перегляд при завантаженні
-            window.addEventListener('load', () => {
-                refreshPreviews();
-                updatePluginSize();
-            });
-
-            // Оновлюємо попередній перегляд при зміні кількості
-            document.getElementById('textCount').addEventListener('input', refreshPreviews);
-
-            // Спостерігаємо за змінами в DOM для оновлення розміру
-            const observer = new MutationObserver(updatePluginSize);
-            observer.observe(document.querySelector('.container'), { 
-                childList: true, 
-                subtree: true, 
-                attributes: true 
-            });
-        </script>
     </div>
+
+    <script>
+        // Оновлюємо функцію для розрахунку висоти вікна
+        function updatePluginSize() {
+            requestAnimationFrame(() => {
+                const container = document.querySelector('.container');
+                const computedStyle = window.getComputedStyle(document.body);
+                const padding = parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+                
+                // Чекаємо поки всі зміни в DOM застосуються
+                const height = Math.ceil(container.getBoundingClientRect().height + padding);
+                
+                parent.postMessage({ 
+                    pluginMessage: { 
+                        type: 'resize',
+                        height: height
+                    } 
+                }, '*');
+            });
+        }
+
+        const translations = {
+            uk: {
+                personal: 'Персональні дані',
+                contacts: 'Контакти',
+                text: 'Текст',
+                other: 'Інше',
+                noSelection: 'Виберіть текст для генерації',
+                selectedLayers: 'Обрано текстових шарів: {count}',
+                all: 'Усі',
+                male: 'Він',
+                female: 'Вона',
+                name: 'Ім\'я',
+                fullName: 'Повне ім\'я',
+                nickname: 'Нікнейм',
+                email: 'Email',
+                phone: 'Телефон',
+                date: 'Дата',
+                price: 'Ціна',
+                address: 'Адреса',
+                fullAddress: 'Повна адреса',
+                postalCode: 'Індекс',
+                sentence: 'Речення',
+                paragraph: 'Параграф',
+                words: 'Слова',
+                city: 'Місто',
+                street: 'Вулиця',
+                company: 'Компанія',
+                jobTitle: 'Посада',
+                uuid: 'UUID',
+                headline: 'Заголовок',
+                glory: 'Слава Україні!',
+                iban: 'IBAN',
+                website: 'Веб-сайт',
+                generate: 'Згенерувати',
+                quantity: 'Кількість',
+                education: 'Освіта',
+                quote: 'Цитата',
+                review: 'Відгук'
+            },
+            en: {
+                personal: 'Personal Data',
+                contacts: 'Contacts',
+                text: 'Text',
+                other: 'Other',
+                noSelection: 'Select text to generate',
+                selectedLayers: 'Selected text layers: {count}',
+                all: 'All',
+                male: 'He',
+                female: 'She',
+                name: 'Name',
+                fullName: 'Full Name',
+                nickname: 'Nickname',
+                email: 'Email',
+                phone: 'Phone',
+                date: 'Date',
+                price: 'Price',
+                address: 'Address',
+                fullAddress: 'Full Address',
+                postalCode: 'Postal Code',
+                sentence: 'Sentence',
+                paragraph: 'Paragraph',
+                words: 'Words',
+                city: 'City',
+                street: 'Street',
+                company: 'Company',
+                jobTitle: 'Job Title',
+                uuid: 'UUID',
+                headline: 'Headline',
+                glory: 'Glory to Ukraine!',
+                iban: 'IBAN',
+                website: 'Website',
+                generate: 'Generate',
+                quantity: 'Quantity',
+                education: 'Education',
+                quote: 'Quote',
+                review: 'Review'
+            },
+            fr: {
+                personal: 'Données Personnelles',
+                contacts: 'Contacts',
+                text: 'Texte',
+                other: 'Autre',
+                noSelection: 'Sélectionnez le texte à générer',
+                selectedLayers: 'Calques de texte sélectionnés: {count}',
+                all: 'Tous',
+                male: 'Il',
+                female: 'Elle',
+                name: 'Nom',
+                fullName: 'Nom Complet',
+                nickname: 'Pseudo',
+                email: 'Email',
+                phone: 'Téléphone',
+                date: 'Date',
+                price: 'Prix',
+                address: 'Adresse',
+                fullAddress: 'Adresse Complète',
+                postalCode: 'Code Postal',
+                sentence: 'Phrase',
+                paragraph: 'Paragraphe',
+                words: 'Mots',
+                city: 'Ville',
+                street: 'Rue',
+                company: 'Entreprise',
+                jobTitle: 'Poste',
+                uuid: 'UUID',
+                headline: 'Titre',
+                glory: 'Gloire à l\'Ukraine!',
+                iban: 'IBAN',
+                website: 'Site Web',
+                generate: 'Générer',
+                quantity: 'Quantité',
+                education: 'Éducation',
+                quote: 'Citation',
+                review: 'Avis'
+            },
+            de: {
+                personal: 'Persönliche Daten',
+                contacts: 'Kontakte',
+                text: 'Text',
+                other: 'Andere',
+                noSelection: 'Wählen Sie Text zum Generieren',
+                selectedLayers: 'Ausgewählte Textebenen: {count}',
+                all: 'Alle',
+                male: 'Er',
+                female: 'Sie',
+                name: 'Name',
+                fullName: 'Vollständiger Name',
+                nickname: 'Spitzname',
+                email: 'E-Mail',
+                phone: 'Telefon',
+                date: 'Datum',
+                price: 'Preis',
+                address: 'Adresse',
+                fullAddress: 'Vollständige Adresse',
+                postalCode: 'Postleitzahl',
+                sentence: 'Satz',
+                paragraph: 'Absatz',
+                words: 'Wörter',
+                city: 'Stadt',
+                street: 'Straße',
+                company: 'Firma',
+                jobTitle: 'Position',
+                uuid: 'UUID',
+                headline: 'Überschrift',
+                glory: 'Ruhm für die Ukraine!',
+                iban: 'IBAN',
+                website: 'Webseite',
+                generate: 'Generieren',
+                quantity: 'Anzahl',
+                education: 'Bildung',
+                quote: 'Zitat',
+                review: 'Bewertung'
+            }
+        };
+
+        let currentLang = 'uk';
+        let currentGender = 'all'; 
+        let hasTextSelection = false;
+
+        // Оновлення інформації про вибрані елементи
+        window.onmessage = (event) => {
+            const msg = event.data.pluginMessage;
+            if (msg.type === 'selectionChange') {
+                hasTextSelection = msg.hasTextNodes;
+                const selectionText = document.getElementById('selectionText');
+                if (selectionText) {
+                    const key = hasTextSelection ? 'selectedLayers' : 'noSelection';
+                    const text = translations[currentLang][key].replace('{count}', msg.textNodesCount);
+                    selectionText.textContent = text;
+                    selectionText.setAttribute('data-i18n', key);
+                }
+            }
+        };
+
+        // Обробка кліків по опціях
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', () => {
+                if (hasTextSelection) {
+                    // Якщо є виділений текст - тільки одна опція
+                    document.querySelectorAll('.option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    option.classList.add('active');
+                } else {
+                    // Якщо немає виділення - множинний вибір
+                    option.classList.toggle('active');
+                }
+                refreshPreviews();
+            });
+        });
+
+        function switchLanguage(lang) {
+            if (!['uk', 'en', 'fr', 'de'].includes(lang)) {
+                console.error('Invalid language:', lang);
+                return;
+            }
+            
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(lang + 'Btn').classList.add('active');
+            currentLang = lang;
+            
+            // Оновлюємо всі переклади на сторінці
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = translations[currentLang][key];
+            });
+            
+            refreshPreviews();
+        }
+
+        function switchGender(gender) {
+            if (!['all', 'male', 'female'].includes(gender)) {
+                console.error('Invalid gender value:', gender);
+                return;
+            }
+            
+            document.querySelectorAll('.gender-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(gender + 'Btn').classList.add('active');
+            currentGender = gender;
+            console.log('Gender switched to:', currentGender); 
+            refreshPreviews();
+        }
+
+        function incrementCount() {
+            const input = document.getElementById('textCount');
+            const currentValue = parseInt(input.value) || 1;
+            input.value = Math.min(100, currentValue + 1);
+            refreshPreviews();
+        }
+
+        function decrementCount() {
+            const input = document.getElementById('textCount');
+            const currentValue = parseInt(input.value) || 1;
+            input.value = Math.max(1, currentValue - 1);
+            refreshPreviews();
+        }
+
+        document.getElementById('textCount').addEventListener('change', function() {
+            const value = parseInt(this.value) || 1;
+            this.value = Math.max(1, Math.min(100, value));
+            refreshPreviews();
+        });
+
+        function refreshPreviews() {
+            const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
+            const count = parseInt(document.getElementById('textCount').value) || 1;
+            
+            parent.postMessage({ 
+                pluginMessage: { 
+                    type: 'preview', 
+                    options: selectedOptions,
+                    language: currentLang,
+                    gender: currentGender,
+                    count: count
+                } 
+            }, '*');
+        }
+
+        function generate() {
+            const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
+            const count = parseInt(document.getElementById('textCount').value) || 1;
+            
+            parent.postMessage({ 
+                pluginMessage: { 
+                    type: 'generate', 
+                    options: selectedOptions,
+                    language: currentLang,
+                    gender: currentGender,
+                    count: count
+                } 
+            }, '*');
+        }
+
+        // Оновлюємо попередній перегляд при завантаженні
+        window.addEventListener('load', () => {
+            refreshPreviews();
+            updatePluginSize();
+        });
+
+        // Оновлюємо попередній перегляд при зміні кількості
+        document.getElementById('textCount').addEventListener('input', refreshPreviews);
+
+        // Спостерігаємо за змінами в DOM для оновлення розміру
+        const observer = new MutationObserver(updatePluginSize);
+        observer.observe(document.querySelector('.container'), { 
+            childList: true, 
+            subtree: true, 
+            attributes: true 
+        });
+    </script>
 </body>
 </html>

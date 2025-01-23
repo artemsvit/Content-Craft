@@ -280,12 +280,7 @@ const data = {
             templates: [
                 "{start} {middle} {end}",
                 "Компанія {action} {start} {end}",
-                "{start} {end} для бізнесу",
-                "{middle} {end} майбутнього",
-                "Інновації сьогодні: {middle} {end}",
-                "Відкрийте для себе {middle} {end}",
-                "{start} рішення для вашого бізнесу",
-                "Майбутнє вже тут: {middle} {end}"
+                "{start}: {action} {middle} {end}"
             ]
         },
         phoneFormats: [
@@ -399,6 +394,35 @@ const data = {
             'Тарас Б.',
             'Юлія К.'
         ],
+        words: [
+            'design', 'project', 'development', 'system', 'technology', 'innovation', 'solution',
+            'algorithm', 'interface', 'platform', 'functionality', 'architecture', 'optimization',
+            'automation', 'integration', 'scalability', 'modernization', 'transformation',
+            'strategy', 'marketing', 'management', 'enterprise', 'commerce', 'finance', 'investment',
+            'growth', 'performance', 'quality', 'service', 'client', 'market', 'product',
+            'success', 'future', 'progress', 'excellence', 'expertise', 'experience', 'competence',
+            'collaboration', 'partnership', 'communication', 'creativity', 'leadership'
+        ],
+        connectors: [
+            'and', 'or', 'but', 'while', 'however',
+            'therefore', 'moreover', 'furthermore',
+            'nevertheless', 'consequently',
+            'in addition,', 'additionally,',
+            'as well as', 'along with'
+        ],
+        paragraphs: [
+            'Our team of experts develops innovative solutions to meet your needs. We combine technical expertise with creativity to deliver exceptional results.',
+            'Through our customer-centric approach, we create customized solutions that perfectly align with your business objectives.',
+            'Innovation is at the heart of our approach. We utilize the latest technologies to optimize your processes and maximize efficiency.',
+            'We are committed to delivering high-quality solutions that keep you competitive in an ever-evolving market.'
+        ],
+        quotes: [
+            'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+            'Innovation distinguishes between a leader and a follower.',
+            'Creativity is intelligence having fun.',
+            'The best way to predict the future is to create it.',
+            'Quality is never an accident; it is always the result of intelligent effort.'
+        ],
     },
     en: {
         maleNames: ['John', 'Michael', 'William', 'James', 'David', 'Robert', 'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Andrew', 'Joseph', 'Ryan', 'Nicholas', 'Anthony', 'Steven', 'Tyler', 'Richard', 'Timothy', 'Brian', 'Alexander', 'Kevin', 'Jason', 'Jeffrey', 'Benjamin', 'Mark', 'Edward', 'Paul', 'Stephen', 'George', 'Ethan', 'Noah', 'Liam', 'Oliver', 'Lucas', 'Jacob', 'Logan', 'Jackson'],
@@ -409,226 +433,36 @@ const data = {
         femaleSurnames: ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez',
             'Anderson', 'Taylor', 'Thomas', 'Moore', 'Jackson', 'Martin', 'Lee', 'Thompson', 'White', 'Harris',
             'Clark', 'Lewis', 'Walker', 'Hall', 'Young', 'Allen', 'King', 'Wright', 'Scott', 'Green'],
-        cities: [
-            // Major cities
-            'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego',
+        cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego',
             'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'San Francisco', 'Charlotte',
             'Indianapolis', 'Seattle', 'Denver', 'Boston',
             
-            // Historic cities
             'Charleston', 'Savannah', 'New Orleans', 'Boston', 'Philadelphia', 'Salem', 'St. Augustine', 'Williamsburg',
             'Annapolis', 'Providence',
             
-            // Tech hubs
             'San Francisco', 'Seattle', 'Austin', 'Boston', 'Portland', 'Boulder', 'Raleigh', 'Pittsburgh',
             'Minneapolis', 'Nashville'
         ],
         streets: [
-            // Historic streets
             'Main St.', 'Broadway', 'Wall Street', 'Fifth Avenue', 'Pennsylvania Avenue',
             'Bourbon Street', 'Beale Street', 'Ocean Drive', 'Lombard Street', 'Michigan Avenue',
             
-            // Common street names
             'Oak Street', 'Maple Avenue', 'Washington Street', 'Lincoln Avenue', 'Jefferson Street',
             'Park Avenue', 'Church Street', 'Market Street', 'State Street', 'High Street',
             'Center Street', 'Pearl Street', 'Pine Street', 'River Road', 'Lake Street',
             'Forest Avenue', 'Hill Street', 'Valley Road', 'Spring Street', 'Cedar Lane'
         ],
-        companies: [
-            // Tech
-            'TechCorp', 'Innovation Plus', 'SmartSystems', 'DigitalFlow', 'TechLab', 'CyberTech', 'InfoSys',
-            'WebWorks', 'DataTech', 'CloudNet', 'SoftPro', 'DevHub', 'TechGlobal', 'ByteCraft', 'CodeWorks',
-            // Manufacturing
-            'MegaBuild', 'IndustryCo', 'BuildPro', 'EcoProm', 'TechManufacturing', 'MetalWorks', 'AutoTech',
-            'PowerSystems', 'MachineWorks', 'ChemCorp', 'WoodWorks', 'AgroTech', 'BuildMach', 'ElectroPro',
-            // Services
-            'ServicePro', 'ConsultPlus', 'BusinessLine', 'FinanceGroup', 'TradePro', 'LogisticPlus',
-            'MarketPro', 'RetailGroup', 'TransService', 'BusinessCenter', 'ConsultPro', 'AuditPlus'
-        ],
-        companyPrefixes: ['LLC', 'Inc.', 'Corp.', 'Ltd.', 'Co.', 'Corporation', 'Limited'],
-        words: [
-            // Technical terms
-            'design', 'project', 'development', 'system', 'technology', 'innovation', 'solution',
-            'algorithm', 'interface', 'platform', 'functionality', 'architecture', 'optimization',
-            'automation', 'integration', 'scaling', 'modernization', 'transformation',
-            
-            // Business terms
-            'strategy', 'analysis', 'result', 'efficiency', 'productivity', 'quality',
-            'competitiveness', 'investment', 'development', 'management', 'planning', 'growth',
-            'collaboration', 'partnership', 'achievement', 'perspective', 'potential', 'opportunity',
-            
-            // Processes and actions
-            'creates', 'develops', 'implements', 'optimizes', 'ensures', 'supports',
-            'generates', 'analyzes', 'tests', 'improves', 'modernizes', 'expands',
-            'transforms', 'adapts', 'integrates', 'scales', 'coordinates', 'realizes',
-            
-            // Characteristics
-            'modern', 'efficient', 'reliable', 'fast', 'convenient', 'quality',
-            'innovative', 'professional', 'optimal', 'unique', 'adaptive',
-            'powerful', 'flexible', 'scalable', 'intuitive', 'thoughtful',
-            
-            // Results
-            'success', 'progress', 'experience', 'achievement', 'improvement', 'update',
-            'growth', 'development', 'enhancement', 'optimization', 'modernization',
-            'transformation', 'innovation', 'breakthrough', 'victory', 'leadership',
-            
-            // Abstract concepts
-            'future', 'perspective', 'concept', 'vision', 'mission', 'value',
-            'quality', 'reliability', 'security', 'comfort', 'convenience', 'simplicity',
-            'efficiency', 'productivity', 'innovation', 'creativity'
-        ],
-        connectors: [
-            // Simple conjunctions
-            'and', 'or', 'but', 'yet', 'however', 'though',
-            
-            // Prepositions
-            'for', 'with', 'in', 'through', 'about', 'regarding',
-            'over', 'under', 'near', 'concerning', 'towards',
-            
-            // Complex conjunctions
-            'because', 'since', 'thanks to', 'due to',
-            'as a result', 'in order to', 'so that',
-            
-            // Temporal conjunctions
-            'when', 'while', 'after', 'before',
-            'during', 'throughout', 'meanwhile',
-            
-            // Cause and effect
-            'therefore', 'thus', 'consequently', 'hence',
-            'as a result', 'accordingly', 'subsequently'
-        ],
-        domains: ['gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'hotmail.com', 'protonmail.com', 'aol.com', 'mail.com', 'example.com', 'test.com'],
-        nicknamePrefixes: [
-            // Technology
-            'Tech', 'Cyber', 'Digital', 'Web', 'Dev', 'Code', 'Pixel', 'Net', 'Data', 'Bot',
-            'AI', 'Smart', 'System', 'Logic', 'Quantum', 'Cloud', 'Mobile', 'App', 'Software', 'Hardware',
-            // Creative
-            'Creative', 'Art', 'Design', 'Visual', 'Color', 'Style', 'Dream', 'Idea', 'Mind', 'Soul',
-            'Spirit', 'Flow', 'Wave', 'Light', 'Shadow', 'Space', 'Star', 'Moon', 'Sun', 'Sky',
-            // Gaming
-            'Game', 'Play', 'Level', 'Quest', 'Boss', 'Hero', 'Legend', 'Epic', 'Magic', 'Power',
-            'Force', 'Ultra', 'Mega', 'Super', 'Hyper', 'Thunder', 'Storm', 'Fire', 'Ice', 'Dragon'
-        ],
-        nicknameSuffixes: [
-            // Professional
-            'Master', 'Pro', 'Expert', 'Guru', 'Ninja', 'Wizard', 'Scholar', 'Sage', 'Chief', 'Lead',
-            'Creator', 'Builder', 'Maker', 'Smith', 'Engineer', 'Architect', 'Designer', 'Artist', 'Crafter', 'Developer',
-            // Status
-            'King', 'Lord', 'Boss', 'Captain', 'Commander', 'Leader', 'Champion', 'Winner', 'Star', 'Hero',
-            'Legend', 'Titan', 'Giant', 'Master', 'Elite', 'Prime', 'Alpha', 'Omega', 'Phoenix', 'Dragon',
-            // Characteristic
-            'Mind', 'Soul', 'Heart', 'Spirit', 'Brain', 'Genius', 'Prodigy', 'Talent', 'Skills', 'Power',
-            'Force', 'Energy', 'Light', 'Shadow', 'Storm', 'Thunder', 'Flame', 'Frost', 'Wave', 'Pulse'
-        ],
-        maleJobTitles: [
-            // Technical positions
-            'Software Developer', 'Web Designer', 'UI/UX Designer', 'Product Manager', 'Project Manager',
-            'DevOps Engineer', 'QA Engineer', 'System Architect', 'Frontend Developer', 'Backend Developer',
-            'Full Stack Developer', 'iOS Developer', 'Android Developer', 'Security Engineer', 'Data Engineer',
-            'ML Engineer', 'Database Administrator', 'System Administrator', 'Network Engineer', 'Cloud Architect',
-            'Automation Engineer', 'Game Developer', 'Embedded Engineer', 'Technical Consultant', 'Scala Developer',
-            'Python Developer', 'Java Developer', 'JavaScript Developer', 'Rust Developer', 'Go Developer',
-            
-            // Creative positions
-            'Graphic Designer', 'Art Director', 'Content Manager', 'Copywriter', 'Brand Manager',
-            'Creative Director', 'Illustrator', 'Motion Designer', '3D Artist', 'Interface Designer',
-            'UX Researcher', 'Product Designer', 'Interaction Designer', 'Print Designer', 'Packaging Designer',
-            'Storyboard Artist', 'Animator', 'Video Editor', 'Sound Designer', 'Character Designer',
-            'Environment Artist', 'Technical Artist', 'Lighting Designer', 'VFX Designer', 'Photographer',
-            'Director', 'Content Producer', 'Editor', 'Scriptwriter', 'Infographic Designer',
-            
-            // Business positions
-            'Business Analyst', 'Marketing Manager', 'HR Manager', 'Financial Analyst', 'Project Lead',
-            'CEO', 'CTO', 'CMO', 'CFO', 'COO', 'CPO', 'CIO', 'CISO', 'CCO', 'CDO',
-            'Development Director', 'Sales Director', 'Support Director', 'Operations Director',
-            'Quality Manager', 'HR Director', 'Recruitment Manager', 'Training Director', 'Business Consultant',
-            'Product Owner', 'Innovation Manager', 'Strategy Director', 'Research Director',
-            'Program Manager', 'Development Team Lead', 'Design Team Lead', 'Marketing Director',
-            'Digital Transformation Manager', 'Analytics Director', 'Security Director'
-        ],
-        femaleJobTitles: [
-            // Technical positions
-            'Software Developer', 'Web Designer', 'UI/UX Designer', 'Product Manager', 'Project Manager',
-            'DevOps Engineer', 'QA Engineer', 'System Architect', 'Frontend Developer', 'Backend Developer',
-            'Full Stack Developer', 'iOS Developer', 'Android Developer', 'Security Engineer', 'Data Engineer',
-            'ML Engineer', 'Database Administrator', 'System Administrator', 'Network Engineer', 'Cloud Architect',
-            'Automation Engineer', 'Game Developer', 'Embedded Engineer', 'Technical Consultant', 'Scala Developer',
-            'Python Developer', 'Java Developer', 'JavaScript Developer', 'Rust Developer', 'Go Developer',
-            
-            // Creative positions
-            'Graphic Designer', 'Art Director', 'Content Manager', 'Copywriter', 'Brand Manager',
-            'Creative Director', 'Illustrator', 'Motion Designer', '3D Artist', 'Interface Designer',
-            'UX Researcher', 'Product Designer', 'Interaction Designer', 'Print Designer', 'Packaging Designer',
-            'Storyboard Artist', 'Animator', 'Video Editor', 'Sound Designer', 'Character Designer',
-            'Environment Artist', 'Technical Artist', 'Lighting Designer', 'VFX Designer', 'Photographer',
-            'Director', 'Content Producer', 'Editor', 'Scriptwriter', 'Infographic Designer',
-            
-            // Business positions
-            'Business Analyst', 'Marketing Manager', 'HR Manager', 'Financial Analyst', 'Project Lead',
-            'CEO', 'CTO', 'CMO', 'CFO', 'COO', 'CPO', 'CIO', 'CISO', 'CCO', 'CDO',
-            'Development Director', 'Sales Director', 'Support Director', 'Operations Director',
-            'Quality Manager', 'HR Director', 'Recruitment Manager', 'Training Director', 'Business Consultant',
-            'Product Owner', 'Innovation Manager', 'Strategy Director', 'Research Director',
-            'Program Manager', 'Development Team Lead', 'Design Team Lead', 'Marketing Director',
-            'Digital Transformation Manager', 'Analytics Director', 'Security Director'
-        ],
-        headlines: {
-            starts: [
-                "New", "Innovative", "Revolutionary", "Modern", "Unique",
-                "Leading", "Popular", "Exclusive", "Premium", "Top",
-                "Perspective", "Progressive", "Trendy", "Intellectual", "Global"
-            ],
-            middles: [
-                "Digital", "Interactive", "Professional", "Technology", "Design",
-                "Creative", "Business", "Social", "Global", "Smart",
-                "Investment", "Educational", "Media", "Analytical", "Infrastructure"
-            ],
-            ends: [
-                "Project", "Product", "Service", "App", "Tool",
-                "Platform", "Marketplace", "Startup", "Brand", "Solution",
-                "Accelerator", "Incubator", "Hub", "Center", "Complex"
-            ],
-            actions: [
-                "Launches", "Presents", "Announces", "Develops", "Creates",
-                "Implements", "Optimizes", "Transforms", "Expands", "Modernizes",
-                "Scales", "Integrates", "Automates", "Realizes", "Presents"
-            ],
-            templates: [
-                "{start} {middle} {end}",
-                "Company {action} {start} {end}",
-                "{start} {end} for Business",
-                "{middle} {end} of the Future",
-                "Innovations Today: {middle} {end}",
-                "Discover {middle} {end}",
-                "{start} Solution for Your Business",
-                "The Future is Here: {middle} {end}"
-            ]
-        },
-        phoneFormats: [
-            '+1 (XXX) XXX-XXXX',
-            '+1-XXX-XXX-XXXX',
-            '+1.XXX.XXX.XXXX',
-            '1-XXX-XXX-XXXX',
-            '(XXX) XXX-XXXX',
-            'XXX-XXX-XXXX',
-            'XXX.XXX.XXXX',
-            '1-800-XXX-XXXX',
-        ],
-        postalCodes: ['10001', '20002', '30003', '40004', '50005', '60006', '70007', '80008', '90009', '12345', '54321', '11111', '22222', '33333', '98765', '87654'],
-        emailDomains: ['gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'hotmail.com', 'protonmail.com', 'aol.com', 'mail.com', 'example.com', 'test.com'],
-        fullAddresses: [
-            '123 Main St, New York, NY 10001',
-            '456 First Ave, Los Angeles, CA 90001',
-            '789 Park Rd, Chicago, IL 60001',
-            '321 Oak St, Houston, TX 77001',
-            '901 River Ln, Phoenix, AZ 85001',
-            '234 Market Sq, Philadelphia, PA 19101',
-            '567 High St, San Antonio, TX 78201',
-            '890 Broadway, San Diego, CA 92101',
-            '135 Elm St, Seattle, WA 98101',
-            '246 Maple Ave, Boston, MA 02101',
-            '357 Pine St, Atlanta, GA 30301',
-            '468 Cedar Blvd, Miami, FL 33101',
+        universities: [
+            'Harvard University',
+            'MIT',
+            'Stanford University',
+            'University of Cambridge',
+            'University of Oxford',
+            'Yale University',
+            'Princeton University',
+            'Columbia University',
+            'University of Chicago',
+            'UC Berkeley'
         ],
         specialties: [
             'Computer Science',
@@ -651,18 +485,6 @@ const data = {
             'Construction',
             'Medicine',
             'Pharmacy'
-        ],
-        universities: [
-            'Harvard University',
-            'MIT',
-            'Stanford University',
-            'University of Cambridge',
-            'University of Oxford',
-            'Yale University',
-            'Princeton University',
-            'Columbia University',
-            'University of Chicago',
-            'UC Berkeley'
         ],
         degrees: [
             'Bachelor',
@@ -717,22 +539,367 @@ const data = {
             'Thomas B.',
             'Julia K.'
         ],
+        words: [
+            'design', 'project', 'development', 'system', 'technology', 'innovation', 'solution',
+            'algorithm', 'interface', 'platform', 'functionality', 'architecture', 'optimization',
+            'automation', 'integration', 'scalability', 'modernization', 'transformation',
+            'strategy', 'marketing', 'management', 'enterprise', 'commerce', 'finance', 'investment',
+            'growth', 'performance', 'quality', 'service', 'client', 'market', 'product',
+            'success', 'future', 'progress', 'excellence', 'expertise', 'experience', 'competence',
+            'collaboration', 'partnership', 'communication', 'creativity', 'leadership'
+        ],
+        connectors: [
+            'and', 'or', 'but', 'while', 'however',
+            'therefore', 'moreover', 'furthermore',
+            'nevertheless', 'consequently',
+            'in addition,', 'additionally,',
+            'as well as', 'along with'
+        ],
+        paragraphs: [
+            'Our team of experts develops innovative solutions to meet your needs. We combine technical expertise with creativity to deliver exceptional results.',
+            'Through our customer-centric approach, we create customized solutions that perfectly align with your business objectives.',
+            'Innovation is at the heart of our approach. We utilize the latest technologies to optimize your processes and maximize efficiency.',
+            'We are committed to delivering high-quality solutions that keep you competitive in an ever-evolving market.'
+        ],
+        quotes: [
+            'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+            'Innovation distinguishes between a leader and a follower.',
+            'Creativity is intelligence having fun.',
+            'The best way to predict the future is to create it.',
+            'Quality is never an accident; it is always the result of intelligent effort.'
+        ],
+    },
+    fr: {
+        maleNames: ['Lucas', 'Gabriel', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Arthur', 'Paul', 'Alexandre', 'Victor', 'Hugo', 'Antoine', 'Maxime', 'Thomas', 'Nicolas', 'Théo', 'Mathis', 'Noah', 'Ethan', 'Pierre', 'Simon', 'Léo', 'Baptiste', 'Clément', 'Alexis', 'Nathan', 'Julien', 'Valentin', 'Charles', 'Samuel'],
+        femaleNames: ['Emma', 'Louise', 'Alice', 'Chloé', 'Inès', 'Léa', 'Manon', 'Lina', 'Jade', 'Sarah', 'Julia', 'Charlotte', 'Juliette', 'Camille', 'Zoé', 'Eva', 'Nina', 'Rose', 'Anna', 'Léna', 'Lucie', 'Marie', 'Elise', 'Clara', 'Valentine', 'Sophie', 'Margot', 'Victoria', 'Mathilde', 'Romane'],
+        maleSurnames: ['Martin', 'Bernard', 'Dubois', 'Thomas', 'Robert', 'Richard', 'Petit', 'Durand', 'Leroy', 'Moreau', 'Simon', 'Laurent', 'Lefebvre', 'Michel', 'Garcia', 'David', 'Bertrand', 'Roux', 'Vincent', 'Fournier', 'Morel', 'Girard', 'Andre', 'Lefevre', 'Mercier'],
+        femaleSurnames: ['Martin', 'Bernard', 'Dubois', 'Thomas', 'Robert', 'Richard', 'Petit', 'Durand', 'Leroy', 'Moreau', 'Simon', 'Laurent', 'Lefebvre', 'Michel', 'Garcia', 'David', 'Bertrand', 'Roux', 'Vincent', 'Fournier', 'Morel', 'Girard', 'Andre', 'Lefevre', 'Mercier'],
+        cities: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Montpellier', 'Bordeaux', 'Lille', 'Rennes', 'Reims', 'Saint-Étienne', 'Toulon', 'Le Havre', 'Grenoble', 'Dijon', 'Angers', 'Nîmes', 'Villeurbanne'],
+        streets: ['Rue de la Paix', 'Avenue des Champs-Élysées', 'Boulevard Saint-Germain', 'Rue de Rivoli', 'Avenue Montaigne', 'Rue du Faubourg Saint-Honoré', 'Place Vendôme', 'Rue Saint-Antoine', 'Boulevard Haussmann', 'Rue de la Pompe', 'Avenue Victor Hugo', 'Rue de la République', 'Boulevard des Italiens', 'Rue de Vaugirard', 'Avenue de l\'Opéra'],
+        words: ['design', 'projet', 'développement', 'système', 'technologie', 'innovation', 'solution', 'algorithme', 'interface', 'plateforme', 'fonctionnalité', 'architecture', 'optimisation', 'automatisation', 'intégration'],
+        maleJobTitles: ['Développeur', 'Designer Web', 'Designer UI/UX', 'Chef de Produit', 'Chef de Projet', 'Ingénieur DevOps', 'Ingénieur QA', 'Architecte Système', 'Développeur Frontend', 'Développeur Backend', 'Développeur Full Stack', 'Développeur iOS', 'Développeur Android', 'Ingénieur Sécurité', 'Ingénieur Data'],
+        femaleJobTitles: ['Développeuse', 'Designer Web', 'Designer UI/UX', 'Cheffe de Produit', 'Cheffe de Projet', 'Ingénieure DevOps', 'Ingénieure QA', 'Architecte Système', 'Développeuse Frontend', 'Développeuse Backend', 'Développeuse Full Stack', 'Développeuse iOS', 'Développeuse Android', 'Ingénieure Sécurité', 'Ingénieure Data'],
+        headlines: {
+            starts: [
+                "Nouveau", "Innovant", "Révolutionnaire", "Moderne", "Unique",
+                "Pionnier", "Populaire", "Exclusif", "Premium", "Top", "Perspectif", "Progressif", "Tendance", "Intellectuel", "Global"
+            ],
+            middles: [
+                "système de", "solution pour", "plateforme de", "technologie de",
+                "application de", "service de", "produit de", "outil de"
+            ],
+            ends: [
+                "développement", "gestion", "optimisation", "innovation",
+                "transformation", "collaboration", "productivité", "performance"
+            ],
+            actions: [
+                "lance", "présente", "introduit", "dévoile", "annonce",
+                "révolutionne", "transforme", "améliore", "optimise"
+            ],
+            templates: [
+                "{start} {middle} {end}",
+                "Une {start} {middle} {end}",
+                "{start}: {action} {middle} {end}"
+            ]
+        },
+        universities: [
+            'Université Paris-Sorbonne',
+            'École Polytechnique',
+            'Sciences Po Paris',
+            'HEC Paris',
+            'École Normale Supérieure',
+            'Université Paris-Saclay',
+            'CentraleSupélec',
+            'ESSEC Business School',
+            'ESCP Business School',
+            'Université Paris-Dauphine',
+            'Université de Strasbourg',
+            'Université de Lyon',
+            'Université de Bordeaux',
+            'Université de Toulouse',
+            'École des Ponts ParisTech',
+            'Université de Montpellier',
+            'Université de Lille',
+            'Université de Nice',
+            'Institut Mines-Télécom',
+            'INSA Lyon'
+        ],
+        reviews: [
+            'Produit incroyable ! A dépassé toutes mes attentes. La qualité et l\'attention aux détails sont impressionnantes',
+            'Très satisfait de la collaboration. Approche professionnelle et excellents résultats',
+            'Je recommande vivement ! Qualité et service au plus haut niveau.',
+            'Impressionné par la rapidité et la qualité du travail. Je réutiliserai certainement',
+            'Une expérience client exceptionnelle. Service professionnel et résultats remarquables.'
+        ],
+        nicknamePrefixes: [
+            'Le', 'Super', 'Mega', 'Ultra', 'Hyper', 'Pro', 'Master',
+            'Expert', 'Top', 'Elite'
+        ],
+        nicknameSuffixes: [
+            'Pro', 'Master', 'Expert', 'Star', 'Champion', 'Boss',
+            'Guru', 'Ninja', 'Génie', 'Legend'
+        ],
+        companyPrefixes: [
+            'Société', 'Groupe', 'Entreprise', 'Compagnie', 'Corporation',
+            'SARL', 'SA', 'SAS'
+        ],
+        companies: [
+            'TechFrance', 'InnovaSoft', 'NumériquePlus', 'SolutionsPro',
+            'DataFrance', 'WebExpert', 'CloudTech', 'SmartSolutions'
+        ],
+        education: [
+            'Licence en Informatique',
+            'Master en Sciences des Données',
+            'Doctorat en Intelligence Artificielle',
+            'DUT Informatique',
+            'BTS Services Informatiques',
+            'Master en Cybersécurité',
+            'Diplôme d\'Ingénieur en Informatique',
+            'Master en Management des Systèmes d\'Information',
+            'Licence en Mathématiques Appliquées',
+            'Master en Développement Web',
+            'Licence en Réseaux et Télécommunications',
+            'Master en Intelligence Artificielle',
+            'DUT Génie Logiciel',
+            'Master en Sécurité des Systèmes d\'Information',
+            'Licence en Systèmes Numériques'
+        ],
+        degrees: [
+            'Licence',
+            'Master',
+            'Doctorat',
+            'DUT',
+            'BTS',
+            'Diplôme d\'Ingénieur'
+        ],
+        specialties: [
+            'Informatique',
+            'Sciences des Données',
+            'Intelligence Artificielle',
+            'Cybersécurité',
+            'Développement Web',
+            'Génie Logiciel',
+            'Systèmes d\'Information',
+            'Réseaux et Télécommunications',
+            'Mathématiques Appliquées',
+            'Management des SI'
+        ],
+        connectors: [
+            'et', 'ou', 'mais', 'donc',
+            'car', 'cependant', 'néanmoins',
+            'ainsi', 'puis', 'ensuite',
+            'en outre,', 'de plus,',
+            'également', 'ainsi que'
+        ],
+        paragraphs: [
+            'Notre équipe d\'experts développe des solutions innovantes pour répondre à vos besoins. Nous combinons l\'expertise technique avec la créativité pour livrer des résultats exceptionnels.',
+            'Grâce à notre approche centrée sur le client, nous créons des solutions personnalisées qui s\'alignent parfaitement sur vos objectifs commerciaux.',
+            'L\'innovation est au cœur de notre approche. Nous utilisons les dernières technologies pour optimiser vos processus et maximiser l\'efficacité.',
+            'Nous sommes engagés à livrer des solutions de haute qualité qui vous maintiennent compétitif dans un marché en constante évolution.'
+        ],
+        quotes: [
+            'Le succès n\'est pas final, l\'échec n\'est pas fatal : c\'est le courage de continuer qui compte.',
+            'L\'innovation distingue un leader d\'un suiveur.',
+            'La créativité est l\'intelligence qui s\'amuse.',
+            'La meilleure façon de prédire l\'avenir est de le créer.',
+            'La qualité n\'est jamais un accident ; elle est toujours le résultat d\'un effort intelligent.'
+        ],
+    },
+    de: {
+        maleNames: ['Alexander', 'Maximilian', 'Paul', 'Leon', 'Luis', 'Luca', 'Felix', 'Jonas', 'David', 'Elias', 'Julian', 'Philipp', 'Noah', 'Ben', 'Niklas', 'Jakob', 'Tim', 'Moritz', 'Henry', 'Johannes', 'Lukas', 'Finn', 'Daniel', 'Emil', 'Anton', 'Leo', 'Rafael', 'Simon', 'Erik', 'Jan'],
+        femaleNames: ['Emma', 'Mia', 'Hannah', 'Sofia', 'Anna', 'Emilia', 'Lina', 'Marie', 'Lena', 'Mila', 'Clara', 'Léa', 'Amelie', 'Sophie', 'Mathilda', 'Frieda', 'Charlotte', 'Luisa', 'Victoria', 'Zoe', 'Ida', 'Helena', 'Julia', 'Sarah', 'Laura', 'Lilly', 'Ella', 'Klara', 'Nora', 'Pia'],
+        maleSurnames: ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann', 'Koch', 'Richter', 'Klein', 'Wolf', 'Schröder', 'Neumann', 'Schwarz', 'Zimmermann', 'Braun', 'Krüger', 'Hofmann', 'Hartmann', 'Lange', 'Schmitt', 'Werner'],
+        femaleSurnames: ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann', 'Koch', 'Richter', 'Klein', 'Wolf', 'Schröder', 'Neumann', 'Schwarz', 'Zimmermann', 'Braun', 'Krüger', 'Hofmann', 'Hartmann', 'Lange', 'Schmitt', 'Werner'],
+        cities: ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Leipzig', 'Dortmund', 'Essen', 'Bremen', 'Dresden', 'Hannover', 'Nürnberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Münster'],
+        streets: ['Hauptstraße', 'Bahnhofstraße', 'Kirchstraße', 'Schulstraße', 'Gartenstraße', 'Bergstraße', 'Waldstraße', 'Ringstraße', 'Friedrichstraße', 'Wilhelmstraße', 'Berliner Straße', 'Münchener Straße', 'Hamburger Straße', 'Königstraße'],
+        words: ['Innovation', 'Technologie', 'Entwicklung', 'Lösung', 'System', 'Projekt', 'Design', 'Schnittstelle', 'Plattform', 'Anwendung', 'Software', 'Daten', 'Intelligenz', 'Digital', 'Netzwerk', 'Sicherheit', 'Cloud', 'Mobil', 'Web', 'Architektur'],
+        maleJobTitles: ['Softwareentwickler', 'Systemarchitekt', 'Projektleiter', 'Analyst', 'Berater', 'DevOps-Ingenieur', 'Technischer Direktor', 'UX-Designer', 'Product Owner', 'Innovationsmanager', 'Technischer Experte'],
+        femaleJobTitles: ['Softwareentwicklerin', 'Systemarchitektin', 'Projektleiterin', 'Analystin', 'Beraterin', 'DevOps-Ingenieurin', 'Technische Direktorin', 'UX-Designerin', 'Product Ownerin', 'Innovationsmanagerin', 'Technische Expertin'],
+        headlines: {
+            starts: [
+                'Neu', 'Innovativ', 'Revolutionär', 'Modern', 'Einzigartig',
+                'Führend', 'Beliebt', 'Exklusiv', 'Premium', 'Top',
+                'Zukunftsorientiert', 'Progressiv', 'Trendig', 'Intellektuell', 'Global'
+            ],
+            middles: [
+                'System für', 'Lösung für', 'Plattform für', 'Technologie für',
+                'Anwendung für', 'Service für', 'Produkt für', 'Tool für'
+            ],
+            ends: [
+                'Entwicklung', 'Management', 'Optimierung', 'Innovation',
+                'Transformation', 'Zusammenarbeit', 'Produktivität', 'Leistung'
+            ],
+            actions: [
+                'startet', 'präsentiert', 'führt ein', 'enthüllt', 'kündigt an',
+                'revolutioniert', 'transformiert', 'verbessert', 'optimiert'
+            ],
+            templates: [
+                '{start} {middle} {end}',
+                'Ein {start} {middle} {end}',
+                '{start}: {action} {middle} {end}'
+            ]
+        },
+        universities: [
+            'Technische Universität München',
+            'Ludwig-Maximilians-Universität München',
+            'Humboldt-Universität zu Berlin',
+            'Freie Universität Berlin',
+            'Universität Heidelberg',
+            'RWTH Aachen',
+            'Technische Universität Berlin',
+            'Universität Hamburg',
+            'Universität Frankfurt',
+            'Universität Köln',
+            'Technische Universität Dresden',
+            'Karlsruher Institut für Technologie',
+            'Universität Stuttgart',
+            'Technische Universität Darmstadt',
+            'Universität Bonn',
+            'Universität Bremen',
+            'Universität Hannover',
+            'Universität Leipzig',
+            'Technische Universität Braunschweig',
+            'Universität Erlangen-Nürnberg'
+        ],
+        reviews: [
+            'Ausgezeichneter Service, sehr zu empfehlen!',
+            'Sehr zufrieden mit der Qualität des Produkts.',
+            'Hervorragende Kundenerfahrung.',
+            'Professionelles und reaktionsschnelles Team.',
+            'Unschlagbares Preis-Leistungs-Verhältnis.'
+        ],
+        nicknamePrefixes: [
+            'Der', 'Super', 'Mega', 'Ultra', 'Hyper', 'Pro', 'Master',
+            'Expert', 'Top', 'Elite'
+        ],
+        nicknameSuffixes: [
+            'Pro', 'Master', 'Experte', 'Star', 'Champion', 'Boss',
+            'Guru', 'Ninja', 'Genie', 'Legende'
+        ],
+        companyPrefixes: [
+            'Firma', 'Gruppe', 'Unternehmen', 'Gesellschaft', 'Corporation',
+            'GmbH', 'AG', 'KG'
+        ],
+        companies: [
+            'TechDeutsch', 'InnovaSoft', 'DigitalPlus', 'LösungenPro',
+            'DatenTech', 'WebExpert', 'CloudTech', 'SmartSolutions'
+        ],
+        education: [
+            'Bachelor in Informatik',
+            'Master in Datenwissenschaft',
+            'Promotion in Künstlicher Intelligenz',
+            'Diplom-Informatiker',
+            'Bachelor in Wirtschaftsinformatik',
+            'Master in Cybersicherheit',
+            'Staatlich geprüfter Informatiker',
+            'Master in Informationsmanagement',
+            'Bachelor in Angewandter Mathematik',
+            'Master in Webentwicklung',
+            'Ausbildung zum Fachinformatiker',
+            'Duales Studium Informatik',
+            'Bachelor in Medieninformatik',
+            'Master in IT-Sicherheit',
+            'Technischer Betriebswirt'
+        ],
+        degrees: [
+            'Bachelor',
+            'Master',
+            'Promotion',
+            'Diplom',
+            'Staatlich geprüfter',
+            'Ausbildung',
+            'Duales Studium'
+        ],
+        specialties: [
+            'Informatik',
+            'Datenwissenschaft',
+            'Künstliche Intelligenz',
+            'Wirtschaftsinformatik',
+            'Cybersicherheit',
+            'Informationsmanagement',
+            'Angewandte Mathematik',
+            'Webentwicklung',
+            'Medieninformatik',
+            'IT-Sicherheit'
+        ],
+        connectors: [
+            'und', 'oder', 'aber', 'während', 'jedoch',
+            'deshalb', 'außerdem', 'darüber hinaus',
+            'dennoch', 'folglich',
+            'in addition,', 'additionally,',
+            'als auch', 'zusammen mit'
+        ],
+        paragraphs: [
+            'Unser Team von Experten entwickelt innovative Lösungen, um Ihre Bedürfnisse zu erfüllen. Wir kombinieren technisches Know-how mit Kreativität, um außergewöhnliche Ergebnisse zu liefern.',
+            'Durch unseren kundenorientierten Ansatz erstellen wir maßgeschneiderte Lösungen, die perfekt auf Ihre Geschäftsziele abgestimmt sind.',
+            'Innovation steht im Mittelpunkt unseres Ansatzes. Wir nutzen die neuesten Technologien, um Ihre Prozesse zu optimieren und die Effizienz zu maximieren.',
+            'Wir sind verpflichtet, Lösungen von höchster Qualität zu liefern, die Sie in einem sich ständig verändernden Markt wettbewerbsfähig halten.'
+        ],
+        quotes: [
+            'Der Erfolg ist nicht endgültig, der Misserfolg ist nicht tödlich: es ist der Mut, weiterzumachen, der zählt.',
+            'Innovation unterscheidet einen Leader von einem Nachahmer.',
+            'Kreativität ist Intelligenz, die Spaß hat.',
+            'Die beste Art, die Zukunft vorherzusagen, ist, sie zu schaffen.',
+            'Qualität ist nie ein Zufall; sie ist immer das Ergebnis intelligenter Anstrengung.'
+        ],
+        words: [
+            'Design', 'Projekt', 'Entwicklung', 'System', 'Technologie', 'Innovation', 'Lösung',
+            'Algorithmus', 'Schnittstelle', 'Plattform', 'Funktionalität', 'Architektur', 'Optimierung',
+            'Automatisierung', 'Integration', 'Skalierbarkeit', 'Modernisierung', 'Transformation',
+            'Strategie', 'Marketing', 'Management', 'Unternehmen', 'Handel', 'Finanzen', 'Investition',
+            'Wachstum', 'Leistung', 'Qualität', 'Service', 'Kunde', 'Markt', 'Produkt',
+            'Erfolg', 'Zukunft', 'Fortschritt', 'Exzellenz', 'Expertise', 'Erfahrung', 'Kompetenz',
+            'Zusammenarbeit', 'Partnerschaft', 'Kommunikation', 'Kreativität', 'Führung'
+        ]
     }
 };
 
-// Додаємо переклади для нотифікацій
-const notifications = {
-    uk: {
-        contentGenerated: 'Контент згенеровано успішно',
-        newElementsCreated: 'Створено нові текстові елементи',
-        error: 'Помилка при генерації контенту'
-    },
-    en: {
-        contentGenerated: 'Content generated successfully',
-        newElementsCreated: 'New text elements created',
-        error: 'Error generating content'
-    }
-};
+// Додаємо структури для генерації компаній для англійської мови
+data.en.companyPrefixes = [
+    'Inc.', 'Corp.', 'LLC', 'Ltd.', 'Group',
+    'Solutions', 'Technologies', 'Systems', 'Industries', 'International',
+    'Global', 'Enterprises', 'Innovations', 'Dynamics', 'Corporation'
+];
+data.en.companies = [
+    'TechPro', 'InnovaSoft', 'DigitalPlus', 'SmartSolutions',
+    'DataTech', 'WebExpert', 'CloudTech', 'CyberSystems',
+    'FutureTech', 'NextGen', 'InfoSys', 'TechWave',
+    'ByteForce', 'CodeCraft', 'DataFlow', 'TechNova',
+    'InnovatePro', 'SmartTech', 'CyberPro', 'WebFlow'
+];
+
+// Додаємо структури для посад для англійської мови
+data.en.maleJobTitles = [
+    // Technical Positions
+    'Software Developer', 'Web Designer', 'UI/UX Designer', 'Product Manager', 'Project Manager',
+    'DevOps Engineer', 'QA Engineer', 'System Architect', 'Frontend Developer', 'Backend Developer',
+    'Full Stack Developer', 'iOS Developer', 'Android Developer', 'Security Engineer', 'Data Engineer',
+    'Cloud Engineer', 'Network Engineer', 'Database Administrator', 'Business Analyst', 'Data Scientist',
+    
+    // Management Positions
+    'CEO', 'CTO', 'COO', 'Team Lead', 'Department Head',
+    'Technical Director', 'IT Director', 'Development Manager', 'Operations Manager', 'Product Owner',
+    
+    // Creative Positions
+    'Art Director', 'Creative Director', 'Lead Designer', 'Brand Manager', 'Content Manager',
+    'Marketing Manager', 'Digital Producer', 'Creative Producer', 'Innovation Manager', 'Strategy Manager'
+];
+
+data.en.femaleJobTitles = [
+    // Technical Positions
+    'Software Developer', 'Web Designer', 'UI/UX Designer', 'Product Manager', 'Project Manager',
+    'DevOps Engineer', 'QA Engineer', 'System Architect', 'Frontend Developer', 'Backend Developer',
+    'Full Stack Developer', 'iOS Developer', 'Android Developer', 'Security Engineer', 'Data Engineer',
+    'Cloud Engineer', 'Network Engineer', 'Database Administrator', 'Business Analyst', 'Data Scientist',
+    
+    // Management Positions
+    'CEO', 'CTO', 'COO', 'Team Lead', 'Department Head',
+    'Technical Director', 'IT Director', 'Development Manager', 'Operations Manager', 'Product Owner',
+    
+    // Creative Positions
+    'Art Director', 'Creative Director', 'Lead Designer', 'Brand Manager', 'Content Manager',
+    'Marketing Manager', 'Digital Producer', 'Creative Producer', 'Innovation Manager', 'Strategy Manager'
+];
 
 // Утиліти
 function getRandomItem(array) {
@@ -815,7 +982,7 @@ figma.ui.onmessage = async (msg) => {
 
         options.forEach(option => {
             let value;
-            if (option === 'words' || option === 'sentence') {
+            if (option === 'words' || option === 'sentence' || option === 'paragraph') {
                 value = generators[option](language, count);
             } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
                 value = generators[option](language, gender);
@@ -859,24 +1026,19 @@ figma.ui.onmessage = async (msg) => {
             if (textNodes.length > 0) {
                 // Якщо є вибрані текстові елементи
                 for (const node of textNodes) {
-                    const option = getRandomItem(options);
-                    console.log('Selected option:', option);
-                    if (generators[option]) {
-                        let generatedText;
-                        // Передаємо параметри в залежності від типу генератора
-                        if (option === 'words' || option === 'sentence') {
-                            generatedText = generators[option](language, parseInt(count) || 1);
-                        } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
-                            console.log('Generating full name with parameters:', { language, gender });
-                            generatedText = generators[option](language, gender);
-                        } else if (option === 'education') {
-                            generatedText = generators[option](language);
-                        } else {
-                            generatedText = generators[option](language);
-                        }
-                        console.log('Generated text:', generatedText);
-                        node.characters = generatedText;
+                    const option = options[0];
+                    let value;
+
+                    if (option === 'words' || option === 'sentence' || option === 'paragraph') {
+                        value = generators[option](language, count);
+                    } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
+                        value = generators[option](language, gender);
+                    } else {
+                        value = generators[option](language);
                     }
+
+                    await figma.loadFontAsync(node.fontName);
+                    node.characters = value;
                 }
                 figma.notify(notifications[language].contentGenerated);
             } else {
@@ -886,20 +1048,20 @@ figma.ui.onmessage = async (msg) => {
                 for (const option of options) {
                     console.log('Creating new element for option:', option);
                     const text = figma.createText();
-                    let generatedText;
+                    let value;
                     // Передаємо параметри в залежності від типу генератора
-                    if (option === 'words' || option === 'sentence') {
-                        generatedText = generators[option](language, parseInt(count) || 1);
+                    if (option === 'words' || option === 'sentence' || option === 'paragraph') {
+                        value = generators[option](language, parseInt(count) || 1);
                     } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
                         console.log('Generating full name with parameters:', { language, gender });
-                        generatedText = generators[option](language, gender);
+                        value = generators[option](language, gender);
                     } else if (option === 'education') {
-                        generatedText = generators[option](language);
+                        value = generators[option](language);
                     } else {
-                        generatedText = generators[option](language);
+                        value = generators[option](language);
                     }
-                    console.log('Generated text:', generatedText);
-                    text.characters = generatedText;
+                    console.log('Generated text:', value);
+                    text.characters = value;
                     
                     if (elements.length > 0) {
                         const lastElement = elements[elements.length - 1];
@@ -1058,14 +1220,20 @@ const generators = {
     },
     
     headline: (lang) => {
-        const h = data[lang].headlines;
-        const template = h.templates[Math.floor(Math.random() * h.templates.length)];
+        const langData = data[lang] || data.en;
+        
+        if (!langData.headlines) {
+            return ''; // Повертаємо пустий рядок, якщо немає структури headlines
+        }
+
+        const h = langData.headlines;
+        const template = getRandomItem(h.templates);
         
         return template
-            .replace('{start}', h.starts[Math.floor(Math.random() * h.starts.length)])
-            .replace('{middle}', h.middles[Math.floor(Math.random() * h.middles.length)])
-            .replace('{end}', h.ends[Math.floor(Math.random() * h.ends.length)])
-            .replace('{action}', h.actions[Math.floor(Math.random() * h.actions.length)]);
+            .replace('{start}', getRandomItem(h.starts))
+            .replace('{middle}', getRandomItem(h.middles))
+            .replace('{end}', getRandomItem(h.ends))
+            .replace('{action}', getRandomItem(h.actions));
     },
     
     nickname: (lang, gender = 'all') => {
@@ -1127,19 +1295,33 @@ const generators = {
     },
     
     iban: (language) => {
-        const countries = {
-            uk: 'UA',
-            en: 'GB'
+        const formats = {
+            uk: { country: 'UA', bankLength: 6, accountLength: 19 },
+            en: { country: 'US', bankLength: 9, accountLength: 12 },
+            fr: { country: 'FR', bankLength: 10, accountLength: 11 },
+            de: { country: 'DE', bankLength: 8, accountLength: 10 }
         };
-        const country = countries[language] || 'UA';
+
+        const format = formats[language] || formats.en;
+        
         // Контрольні цифри (2 знаки)
         const checkDigits = Math.floor(Math.random() * 90 + 10).toString();
-        // Код банку (6 знаків)
-        const bankCode = Math.floor(Math.random() * 900000 + 100000).toString();
-        // Номер рахунку (19 знаків)
-        const accountNumber = Array.from({length: 19}, () => Math.floor(Math.random() * 10)).join('');
         
-        return `${country}${checkDigits}${bankCode}${accountNumber}`;
+        // Код банку
+        const bankCode = Array.from(
+            {length: format.bankLength}, 
+            () => Math.floor(Math.random() * 10)
+        ).join('');
+        
+        // Номер рахунку
+        const accountNumber = Array.from(
+            {length: format.accountLength}, 
+            () => Math.floor(Math.random() * 10)
+        ).join('');
+        
+        // Форматуємо IBAN з пробілами для кращої читабельності
+        const fullIban = `${format.country}${checkDigits}${bankCode}${accountNumber}`;
+        return fullIban.match(/.{1,4}/g).join(' ');
     },
     
     website: (language) => {
@@ -1157,9 +1339,8 @@ const generators = {
             // Бізнес домени
             'biz', 'company', 'inc', 'ltd', 'group', 'corp',
             // Технічні домени
-            'tech', 'digital', 'software', 'systems', 'solutions',
-            // Нові домени
-            'app', 'dev', 'io', 'ai', 'cloud', 'web', 'online', 'site'
+            'tech', 'digital', 'web', 'app', 'soft', 'dev', 'code', 'it',
+            'cloud', 'online', 'site'
         ];
 
         const prefixes = language === 'uk' ? [
@@ -1316,16 +1497,25 @@ const generators = {
             .join(' ');
     },
     
-    paragraph: (lang) => {
-        const sentenceCount = Math.floor(Math.random() * 3) + 2; // 2-4 речення
-        return generators.sentence(lang, sentenceCount);
+    paragraph: (lang, count = 1) => {
+        if (!data[lang] || !data[lang].paragraphs) {
+            return lang === 'uk' ? 'Текст відсутній' : 'No text available';
+        }
+        
+        count = Math.max(1, parseInt(count) || 1);
+        const paragraphs = [];
+        
+        for (let i = 0; i < count; i++) {
+            paragraphs.push(getRandomItem(data[lang].paragraphs));
+        }
+        
+        return paragraphs.join('\n\n');
     },
     quote: (lang) => {
-        const quotes = data[lang].quotes;
-        const authors = data[lang].quoteAuthors;
-        const quote = getRandomItem(quotes);
-        const author = getRandomItem(authors);
-        return `"${quote}" - ${author}`;
+        if (!data[lang] || !data[lang].quotes) {
+            return lang === 'uk' ? 'Цитата відсутня' : 'No quote available';
+        }
+        return getRandomItem(data[lang].quotes);
     },
     review: (lang) => {
         const reviews = data[lang].reviews;
@@ -1338,60 +1528,77 @@ const generators = {
 
 // Утиліти для форматування
 function formatPrice(number, lang) {
-    const [intPart, decPart] = number.toFixed(2).split('.');
-    const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'uk' ? ' ' : ',');
-    return lang === 'uk' 
-        ? `${formattedInt},${decPart} ₴`
-        : `$${formattedInt}.${decPart}`;
+    const formats = {
+        uk: { currency: '₴', separator: ' ', decimal: ',' },
+        en: { currency: '$', separator: ',', decimal: '.' },
+        fr: { currency: '€', separator: ' ', decimal: ',' },
+        de: { currency: '€', separator: '.', decimal: ',' }
+    };
+
+    const format = formats[lang] || formats.en;
+    
+    const parts = number.toFixed(2).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, format.separator);
+    
+    return lang === 'fr' || lang === 'de' 
+        ? parts.join(format.decimal) + ' ' + format.currency
+        : format.currency + parts.join(format.decimal);
 }
 
 function formatDate(date, lang) {
-    const day = date.getDate();
-    const year = date.getFullYear();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let locale;
     
-    const monthsUk = [
-        'січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',
-        'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'
-    ];
-    
-    const monthsEn = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-
-    if (lang === 'uk') {
-        return `${day} ${monthsUk[date.getMonth()]} ${year} року`;
-    } else {
-        return `${monthsEn[date.getMonth()]} ${day}, ${year}`;
+    switch(lang) {
+        case 'uk':
+            locale = 'uk-UA';
+            break;
+        case 'fr':
+            locale = 'fr-FR';
+            break;
+        case 'de':
+            locale = 'de-DE';
+            break;
+        default:
+            locale = 'en-US';
     }
+    
+    return date.toLocaleDateString(locale, options);
 }
 
 function formatPhone(lang) {
-    if (lang === 'uk') {
-        // Коди міст та операторів
-        const areaCodes = ['044', '050', '063', '066', '067', '068', '073', '091', '092', '093', '094', '095', '096', '097', '098', '099'];
-        const areaCode = areaCodes[Math.floor(Math.random() * areaCodes.length)];
-        
-        // Генеруємо групи цифр
-        const group1 = Math.floor(Math.random() * 900) + 100; // 100-999
-        const group2 = Math.floor(Math.random() * 90) + 10;   // 10-99
-        
-        return `+38 (${areaCode}) ${group1} ${group2} ${Math.floor(Math.random() * 90) + 10}`;
-    } else {
-        const areaCodes = ['202', '212', '310', '312', '404', '415', '512', '617', '702', '713'];
-        return `+1 (${areaCodes[Math.floor(Math.random() * areaCodes.length)]}) ${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 9000) + 1000}`;
-    }
+    const formats = {
+        uk: '+380 (XX) XXX-XX-XX',
+        en: '+1 (###) ###-####',
+        fr: '+33 # ## ## ## ##',
+        de: '+49 ### ########'
+    };
+
+    const format = formats[lang] || formats.en;
+    return format.replace(/#/g, () => Math.floor(Math.random() * 10));
 }
 
 function formatPostalCode(lang) {
-    if (lang === 'uk') {
-        return Math.floor(Math.random() * 100000).toString().padStart(5, '0');
-    } else {
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const letter1 = letters[Math.floor(Math.random() * letters.length)];
-        const letter2 = letters[Math.floor(Math.random() * letters.length)];
-        const numbers = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-        return `${letter1}${letter2}${numbers}`;
+    switch(lang) {
+        case 'uk':
+            return String(Math.floor(10000 + Math.random() * 90000)); // 5 цифр: 01001-99999
+        case 'fr':
+            // Французький формат: 5 цифр (00000-99999)
+            const frPrefix = String(Math.floor(Math.random() * 96) + 1).padStart(2, '0');
+            const frSuffix = String(Math.floor(1000 + Math.random() * 9000));
+            return frPrefix + frSuffix;
+        case 'de':
+            // Німецький формат: 5 цифр (01000-99999)
+            return String(Math.floor(1000 + Math.random() * 98999)).padStart(5, '0');
+        default: // en - США
+            // Американський формат: NNNNN або NNNNN-NNNN
+            const zip = String(Math.floor(10000 + Math.random() * 90000));
+            const hasPlus4 = Math.random() > 0.5;
+            if (hasPlus4) {
+                const plus4 = String(Math.floor(1000 + Math.random() * 9000));
+                return `${zip}-${plus4}`;
+            }
+            return zip;
     }
 }
 
@@ -1416,3 +1623,73 @@ const translitMap = {
 function transliterate(text) {
     return text.toLowerCase().split('').map(char => translitMap[char] || char).join('');
 }
+
+// Тестування генерації заголовків
+function testHeadlineGeneration() {
+    const languages = ['uk', 'en', 'fr', 'de'];
+    
+    console.log('Тестування генерації заголовків:');
+    console.log('--------------------------------');
+    
+    languages.forEach(lang => {
+        console.log(`\nМова: ${lang}`);
+        for (let i = 0; i < 3; i++) {
+            console.log(generators.headline(lang));
+        }
+    });
+}
+
+// Тестування генерації компаній
+function testCompanyGeneration() {
+    const languages = ['uk', 'en', 'fr', 'de'];
+    
+    console.log('Тестування генерації компаній:');
+    console.log('--------------------------------');
+    
+    languages.forEach(lang => {
+        console.log(`\nМова: ${lang}`);
+        for (let i = 0; i < 3; i++) {
+            console.log(generators.company(lang));
+        }
+    });
+}
+
+// Тестування генерації посад
+function testJobTitleGeneration() {
+    const languages = ['uk', 'en', 'fr', 'de'];
+    const genders = ['male', 'female'];
+    
+    console.log('Тестування генерації посад:');
+    console.log('--------------------------------');
+    
+    languages.forEach(lang => {
+        console.log(`\nМова: ${lang}`);
+        genders.forEach(gender => {
+            console.log(`\nСтать: ${gender}`);
+            for (let i = 0; i < 3; i++) {
+                console.log(generators.jobTitle(lang, gender));
+            }
+        });
+    });
+}
+
+// Тестування генерації поштових індексів
+function testPostalCodeGeneration() {
+    const languages = ['uk', 'en', 'fr', 'de'];
+    
+    console.log('Тестування генерації поштових індексів:');
+    console.log('--------------------------------');
+    
+    languages.forEach(lang => {
+        console.log(`\nМова: ${lang}`);
+        for (let i = 0; i < 5; i++) {
+            console.log(formatPostalCode(lang));
+        }
+    });
+}
+
+// Запускаємо тест при ініціалізації плагіна
+testHeadlineGeneration();
+testCompanyGeneration();
+testJobTitleGeneration();
+testPostalCodeGeneration();
