@@ -10,6 +10,7 @@ build/
 .idea/
 *.sublime-project
 *.sublime-workspace
+.windsurfrules
 
 # OS
 .DS_Store
