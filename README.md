@@ -4,7 +4,7 @@
 
 # Content Craft
 
-### Content Craft - інструмент для швидкого наповнення ваших макетів реалістичними даними
+### Інструмент для швидкого наповнення ваших макетів реалістичними даними
 
 [![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-FF69B4?style=for-the-badge&logo=figma)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
 ![Version](https://img.shields.io/badge/version-8.0.0-blue?style=for-the-badge)
@@ -13,9 +13,9 @@
 
 </div>
 
-### <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/target-regular.svg" width="20" height="20"> Можливості
+### <img src="assets/icons/target.svg" width="20" height="20" style="vertical-align: middle"> Можливості
 
-| <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/user-regular.svg" width="16" height="16"> Персональні Дані | <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/map-pin-regular.svg" width="16" height="16"> Локації | <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/briefcase-regular.svg" width="16" height="16"> Бізнес | <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/article-regular.svg" width="16" height="16"> Контент | <img src="https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/puzzle-piece-regular.svg" width="16" height="16"> Інше |
+| <img src="assets/icons/user.svg" width="16" height="16" style="vertical-align: middle"> Персональні Дані | <img src="assets/icons/map-pin.svg" width="16" height="16" style="vertical-align: middle"> Локації | <img src="assets/icons/briefcase.svg" width="16" height="16" style="vertical-align: middle"> Бізнес | <img src="assets/icons/article.svg" width="16" height="16" style="vertical-align: middle"> Контент | <img src="assets/icons/puzzle.svg" width="16" height="16" style="vertical-align: middle"> Інше |
 |-------------------|-----------|-----------|------------|---------|
 | Імена | Міста | Компанії | Заголовки | UUID |
 | Прізвища | Вулиці | Посади | Речення | Дати |
