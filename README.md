@@ -15,7 +15,7 @@
 [![Ukrainian](https://img.shields.io/badge/UA-Ukrainian-FFD700?style=flat-square)](README.md)
 [![English](https://img.shields.io/badge/EN-English-red?style=flat-square)](README_EN.md)
 [![French](https://img.shields.io/badge/FR-French-blue?style=flat-square)](README_FR.md)
-[![Polish](https://img.shields.io/badge/PL-Polish-white?style=flat-square)](README_PL.md)
+[![German](https://img.shields.io/badge/DE-German-black?style=flat-square)](README_DE.md)
 
 </div>
 
