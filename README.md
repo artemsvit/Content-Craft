@@ -44,7 +44,7 @@
 
 ## 💫 Інтерфейс
 
-![Content Craft Interface](Cover 2.png)
+![Content Craft Interface](Cover2.png)
 
 ## 🛠 Для Розробників
 
