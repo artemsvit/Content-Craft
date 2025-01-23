@@ -1,27 +1,116 @@
-figma.showUI(__html__, { width: 280, height: 420 });
+figma.showUI(__html__, { width: 400, height: 420 });
 
 // Дані для генерації
 const data = {
     uk: {
-        maleNames: ['Олександр', 'Михайло', 'Андрій', 'Дмитро', 'Максим', 'Данило', 'Артем', 'Владислав', 'Богдан', 'Віктор', 
-            'Василь', 'Іван', 'Петро', 'Сергій', 'Юрій', 'Тарас', 'Роман', 'Степан', 'Павло', 'Назар', 
-            'Денис', 'Ігор', 'Олег', 'Ярослав', 'Володимир', 'Микола', 'Григорій', 'Валентин', 'Євген', 'Костянтин', 'Станіслав', 'Анатолій', 'Віталій', 'Сергій', 'Володислав', 'Дмитрій', 'Станіслав', 'Тимур'],
-        femaleNames: ['Олена', 'Анна', 'Марія', 'Софія', 'Вікторія', 'Юлія', 'Дарина', 'Ірина', 'Катерина', 'Наталія',
+        maleNames: [
+            'Олександр', 'Михайло', 'Андрій', 'Дмитро', 'Максим', 'Данило', 'Артем', 'Владислав', 'Богдан', 'Віктор',
+            'Василь', 'Іван', 'Петро', 'Сергій', 'Юрій', 'Тарас', 'Роман', 'Степан', 'Павло', 'Назар',
+            'Денис', 'Ігор', 'Олег', 'Ярослав', 'Володимир', 'Микола', 'Григорій', 'Валентин', 'Євген', 'Костянтин',
+            'Руслан', 'Любомир', 'Святослав', 'Мирослав', 'Ростислав', 'Захар', 'Матвій', 'Давид', 'Антон', 'Вадим',
+            'Борис', 'Георгій', 'Данило', 'Єгор', 'Зеновій', 'Кирило', 'Леонід', 'Маркіян', 'Остап', 'Тимофій'
+        ],
+        femaleNames: [
+            'Олена', 'Анна', 'Марія', 'Софія', 'Вікторія', 'Юлія', 'Дарина', 'Ірина', 'Катерина', 'Наталія',
             'Оксана', 'Людмила', 'Тетяна', 'Галина', 'Надія', 'Світлана', 'Христина', 'Любов', 'Діана', 'Василина',
-            'Мирослава', 'Олександра', 'Валерія', 'Божена', 'Злата', 'Ярина', 'Соломія', 'Орися', 'Роксолана', 'Богдана', 'Аліна', 'Маргарита', 'Валентина', 'Валерія', 'Ксенія', 'Ніна'],
+            'Мирослава', 'Олександра', 'Валерія', 'Божена', 'Злата', 'Ярина', 'Соломія', 'Орися', 'Роксолана', 'Богдана',
+            'Анастасія', 'Вероніка', 'Дарія', 'Євгенія', 'Зоряна', 'Іванна', 'Лілія', 'Маргарита', 'Ніна', 'Поліна',
+            'Раїса', 'Сніжана', 'Таїсія', 'Уляна', 'Фаїна', 'Христина', 'Цвітана', 'Шанна', 'Юстина', 'Ярослава'
+        ],
         maleSurnames: ['Шевченко', 'Бондаренко', 'Коваленко', 'Бойко', 'Ткаченко', 'Кравченко', 'Олійник', 'Шевчук', 'Коваль', 'Поліщук',
             'Бондар', 'Ковальчук', 'Мельник', 'Мороз', 'Лисенко', 'Петренко', 'Марченко', 'Савченко', 'Руденко', 'Левченко',
             'Білоус', 'Гаврилюк', 'Карпенко', 'Кулик', 'Павленко', 'Савчук', 'Харченко', 'Яковенко', 'Якименко', 'Литвиненко'],
         femaleSurnames: ['Шевченко', 'Бондаренко', 'Коваленко', 'Бойко', 'Ткаченко', 'Кравченко', 'Олійник', 'Шевчук', 'Коваль', 'Поліщук',
             'Бондар', 'Ковальчук', 'Мельник', 'Мороз', 'Лисенко', 'Петренко', 'Марченко', 'Савченко', 'Руденко', 'Левченко',
             'Білоус', 'Гаврилюк', 'Карпенко', 'Кулик', 'Павленко', 'Савчук', 'Харченко', 'Яковенко', 'Якименко', 'Литвиненко'],
-        cities: ['Київ', 'Львів', 'Харків', 'Одеса', 'Дніпро', 'Запоріжжя', 'Вінниця', 'Тернопіль', 'Луцьк', 'Рівне', 'Івано-Франківськ', 'Чернівці', 'Ужгород', 'Хмельницький', 'Черкаси', 'Полтава', 'Суми', 'Житомир', 'Чернігів', 'Кропивницький', 'Миколаїв', 'Маріуполь', 'Мелітополь', 'Нікополь', 'Херсон', 'Мукачево', 'Дрогобич', 'Біла Церква', 'Умань'],
-        streets: ['вул. Шевченка', 'вул. Франка', 'вул. Лесі Українки', 'вул. Сагайдачного', 'вул. Хрещатик', 
-            'просп. Свободи', 'вул. Соборна', 'вул. Незалежності', 'вул. Володимирська', 'просп. Перемоги',
-            'вул. Європейська', 'вул. Центральна', 'вул. Паркова', 'вул. Миру', 'просп. Науки',
-            'вул. Грушевського', 'вул. Мазепи', 'вул. Богдана Хмельницького', 'вул. Довженка', 'вул. Коцюбинського',
-            'просп. Шухевича', 'вул. Вернадського', 'вул. Січових Стрільців', 'вул. Героїв України', 'вул. Старокиївська',
-            'вул. Вишнева', 'вул. Сонячна', 'вул. Молодіжна', 'вул. Спортивна', 'вул. Театральна', 'Вулиця Шевченка', 'Вулиця Лесі Українки', 'Вулиця Грушевського', 'Вулиця Сагайдачного', 'Вулиця Коцюбинського', 'Вулиця Франка', 'Вулиця Тараса Бульби', 'Вулиця Пушкіна', 'Вулиця Кобзаря', 'Вулиця Незалежності'],
+        cities: [
+            // Обласні центри
+            'Київ', 'Львів', 'Харків', 'Одеса', 'Дніпро', 'Запоріжжя', 'Вінниця', 'Тернопіль', 'Луцьк', 'Рівне',
+            'Івано-Франківськ', 'Чернівці', 'Ужгород', 'Хмельницький', 'Черкаси', 'Полтава', 'Суми', 'Житомир',
+            'Чернігів', 'Кропивницький', 'Миколаїв', 'Херсон',
+            
+            // Великі міста
+            'Кривий Ріг', 'Маріуполь', 'Кам\'янське', 'Біла Церква', 'Мелітополь', 'Нікополь', 'Бердянськ',
+            'Павлоград', 'Ірпінь', 'Буча', 'Бровари', 'Бориспіль',
+            
+            // Історичні міста
+            'Дрогобич', 'Галич', 'Острог', 'Батурин', 'Переяслав', 'Канів', 'Коломия', 'Мукачево',
+            'Трускавець', 'Жовква', 'Бучач', 'Збараж'
+        ],
+        streets: [
+            // Вулиці на честь історичних постатей
+            'вул. Шевченка', 'вул. Франка', 'вул. Лесі Українки', 'вул. Сагайдачного', 'вул. Грушевського',
+            'вул. Мазепи', 'вул. Богдана Хмельницького', 'вул. Довженка', 'вул. Коцюбинського', 'вул. Шухевича',
+            'вул. Бандери', 'вул. Петлюри', 'вул. Винниченка', 'вул. Драгоманова', 'вул. Вернадського',
+            
+            // Традиційні назви
+            'вул. Соборна', 'вул. Незалежності', 'вул. Центральна', 'вул. Паркова', 'вул. Вишнева',
+            'вул. Зелена', 'вул. Молодіжна', 'вул. Спортивна', 'вул. Шкільна', 'вул. Садова',
+            'вул. Польова', 'вул. Лісова', 'вул. Квіткова', 'вул. Сонячна', 'вул. Весняна',
+            
+            // Проспекти та площі
+            'проспект Свободи', 'проспект Перемоги', 'проспект Науки', 'проспект Миру', 'проспект Європейський',
+            'площа Ринок', 'площа Незалежності', 'площа Соборна', 'площа Театральна', 'площа Конституції'
+        ],
+        universities: [
+            // Київ
+            'Київський національний університет імені Тараса Шевченка',
+            'Національний технічний університет України "КПІ"',
+            'Національний університет "Києво-Могилянська академія"',
+            'Київський національний економічний університет',
+            
+            // Львів
+            'Львівський національний університет імені Івана Франка',
+            'Національний університет "Львівська політехніка"',
+            'Український католицький університет',
+            'Львівський національний медичний університет',
+            
+            // Харків
+            'Харківський національний університет імені В.Н. Каразіна',
+            'Національний технічний університет "ХПІ"',
+            'Харківський національний медичний університет',
+            
+            // Одеса
+            'Одеський національний університет імені І.І. Мечникова',
+            'Одеський національний політехнічний університет',
+            'Одеський національний медичний університет',
+            
+            // Інші міста
+            'Дніпровський національний університет імені Олеся Гончара',
+            'Чернівецький національний університет імені Юрія Федьковича',
+            'Запорізький національний університет',
+            'Донецький національний університет імені Василя Стуса',
+            'Прикарпатський національний університет імені Василя Стефаника',
+            'Сумський державний університет'
+        ],
+        specialties: [
+            // Технічні
+            'Комп\'ютерні науки', 'Інженерія програмного забезпечення', 'Кібербезпека',
+            'Інформаційні системи', 'Системний аналіз', 'Комп\'ютерна інженерія',
+            'Автоматизація та комп\'ютерно-інтегровані технології', 'Телекомунікації',
+            'Електроніка', 'Робототехніка',
+            
+            // Природничі
+            'Прикладна математика', 'Фізика та астрономія', 'Хімія',
+            'Біологія', 'Екологія', 'Геологія', 'Географія',
+            
+            // Економічні
+            'Економіка', 'Менеджмент', 'Маркетинг', 'Фінанси',
+            'Міжнародні економічні відносини', 'Облік і оподаткування',
+            'Підприємництво', 'Логістика',
+            
+            // Гуманітарні
+            'Право', 'Психологія', 'Філологія', 'Журналістика',
+            'Міжнародні відносини', 'Політологія', 'Соціологія',
+            
+            // Мистецькі
+            'Дизайн', 'Архітектура', 'Образотворче мистецтво',
+            'Музичне мистецтво', 'Сценічне мистецтво',
+            
+            // Медичні
+            'Медицина', 'Стоматологія', 'Фармація',
+            'Фізична терапія', 'Ветеринарна медицина'
+        ],
         companies: [
             // ІТ компанії
             'УкрТех', 'Інновація Плюс', 'СмартСистемс', 'ДіджіталЮа', 'ТехноЛаб', 'КіберСофт', 'АйТіПро', 
@@ -36,15 +125,55 @@ const data = {
         ],
         companyPrefixes: ['ТОВ', 'ПП', 'ФОП', 'АТ', 'ПрАТ', 'КП', 'ДП', 'ПАТ'],
         words: [
+            // Технологічні терміни
             'дизайн', 'проект', 'розробка', 'система', 'технологія', 'інновація', 'рішення',
-            'якість', 'досвід', 'команда', 'успіх', 'результат', 'процес', 'методика',
-            'стратегія', 'аналіз', 'концепція', 'структура', 'елемент', 'компонент',
-            'простір', 'середовище', 'платформа', 'інтерфейс', 'макет', 'прототип',
-            'продукт', 'сервіс', 'додаток', 'програма', 'інструмент', 'модуль',
+            'алгоритм', 'інтерфейс', 'платформа', 'функціонал', 'архітектура', 'оптимізація',
+            'автоматизація', 'інтеграція', 'масштабування', 'модернізація', 'трансформація',
+            
+            // Бізнес терміни
+            'стратегія', 'аналіз', 'результат', 'ефективність', 'продуктивність', 'якість',
+            'конкурентність', 'інвестиція', 'розвиток', 'управління', 'планування', 'зростання',
+            'співпраця', 'партнерство', 'досягнення', 'перспектива', 'потенціал', 'можливість',
+            
+            // Процеси та дії
             'створює', 'розробляє', 'впроваджує', 'оптимізує', 'забезпечує', 'підтримує',
             'генерує', 'аналізує', 'тестує', 'покращує', 'модернізує', 'розширює',
+            'трансформує', 'адаптує', 'інтегрує', 'масштабує', 'координує', 'реалізує',
+            
+            // Характеристики
             'сучасний', 'ефективний', 'надійний', 'швидкий', 'зручний', 'якісний',
-            'інноваційний', 'професійний', 'оптимальний', 'унікальний', 'адаптивний'
+            'інноваційний', 'професійний', 'оптимальний', 'унікальний', 'адаптивний',
+            'потужний', 'гнучкий', 'масштабований', 'інтуїтивний', 'продуманий',
+            
+            // Результати
+            'успіх', 'прогрес', 'досвід', 'досягнення', 'вдосконалення', 'оновлення',
+            'зростання', 'розвиток', 'покращення', 'оптимізація', 'модернізація',
+            'трансформація', 'інновація', 'прорив', 'перемога', 'лідерство',
+            
+            // Абстрактні поняття
+            'майбутнє', 'перспектива', 'концепція', 'візія', 'місія', 'цінність',
+            'якість', 'надійність', 'безпека', 'комфорт', 'зручність', 'простота',
+            'ефективність', 'продуктивність', 'інновативність', 'креативність'
+        ],
+        connectors: [
+            // Прості сполучники
+            'та', 'і', 'або', 'але', 'проте', 'однак',
+            
+            // Прийменники
+            'для', 'з', 'у', 'при', 'про', 'через',
+            'над', 'під', 'біля', 'щодо', 'стосовно',
+            
+            // Складні сполучники
+            'тому що', 'оскільки', 'завдяки', 'внаслідок',
+            'в результаті', 'з метою', 'для того щоб',
+            
+            // Часові сполучники
+            'коли', 'поки', 'після того як', 'перед тим як',
+            'в той час як', 'протягом', 'впродовж',
+            
+            // Причинно-наслідкові
+            'тому', 'через це', 'в результаті', 'отже',
+            'таким чином', 'як наслідок', 'відповідно'
         ],
         domains: ['gmail.com', 'ukr.net', 'icloud.com', 'outlook.com', 'yahoo.com', 'proton.me', 'meta.ua', 'i.ua'],
         nicknamePrefixes: [
@@ -78,24 +207,25 @@ const data = {
             'Інженер з автоматизації', 'Розробник ігор', 'Embedded інженер', 'Технічний консультант', 'Scala розробник',
             'Python розробник', 'Java розробник', 'JavaScript розробник', 'Rust розробник', 'Go розробник',
             'Аналізатор', 'Тестувальник', 'Менеджер проектів', 'Консультант', 'Аудитор',
+            // Керівні посади
+            'Директор', 'Керівник відділу', 'Генеральний директор', 'Операційний директор', 'HR-директор',
+            'Фінансовий директор', 'Технічний директор', 'Керівник проєктів', 'Керівник групи', 'Начальник відділу',
             // Креативні посади
-            'Графічний дизайнер', 'Арт-директор', 'Контент-менеджер', 'Копірайтер', 'Бренд-менеджер',
-            'Креативний директор', 'Ілюстратор', 'Motion дизайнер', '3D художник', 'Дизайнер інтерфейсів',
-            'UX дослідник', 'Продуктовий дизайнер', 'Дизайнер взаємодії', 'Дизайнер друку', 'Дизайнер упаковки',
-            'Сторіборд художник', 'Аніматор', 'Відеомонтажер', 'Саунд дизайнер', 'Дизайнер персонажів',
-            'Дизайнер ігрового оточення', 'Технічний художник', 'Дизайнер освітлення', 'Дизайнер візуальних ефектів',
-            'Фотограф', 'Режисер', 'Продюсер контенту', 'Редактор', 'Сценарист', 'Дизайнер інфографіки',
-            // Бізнес та управління
-            'Бізнес-аналітик', 'Маркетинг-менеджер', 'HR менеджер', 'Фінансовий аналітик', 'Керівник проєктів',
-            'CEO', 'CTO', 'CMO', 'CFO', 'COO', 'CPO', 'CIO', 'CISO', 'CCO', 'CDO',
-            'Директор з розвитку', 'Керівник відділу продажів', 'Керівник служби підтримки', 'Операційний директор',
-            'Менеджер з якості', 'Керівник HR', 'Менеджер з найму', 'Керівник з навчання', 'Бізнес-консультант',
-            'Керівник продукту', 'Менеджер з інновацій', 'Керівник стратегії', 'Керівник досліджень',
-            'Менеджер програм', 'Керівник команди розробки', 'Керівник дизайн-команди', 'Керівник маркетингу',
-            'Менеджер з цифрової трансформації', 'Керівник з аналітики', 'Керівник з безпеки',
-            'Бізнес-аналітик', 'Маркетинг-менеджер', 'HR менеджер', 'Фінансовий аналітик', 'Керівник проєктів',
-            'Керівник відділу продажів', 'Директор з розвитку', 'Спеціаліст з продажу', 'Керівник з маркетингу', 'Консалтинг',
-            'АудитПлюс'
+            'Дизайнер', 'Копірайтер', 'Контент-менеджер', 'Маркетолог', 'SMM-менеджер',
+            'PR-менеджер', 'Бренд-менеджер', 'Арт-директор', 'Креативний директор', 'Редактор',
+            // Фінансові посади
+            'Бухгалтер', 'Фінансовий аналітик', 'Економіст', 'Аудитор', 'Фінансовий консультант',
+            // Медичні посади
+            'Лікар', 'Терапевт', 'Педіатр', 'Хірург', 'Стоматолог',
+            'Психолог', 'Фармацевт', 'Медсестра', 'Дієтолог', 'Реабілітолог',
+            // Освітні посади
+            'Вчитель', 'Викладач', 'Професор', 'Наукова співробітниця', 'Дослідниця',
+            'Методист', 'Вихователь', 'Тренер', 'Репетитор', 'Асистент викладача',
+            // Юридичні посади
+            'Юрист', 'Адвокат', 'Нотаріус', 'Суддя', 'Прокурор',
+            // Інші професійні посади
+            'Архітектор', 'Перекладач', 'Журналіст', 'Письменниця', 'Фотограф',
+            'Консультант', 'Аналітик', 'Менеджер з продажу', 'Ріелтор', 'Страхова агент'
         ],
         femaleJobTitles: [
             // Технічні посади
@@ -182,6 +312,93 @@ const data = {
             'вул. Довженка, 9, Черкаси, 18000',
             'вул. Грушевського, 10, Суми, 40000',
         ],
+        specialties: [
+            'Комп\'ютерні науки',
+            'Інженерія програмного забезпечення',
+            'Кібербезпека',
+            'Інформаційні системи',
+            'Системний аналіз',
+            'Комп\'ютерна інженерія',
+            'Автоматизація',
+            'Штучний інтелект',
+            'Прикладна математика',
+            'Економіка',
+            'Менеджмент',
+            'Маркетинг',
+            'Фінанси',
+            'Право',
+            'Психологія',
+            'Дизайн',
+            'Архітектура',
+            'Будівництво',
+            'Медицина',
+            'Фармація'
+        ],
+        universities: [
+            'КНУ ім. Т. Шевченка',
+            'КПІ ім. І. Сікорського',
+            'ЛНУ ім. І. Франка',
+            'ХНУ ім. В.Н. Каразіна',
+            'НУ "Львівська політехніка"',
+            'ОНУ ім. І.І. Мечникова',
+            'ДНУ ім. О. Гончара',
+            'ЧНУ ім. Ю. Федьковича',
+            'УжНУ',
+            'НУ "Києво-Могилянська академія"'
+        ],
+        degrees: [
+            'Бакалавр',
+            'Магістр',
+            'Доктор філософії'
+        ],
+        quotes: [
+            'Успіх — це здатність крокувати від однієї невдачі до іншої, не втрачаючи ентузіазму',
+            'Найкращий спосіб передбачити майбутнє — створити його',
+            'Єдиний спосіб робити велику роботу — любити те, що ви робите',
+            'Ніколи не пізно стати тим, ким ти міг би бути',
+            'Життя — це те, що з тобою відбувається, поки ти будуєш інші плани',
+            'Найважливіше — не перестати запитувати',
+            'Кожна мрія дається з силами для її здійснення',
+            'Дорога в тисячу миль починається з першого кроку',
+            'Найкращі інвестиції — це інвестиції в себе',
+            'Ваш час обмежений, не витрачайте його, проживаючи чуже життя'
+        ],
+        quoteAuthors: [
+            'Вінстон Черчилль',
+            'Пітер Друкер',
+            'Стів Джобс',
+            'Джордж Еліот',
+            'Джон Леннон',
+            'Альберт Ейнштейн',
+            'Ричард Бах',
+            'Лао-цзи',
+            'Бенджамін Франклін',
+            'Стів Джобс'
+        ],
+        reviews: [
+            'Чудовий продукт! Перевершив усі мої очікування. Особливо вражає якість та увага до деталей',
+            'Дуже задоволений співпрацею. Професійний підхід та відмінний результат',
+            'Рекомендую! Якість на висоті, обслуговування на найвищому рівні',
+            'Приємно вражений швидкістю та якістю роботи. Обов\'язково звернусь ще',
+            'Відмінний сервіс та професійний підхід. Дякую за чудову роботу',
+            'Перевершує конкурентів за всіма параметрами. Дуже задоволений результатом',
+            'Найкраще рішення, яке я знайшов. Простота використання вражає',
+            'Чудове співвідношення ціни та якості. Рекомендую всім',
+            'Професійний підхід та індивідуальне ставлення до клієнта. Дякую!',
+            'Вражаючі результати! Перевершило всі мої очікування'
+        ],
+        reviewAuthors: [
+            'Олександр К.',
+            'Марія В.',
+            'Андрій П.',
+            'Ірина М.',
+            'Василь Д.',
+            'Оксана С.',
+            'Михайло Р.',
+            'Наталія З.',
+            'Тарас Б.',
+            'Юлія К.'
+        ],
     },
     en: {
         maleNames: ['John', 'Michael', 'William', 'James', 'David', 'Robert', 'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Andrew', 'Joseph', 'Ryan', 'Nicholas', 'Anthony', 'Steven', 'Tyler', 'Richard', 'Timothy', 'Brian', 'Alexander', 'Kevin', 'Jason', 'Jeffrey', 'Benjamin', 'Mark', 'Edward', 'Paul', 'Stephen', 'George', 'Ethan', 'Noah', 'Liam', 'Oliver', 'Lucas', 'Jacob', 'Logan', 'Jackson'],
@@ -192,13 +409,30 @@ const data = {
         femaleSurnames: ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez',
             'Anderson', 'Taylor', 'Thomas', 'Moore', 'Jackson', 'Martin', 'Lee', 'Thompson', 'White', 'Harris',
             'Clark', 'Lewis', 'Walker', 'Hall', 'Young', 'Allen', 'King', 'Wright', 'Scott', 'Green'],
-        cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'San Francisco', 'Columbus', 'Fort Worth', 'Indianapolis', 'Charlotte', 'Seattle', 'Denver', 'Boston', 'Orlando', 'Nashville', 'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Sacramento', 'Long Beach', 'Kansas City', 'Mesa', 'Virginia Beach', 'Atlanta', 'Colorado Springs', 'Omaha', 'Raleigh', 'Miami'],
+        cities: [
+            // Major cities
+            'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego',
+            'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'San Francisco', 'Charlotte',
+            'Indianapolis', 'Seattle', 'Denver', 'Boston',
+            
+            // Historic cities
+            'Charleston', 'Savannah', 'New Orleans', 'Boston', 'Philadelphia', 'Salem', 'St. Augustine', 'Williamsburg',
+            'Annapolis', 'Providence',
+            
+            // Tech hubs
+            'San Francisco', 'Seattle', 'Austin', 'Boston', 'Portland', 'Boulder', 'Raleigh', 'Pittsburgh',
+            'Minneapolis', 'Nashville'
+        ],
         streets: [
-            'Main St', 'First Ave', 'Park Road', 'Oak Street', 'River Lane', 'Market Square', 'High Street',
-            'Broadway', 'Fifth Avenue', 'Oxford Street', 'King\'s Road', 'Queen Street', 'Victoria Road',
-            'Church Street', 'Station Road', 'London Road', 'Mill Lane', 'School Lane', 'North Street', 'South Road',
-            'West Avenue', 'East Drive', 'The Green', 'The Grove', 'New Road', 'Old Lane', 'Bridge Street', 'Castle Road',
-            'Manor Close', 'Forest Way'
+            // Historic streets
+            'Main St.', 'Broadway', 'Wall Street', 'Fifth Avenue', 'Pennsylvania Avenue',
+            'Bourbon Street', 'Beale Street', 'Ocean Drive', 'Lombard Street', 'Michigan Avenue',
+            
+            // Common street names
+            'Oak Street', 'Maple Avenue', 'Washington Street', 'Lincoln Avenue', 'Jefferson Street',
+            'Park Avenue', 'Church Street', 'Market Street', 'State Street', 'High Street',
+            'Center Street', 'Pearl Street', 'Pine Street', 'River Road', 'Lake Street',
+            'Forest Avenue', 'Hill Street', 'Valley Road', 'Spring Street', 'Cedar Lane'
         ],
         companies: [
             // Tech
@@ -213,15 +447,55 @@ const data = {
         ],
         companyPrefixes: ['LLC', 'Inc.', 'Corp.', 'Ltd.', 'Co.', 'Corporation', 'Limited'],
         words: [
+            // Technical terms
             'design', 'project', 'development', 'system', 'technology', 'innovation', 'solution',
-            'quality', 'experience', 'team', 'success', 'result', 'process', 'methodology',
-            'strategy', 'analysis', 'concept', 'structure', 'element', 'component',
-            'space', 'environment', 'platform', 'interface', 'layout', 'prototype',
-            'product', 'service', 'application', 'program', 'tool', 'module',
-            'creates', 'develops', 'implements', 'optimizes', 'provides', 'supports',
+            'algorithm', 'interface', 'platform', 'functionality', 'architecture', 'optimization',
+            'automation', 'integration', 'scaling', 'modernization', 'transformation',
+            
+            // Business terms
+            'strategy', 'analysis', 'result', 'efficiency', 'productivity', 'quality',
+            'competitiveness', 'investment', 'development', 'management', 'planning', 'growth',
+            'collaboration', 'partnership', 'achievement', 'perspective', 'potential', 'opportunity',
+            
+            // Processes and actions
+            'creates', 'develops', 'implements', 'optimizes', 'ensures', 'supports',
             'generates', 'analyzes', 'tests', 'improves', 'modernizes', 'expands',
+            'transforms', 'adapts', 'integrates', 'scales', 'coordinates', 'realizes',
+            
+            // Characteristics
             'modern', 'efficient', 'reliable', 'fast', 'convenient', 'quality',
-            'innovative', 'professional', 'optimal', 'unique', 'adaptive'
+            'innovative', 'professional', 'optimal', 'unique', 'adaptive',
+            'powerful', 'flexible', 'scalable', 'intuitive', 'thoughtful',
+            
+            // Results
+            'success', 'progress', 'experience', 'achievement', 'improvement', 'update',
+            'growth', 'development', 'enhancement', 'optimization', 'modernization',
+            'transformation', 'innovation', 'breakthrough', 'victory', 'leadership',
+            
+            // Abstract concepts
+            'future', 'perspective', 'concept', 'vision', 'mission', 'value',
+            'quality', 'reliability', 'security', 'comfort', 'convenience', 'simplicity',
+            'efficiency', 'productivity', 'innovation', 'creativity'
+        ],
+        connectors: [
+            // Simple conjunctions
+            'and', 'or', 'but', 'yet', 'however', 'though',
+            
+            // Prepositions
+            'for', 'with', 'in', 'through', 'about', 'regarding',
+            'over', 'under', 'near', 'concerning', 'towards',
+            
+            // Complex conjunctions
+            'because', 'since', 'thanks to', 'due to',
+            'as a result', 'in order to', 'so that',
+            
+            // Temporal conjunctions
+            'when', 'while', 'after', 'before',
+            'during', 'throughout', 'meanwhile',
+            
+            // Cause and effect
+            'therefore', 'thus', 'consequently', 'hence',
+            'as a result', 'accordingly', 'subsequently'
         ],
         domains: ['gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'hotmail.com', 'protonmail.com', 'aol.com', 'mail.com', 'example.com', 'test.com'],
         nicknamePrefixes: [
@@ -270,9 +544,7 @@ const data = {
             'Quality Manager', 'HR Director', 'Recruitment Manager', 'Training Director', 'Business Consultant',
             'Product Owner', 'Innovation Manager', 'Strategy Director', 'Research Director',
             'Program Manager', 'Development Team Lead', 'Design Team Lead', 'Marketing Director',
-            'Digital Transformation Manager', 'Analytics Director', 'Security Director',
-            'Business Analyst', 'Marketing Manager', 'HR Manager', 'Financial Analyst', 'Project Lead',
-            'Sales Director', 'Development Director', 'Sales Specialist', 'Marketing Manager', 'Management Consultant'
+            'Digital Transformation Manager', 'Analytics Director', 'Security Director'
         ],
         femaleJobTitles: [
             // Technical positions
@@ -358,6 +630,93 @@ const data = {
             '357 Pine St, Atlanta, GA 30301',
             '468 Cedar Blvd, Miami, FL 33101',
         ],
+        specialties: [
+            'Computer Science',
+            'Software Engineering',
+            'Cybersecurity',
+            'Information Systems',
+            'System Analysis',
+            'Computer Engineering',
+            'Automation',
+            'Artificial Intelligence',
+            'Applied Mathematics',
+            'Economics',
+            'Management',
+            'Marketing',
+            'Finance',
+            'Law',
+            'Psychology',
+            'Design',
+            'Architecture',
+            'Construction',
+            'Medicine',
+            'Pharmacy'
+        ],
+        universities: [
+            'Harvard University',
+            'MIT',
+            'Stanford University',
+            'University of Cambridge',
+            'University of Oxford',
+            'Yale University',
+            'Princeton University',
+            'Columbia University',
+            'University of Chicago',
+            'UC Berkeley'
+        ],
+        degrees: [
+            'Bachelor',
+            'Master',
+            'Ph.D.'
+        ],
+        quotes: [
+            'Success is walking from failure to failure with no loss of enthusiasm',
+            'The best way to predict the future is to create it',
+            'The only way to do great work is to love what you do',
+            'It\'s never too late to be what you might have been',
+            'Life is what happens while you\'re busy making other plans',
+            'The important thing is not to stop questioning',
+            'Every dream comes with the power to make it come true',
+            'A journey of a thousand miles begins with a single step',
+            'The best investment you can make is in yourself',
+            'Your time is limited, don\'t waste it living someone else\'s life'
+        ],
+        quoteAuthors: [
+            'Winston Churchill',
+            'Peter Drucker',
+            'Steve Jobs',
+            'George Eliot',
+            'John Lennon',
+            'Albert Einstein',
+            'Richard Bach',
+            'Lao Tzu',
+            'Benjamin Franklin',
+            'Steve Jobs'
+        ],
+        reviews: [
+            'Amazing product! Exceeded all my expectations. The quality and attention to detail are impressive',
+            'Very satisfied with the collaboration. Professional approach and excellent results',
+            'Highly recommend! Top quality and service at its finest',
+            'Impressed with the speed and quality of work. Will definitely use again',
+            'Excellent service and professional approach. Thank you for the great work',
+            'Surpasses competitors in every aspect. Very satisfied with the results',
+            'Best solution I\'ve found. Ease of use is impressive',
+            'Great value for money. Recommend to everyone',
+            'Professional approach and individual attention to the client. Thank you!',
+            'Impressive results! Exceeded all my expectations'
+        ],
+        reviewAuthors: [
+            'Alexander K.',
+            'Maria V.',
+            'Andrew P.',
+            'Irene M.',
+            'William D.',
+            'Olivia S.',
+            'Michael R.',
+            'Natalie Z.',
+            'Thomas B.',
+            'Julia K.'
+        ],
     }
 };
 
@@ -391,25 +750,8 @@ function capitalizeFirstLetter(string) {
 // Генератори імен
 function generateName(lang = 'uk', gender = 'all') {
     const langData = data[lang];
-    if (gender === 'male') {
-        return getRandomItem(langData.maleNames);
-    } else if (gender === 'female') {
-        return getRandomItem(langData.femaleNames);
-    } else {
-        // Випадково обираємо стать для режиму 'all'
-        return Math.random() < 0.5 
-            ? getRandomItem(langData.maleNames)
-            : getRandomItem(langData.femaleNames);
-    }
-}
-
-function generateFullName(lang = 'uk', gender = 'all') {
-    const langData = data[lang];
-    let firstName, surname;
-
-    // Отримуємо прізвище (однакове для обох статей)
-    surname = getRandomItem(langData.maleSurnames);
-
+    let firstName;
+    
     if (gender === 'male') {
         firstName = getRandomItem(langData.maleNames);
     } else if (gender === 'female') {
@@ -419,6 +761,26 @@ function generateFullName(lang = 'uk', gender = 'all') {
         firstName = Math.random() < 0.5 
             ? getRandomItem(langData.maleNames)
             : getRandomItem(langData.femaleNames);
+    }
+    
+    return firstName;
+}
+
+function fullName(lang = 'uk', gender = 'all') {
+    const langData = data[lang];
+    let firstName, surname;
+    
+    if (gender === 'male') {
+        firstName = getRandomItem(langData.maleNames);
+        surname = getRandomItem(langData.maleSurnames);
+    } else if (gender === 'female') {
+        firstName = getRandomItem(langData.femaleNames);
+        surname = getRandomItem(langData.femaleSurnames);
+    } else {
+        // Випадково обираємо стать для режиму 'all'
+        const isMale = Math.random() < 0.5;
+        firstName = isMale ? getRandomItem(langData.maleNames) : getRandomItem(langData.femaleNames);
+        surname = isMale ? getRandomItem(langData.maleSurnames) : getRandomItem(langData.femaleSurnames);
     }
     
     return `${firstName} ${surname}`;
@@ -437,7 +799,7 @@ figma.on('selectionchange', () => {
 // Обробка повідомлень від UI
 figma.ui.onmessage = async (msg) => {
     if (msg.type === 'resize') {
-        figma.ui.resize(280, msg.height);
+        figma.ui.resize(400, msg.height);
         return;
     }
 
@@ -505,7 +867,10 @@ figma.ui.onmessage = async (msg) => {
                         if (option === 'words' || option === 'sentence') {
                             generatedText = generators[option](language, parseInt(count) || 1);
                         } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
+                            console.log('Generating full name with parameters:', { language, gender });
                             generatedText = generators[option](language, gender);
+                        } else if (option === 'education') {
+                            generatedText = generators[option](language);
                         } else {
                             generatedText = generators[option](language);
                         }
@@ -526,7 +891,10 @@ figma.ui.onmessage = async (msg) => {
                     if (option === 'words' || option === 'sentence') {
                         generatedText = generators[option](language, parseInt(count) || 1);
                     } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
+                        console.log('Generating full name with parameters:', { language, gender });
                         generatedText = generators[option](language, gender);
+                    } else if (option === 'education') {
+                        generatedText = generators[option](language);
                     } else {
                         generatedText = generators[option](language);
                     }
@@ -559,10 +927,54 @@ figma.ui.onmessage = async (msg) => {
 
 // Генератори контенту
 const generators = {
-    name: (lang = 'uk', gender = 'all') => generateName(lang, gender),
-    
-    fullName: (lang = 'uk', gender = 'all') => generateFullName(lang, gender),
-    
+    name: (lang = 'uk', gender = 'all') => {
+        const langData = data[lang];
+        let firstName;
+        
+        if (gender === 'male') {
+            firstName = getRandomItem(langData.maleNames);
+        } else if (gender === 'female') {
+            firstName = getRandomItem(langData.femaleNames);
+        } else {
+            // Випадково обираємо стать для режиму 'all'
+            firstName = Math.random() < 0.5 
+                ? getRandomItem(langData.maleNames)
+                : getRandomItem(langData.femaleNames);
+        }
+        
+        return firstName;
+    },
+
+    fullName: (lang = 'uk', gender = 'all') => {
+        const langData = data[lang];
+        let firstName, surname;
+        
+        if (gender === 'male') {
+            firstName = getRandomItem(langData.maleNames);
+            surname = getRandomItem(langData.maleSurnames);
+        } else if (gender === 'female') {
+            firstName = getRandomItem(langData.femaleNames);
+            surname = getRandomItem(langData.femaleSurnames);
+        } else {
+            // Випадково обираємо стать для режиму 'all'
+            const isMale = Math.random() < 0.5;
+            firstName = isMale ? getRandomItem(langData.maleNames) : getRandomItem(langData.femaleNames);
+            surname = isMale ? getRandomItem(langData.maleSurnames) : getRandomItem(langData.femaleSurnames);
+        }
+        
+        return `${firstName} ${surname}`;
+    },
+
+    city: (lang) => {
+        const langData = data[lang];
+        return getRandomItem(langData.cities);
+    },
+
+    street: (lang) => {
+        const langData = data[lang];
+        return getRandomItem(langData.streets);
+    },
+
     email: (lang, gender = 'all') => {
         let name;
         const langData = data[lang];
@@ -581,7 +993,7 @@ const generators = {
         
         // Транслітерація для української мови
         if (lang === 'uk') {
-            name = transliterate(name);
+            name = transliterate(name.toLowerCase());
         }
         
         const number = getRandomNumber(1, 999);
@@ -618,93 +1030,23 @@ const generators = {
     },
 
     fullAddress: (lang) => {
+        const city = generators.city(lang);
+        const street = generators.street(lang);
+        const building = Math.floor(Math.random() * 150) + 1;
+        const apartment = Math.floor(Math.random() * 100) + 1;
+        const postalCode = formatPostalCode(lang);
+
+        // Додаємо варіації для корпусів та літер
+        const buildingVariations = ['', 'А', 'Б', 'В', '-1', '-2'];
+        const buildingExtra = Math.random() < 0.3 ? getRandomItem(buildingVariations) : '';
+
         if (lang === 'uk') {
-            const city = generators.city(lang);
-            const street = generators.street(lang);
-            const building = Math.floor(Math.random() * 100) + 1;
-            const apartment = Math.floor(Math.random() * 100) + 1;
-            const postal = formatPostalCode(lang);
-            return `${postal}, ${city}, ${street}, ${building}${['А', 'Б', 'В'][Math.floor(Math.random() * 3)]}, кв. ${apartment}`;
+            return `${postalCode}, ${city}, ${street}, ${building}${buildingExtra}${Math.random() < 0.7 ? `, кв. ${apartment}` : ''}`;
         } else {
-            const number = Math.floor(Math.random() * 1000) + 1;
-            const street = generators.street(lang);
-            const city = generators.city(lang);
-            const postal = formatPostalCode(lang);
-            return `${number} ${street}, ${city}, ${postal}`;
+            return `${postalCode}, ${city}, ${street}, ${building}${buildingExtra}${Math.random() < 0.7 ? `, apt. ${apartment}` : ''}`;
         }
     },
 
-    sentence: (lang, count = 1) => {
-        console.log('sentence generator called with:', { lang, count });
-        const words = data[lang].words;
-        if (!words || words.length === 0) {
-            console.error('No words found for language:', lang);
-            return lang === 'uk' ? 'Текст відсутній' : 'No text available';
-        }
-
-        let sentences = [];
-        count = Math.max(1, parseInt(count) || 1);
-        
-        for (let i = 0; i < count; i++) {
-            const length = Math.floor(Math.random() * 5) + 3; // від 3 до 8 слів
-            let sentence = [];
-            
-            for (let j = 0; j < length; j++) {
-                let word = getRandomItem(words);
-                
-                if (j > 0 && Math.random() < 0.3) {
-                    const connectors = lang === 'uk' 
-                        ? ['та', 'і', 'або', 'для', 'з', 'у', 'при', 'про', 'як', 'що']
-                        : ['and', 'or', 'for', 'with', 'in', 'about', 'to', 'as', 'that'];
-                    word = getRandomItem(connectors) + ' ' + word;
-                }
-                sentence.push(word);
-            }
-            
-            sentence[0] = capitalizeFirstLetter(sentence[0]);
-            sentences.push(sentence.join(' ') + '.');
-        }
-        
-        const result = sentences.join(' ');
-        console.log('Generated sentences:', result);
-        return result;
-    },
-    
-    words: (lang, count = 3) => {
-        console.log('words generator called with:', { lang, count });
-        const words = data[lang].words;
-        if (!words || words.length === 0) {
-            console.error('No words found for language:', lang);
-            return lang === 'uk' ? 'Слова відсутні' : 'No words available';
-        }
-
-        count = Math.max(1, parseInt(count) || 1);
-        const uniqueWords = new Set();
-        
-        // Спробуємо знайти унікальні слова
-        let attempts = 0;
-        while (uniqueWords.size < count && attempts < 100) {
-            uniqueWords.add(getRandomItem(words));
-            attempts++;
-        }
-        
-        const result = Array.from(uniqueWords)
-            .map(word => capitalizeFirstLetter(word))
-            .join(' ');
-            
-        console.log('Generated words:', result);
-        return result;
-    },
-    
-    city: (lang) => getRandomItem(data[lang].cities),
-    
-    street: (lang) => getRandomItem(data[lang].streets),
-    
-    paragraph: (lang) => {
-        const sentenceCount = Math.floor(Math.random() * 3) + 2; // 2-4 речення
-        return generators.sentence(lang, sentenceCount);
-    },
-    
     uuid: () => {
         return generateUUID();
     },
@@ -737,16 +1079,18 @@ const generators = {
             name = langData.femaleNames[Math.floor(Math.random() * langData.femaleNames.length)];
         } else {
             // Для режиму 'all' випадково вибираємо стать
-            name = Math.random() < 0.5
+            name = Math.random() < 0.5 
                 ? langData.maleNames[Math.floor(Math.random() * langData.maleNames.length)]
                 : langData.femaleNames[Math.floor(Math.random() * langData.femaleNames.length)];
         }
         
         // Транслітерація для української мови
         if (lang === 'uk') {
-            name = transliterate(name);
+            name = transliterate(name.toLowerCase());
+        } else {
+            name = name.toLowerCase();
         }
-        
+
         const prefix = langData.nicknamePrefixes[Math.floor(Math.random() * langData.nicknamePrefixes.length)];
         const suffix = langData.nicknameSuffixes[Math.floor(Math.random() * langData.nicknameSuffixes.length)];
         const number = Math.random() < 0.5 ? Math.floor(Math.random() * 999) + 1 : '';
@@ -898,6 +1242,97 @@ const generators = {
         }
 
         return `${useWww ? 'www.' : ''}${result}.${domain}`;
+    },
+    
+    education: (lang = 'uk') => {
+        const degree = getRandomItem(data[lang].degrees);
+        const specialty = getRandomItem(data[lang].specialties);
+        const university = getRandomItem(data[lang].universities);
+        
+        return `${degree}, ${specialty}, ${university}`;
+    },
+    
+    sentence: (lang, count = 1) => {
+        const words = data[lang].words;
+        const connectors = data[lang].connectors;
+        
+        if (!words || words.length === 0) {
+            return lang === 'uk' ? 'Текст відсутній' : 'No text available';
+        }
+
+        let sentences = [];
+        count = Math.max(1, parseInt(count) || 1);
+        
+        for (let i = 0; i < count; i++) {
+            const length = Math.floor(Math.random() * 7) + 4; // від 4 до 10 слів
+            let sentence = [];
+            
+            for (let j = 0; j < length; j++) {
+                let word = getRandomItem(words);
+                
+                // Збільшуємо ймовірність використання сполучників
+                if (j > 0 && Math.random() < 0.4) {
+                    const connector = getRandomItem(connectors);
+                    // Додаємо пробіл після коми
+                    if (connector.includes(',')) {
+                        word = connector + ' ' + word;
+                    } else {
+                        word = connector + ' ' + word;
+                    }
+                }
+                
+                sentence.push(word);
+            }
+            
+            // Капіталізуємо перше слово
+            sentence[0] = capitalizeFirstLetter(sentence[0]);
+            
+            // Додаємо розділові знаки
+            const punctuation = Math.random() < 0.2 ? '!' : '.';
+            sentences.push(sentence.join(' ') + punctuation);
+        }
+        
+        return sentences.join(' ');
+    },
+    
+    words: (lang, count = 3) => {
+        const words = data[lang].words;
+        if (!words || words.length === 0) {
+            return lang === 'uk' ? 'Слова відсутні' : 'No words available';
+        }
+
+        count = Math.max(1, parseInt(count) || 1);
+        const uniqueWords = new Set();
+        
+        // Спробуємо знайти унікальні слова
+        let attempts = 0;
+        while (uniqueWords.size < count && attempts < 100) {
+            uniqueWords.add(getRandomItem(words));
+            attempts++;
+        }
+        
+        return Array.from(uniqueWords)
+            .map(word => capitalizeFirstLetter(word))
+            .join(' ');
+    },
+    
+    paragraph: (lang) => {
+        const sentenceCount = Math.floor(Math.random() * 3) + 2; // 2-4 речення
+        return generators.sentence(lang, sentenceCount);
+    },
+    quote: (lang) => {
+        const quotes = data[lang].quotes;
+        const authors = data[lang].quoteAuthors;
+        const quote = getRandomItem(quotes);
+        const author = getRandomItem(authors);
+        return `"${quote}" - ${author}`;
+    },
+    review: (lang) => {
+        const reviews = data[lang].reviews;
+        const authors = data[lang].reviewAuthors;
+        const review = getRandomItem(reviews);
+        const author = getRandomItem(authors);
+        return `"${review}" - ${author}`;
     },
 };
 
