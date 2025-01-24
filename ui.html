@@ -221,19 +221,6 @@
             box-shadow: 0 2px 4px rgba(33, 150, 243, 0.25);
         }
 
-        .preview {
-            font-size: 8px;
-            color: #666;
-            margin-top: var(--spacing);
-            height: -webkit-fit-content;
-            height: -moz-fit-content;
-            height: fit-content;
-        }
-
-        .preview:not(:empty) {
-            display: block;
-        }
-
         .settings {
             background: var(--section-bg);
             border-radius: var(--radius);
@@ -407,11 +394,6 @@
                 height: auto;
                 min-height: min-content;
             }
-            
-            .preview {
-                height: auto;
-                min-height: min-content;
-            }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -488,7 +470,6 @@
                     <span data-i18n="company">Компанія</span>
                 </div>
             </div>
-            <div class="preview" id="previewName"></div>
         </div>
 
         <div class="content-type">
@@ -510,7 +491,6 @@
                 <div class="option" data-type="postalCode" data-i18n="postalCode">Індекс</div>
                 <div class="option" data-type="fullAddress" data-i18n="fullAddress">Повна адреса</div>
             </div>
-            <div class="preview" id="contactsPreview"></div>
         </div>
 
         <div class="content-type">
@@ -536,7 +516,6 @@
                     <button class="number-btn" onclick="incrementCount()">+</button>
                 </div>
             </div>
-            <div class="preview" id="textPreview"></div>
         </div>
 
         <div class="content-type">
@@ -570,7 +549,6 @@
                     <span data-i18n="creditCard">Номер картки</span>
                 </div>
             </div>
-            <div class="preview" id="otherPreview"></div>
         </div>
     </div>
     <div class="button-container">
@@ -793,7 +771,6 @@
                     // Якщо немає виділення - множинний вибір
                     option.classList.toggle('active');
                 }
-                refreshPreviews();
             });
         });
 
@@ -814,8 +791,6 @@
                 const key = element.getAttribute('data-i18n');
                 element.textContent = translations[currentLang][key];
             });
-            
-            refreshPreviews();
         }
 
         function switchGender(gender) {
@@ -830,43 +805,24 @@
             document.getElementById(gender + 'Btn').classList.add('active');
             currentGender = gender;
             console.log('Gender switched to:', currentGender); 
-            refreshPreviews();
         }
 
         function incrementCount() {
             const input = document.getElementById('textCount');
             const currentValue = parseInt(input.value) || 1;
             input.value = Math.min(100, currentValue + 1);
-            refreshPreviews();
         }
 
         function decrementCount() {
             const input = document.getElementById('textCount');
             const currentValue = parseInt(input.value) || 1;
             input.value = Math.max(1, currentValue - 1);
-            refreshPreviews();
         }
 
         document.getElementById('textCount').addEventListener('change', function() {
             const value = parseInt(this.value) || 1;
             this.value = Math.max(1, Math.min(100, value));
-            refreshPreviews();
         });
-
-        function refreshPreviews() {
-            const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
-            const count = parseInt(document.getElementById('textCount').value) || 1;
-            
-            parent.postMessage({ 
-                pluginMessage: { 
-                    type: 'preview', 
-                    options: selectedOptions,
-                    language: currentLang,
-                    gender: currentGender,
-                    count: count
-                } 
-            }, '*');
-        }
 
         function generate() {
             const selectedOptions = Array.from(document.querySelectorAll('.option.active')).map(opt => opt.getAttribute('data-type'));
@@ -885,12 +841,8 @@
 
         // Оновлюємо попередній перегляд при завантаженні
         window.addEventListener('load', () => {
-            refreshPreviews();
             updatePluginSize();
         });
-
-        // Оновлюємо попередній перегляд при зміні кількості
-        document.getElementById('textCount').addEventListener('input', refreshPreviews);
 
         // Спостерігаємо за змінами в DOM для оновлення розміру
         const observer = new MutationObserver(updatePluginSize);
