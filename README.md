@@ -7,7 +7,7 @@
 ### 🚀 Інструмент для швидкого наповнення ваших макетів реалістичними даними
 
 [![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-FF69B4?style=for-the-badge&logo=figma)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
-![Version](https://img.shields.io/badge/version-10.0.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-11.0.0-blue?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 [![Downloads](https://img.shields.io/badge/downloads-1k+-green?style=for-the-badge)](https://www.figma.com/community/plugin/1463946490049005195/content-craft)
 
