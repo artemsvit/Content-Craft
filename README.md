@@ -1,6 +1,6 @@
 <div align="center">
 
-![Content Craft Cover](Cover.png)
+![Content Craft Cover](assets/Cover.png)
 
 # Content Craft 🎨
 
@@ -40,8 +40,8 @@
 
 ## 🖥️ Інтерфейс
 
-![Content Craft Interface](Cover2.png)
-![Content Craft Interface](Cover3.png)
+![Content Craft Interface](assets/Cover2.png)
+![Content Craft Interface](assets/Cover3.png)
 
 ## 👨‍💻 Для Розробників
 
