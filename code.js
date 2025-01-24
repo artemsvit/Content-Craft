@@ -110,14 +110,25 @@ const data = {
             'УкрТех', 'Інновація Плюс', 'СмартСистемс', 'ДіджіталЮа', 'ТехноЛаб', 'КіберСофт', 'АйТіПро', 
             'УкрСофт', 'ВебСтудія', 'ДатаЦентр', 'ІнфоТех', 'НетворкПро', 'СистемІТ', 'ТехноХаб', 'ДевПро',
             'ЕкспертГруп', 'БізнесРішення', 'ТехнологіїМайбутнього', 'СервісПро', 'Консалтинг', 'АудитПлюс',
+            'КодМайстер', 'ІнтелСофт', 'ПроТех', 'СофтЛайн', 'ІТКоннект', 'ВебТех', 'ДіджіталСервіс', 
+            'ТехноВижн', 'УкрНет', 'СмартТех', 'СофтЮа', 'КіберТех', 'ІТЛаб', 'ДіджіталПро',
+            
             // Виробництво
             'МегаБуд', 'УкрПром', 'БудІндустрія', 'ЕкоПром', 'ТехноПром', 'МеталПром', 'АвтоЗавод',
             'ЕнергоПром', 'МашБуд', 'ХімПром', 'ЛісПром', 'АгроТех', 'БудМаш', 'ЕлектроПром',
+            'БудЕнерго', 'МеталЮа', 'ЗаводМайбутнього', 'ПрецизПром', 'УкрМаш', 'ТехноБуд',
+            'ПромТех', 'ЕкоТех', 'ЛісБуд', 'АвтоТех', 'ПластПром', 'АгроБуд', 'ІндустріяПро',
+            'СталБуд', 'ТехПром', 'БудПро', 'ПромЛаб', 'ХімБуд', 'АгроПром', 'ЕнергіяСервіс',
+        
             // Сфера послуг
             'СервісПро', 'УкрКонсалт', 'БізнесЛайн', 'ФінансГруп', 'ТрейдПро', 'ЛогістикПлюс',
-            'МаркетПро', 'РітейлГруп', 'ТрансСервіс', 'БізнесЦентр', 'КонсалтПро', 'АудитПлюс'
+            'МаркетПро', 'РітейлГруп', 'ТрансСервіс', 'БізнесЦентр', 'КонсалтПро', 'АудитПлюс',
+            'СмартЛогістик', 'ПроФінанс', 'УспіхПлюс', 'ПартнерСервіс', 'РітейлСмарт', 'ТрейдЛаб',
+            'ЛогістикМайстер', 'СмартБізнес', 'УкрСервіс', 'МаркетСмарт', 'ПроФін', 'ЛайнТрейд',
+            'ТрансЮа', 'СервісЛайн', 'БізнесРітейл', 'КонсалтСмарт', 'АудитПро', 'БізнесМайстер'
         ],
         companyPrefixes: ['ТОВ', 'ПП', 'ФОП', 'АТ', 'ПрАТ', 'КП', 'ДП', 'ПАТ'],
+        
         words: [
             // Технологічні терміни
             'дизайн', 'проект', 'розробка', 'система', 'технологія', 'інновація', 'рішення',
@@ -284,12 +295,6 @@ const data = {
         phoneFormats: [
             '+380 (XX) XXX-XX-XX',
             '+38 (0XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
-            '+380 (XX) XXX-XX-XX',
         ],
         postalCodes: ['01001', '02002', '03003', '04004', '05005', '06006', '07007', '08008', '09009', '10010', '11011', '12012', '13013', '14014', '15015'],
         emailDomains: ['gmail.com', 'yahoo.com', 'outlook.com', 'ukr.net', 'meta.ua', 'i.ua', 'proton.me', 'mail.com', 'hotmail.com', 'icloud.com', 'yandex.ua', 'example.com', 'test.com'],
@@ -386,13 +391,28 @@ const data = {
             'Мати мову — це мати можливість мислити.', 
             'Я розумію, що таке бути сильною людиною, коли йду вгору, навіть коли падаю.', 
             'Мудра людина знайде вихід навіть з найскладнішої ситуації.', 
-            'Життя — це постійна боротьба, а щастя — це перемога у ній.', 
-            'Головне — не бути байдужим.', 
-            'Розум має межі, а дурість — ні.', 
-            'Істина завжди проста, а складність — від лукавого.', 
-            'У світі, де так багато болю, важливо залишатися людяним.', 
-            'Ніколи не пізно почати спочатку.', 
-            'Не кожен може дивитись у завтрашній день, але кожен може його зробити кращим.'
+            'Життя — це те, що з тобою відбувається, поки ти будуєш інші плани.', 
+            'Найважливіше — не перестати запитувати.',
+            'Кожна мрія дається з силами для її здійснення',
+            'Дорога в тисячу миль починається з першого кроку',
+            'Найкраще інвестиції — це інвестиції в себе',
+            'Ваш час обмежений, не витрачайте його, проживаючи чуже життя',
+            'Єдиний спосіб робити велику роботу — любити те, що ви робите',
+            'Ніколи не пізно стати тим, ким ти міг би бути',
+            'Життя — це те, що з тобою відбувається, поки ти будуєш інші плани',
+            'Найважливіше — не перестати запитувати',
+            'Кожна мрія дається з силами для її здійснення',
+            'Дорога в тисячу миль починається з першого кроку',
+            'Найкраще інвестиції — це інвестиції в себе',
+            'Ваш час обмежений, не витрачайте його, проживаючи чуже життя',
+            'А сьогодні в завтрашній день не всі можуть дивитися. Точніше, дивитися можуть не тільки всі, мало хто може це робити.',
+            'Дві години ночі - це північ.',
+            'Я не втомився. Я просто сильно виснажений.',
+            'У мене два заступники, чотири з яких вже місяць лежать у кабінеті міністрів.',
+            'Язик до Києва доведе, а ноги до рингу приведуть.',
+            'Сьогодні буде тільки завтра!',
+            'Давайте відкриємо вікно, тому що повітря йде.',
+            'Ми повинні зробити все, щоб наша країна рухалася вперед. А якщо вона рухатиметься назад, то ми повернемося в минуле.',
         ],
         quoteAuthors: [
             'Тарас Шевченко',
@@ -419,7 +439,7 @@ const data = {
             'Чудовий продукт! Перевершив усі мої очікування. Особливо вражає якість та увага до деталей',
             'Дуже задоволений співпрацею. Професійний підхід та відмінний результат',
             'Рекомендую! Якість на висоті, обслуговування на найвищому рівні',
-            'Приємно вражений швидкістю та якістю роботи. Обов\'язково звернусь ще',
+            'Приємно вражений швидкістю та якістю роботи. Обов’язково звернусь ще',
             'Відмінний сервіс та професійний підхід. Дякую за чудову роботу',
             'Перевершує конкурентів за всіма параметрами. Дуже задоволений результатом',
             'Найкраще рішення, яке я знайшов. Простота використання вражає',
@@ -481,18 +501,6 @@ const data = {
             'Творчість та інновації є рушійною силою прогресу. Вони допомагають нам знаходити нестандартні рішення складних завдань та створювати щось унікальне. У цьому процесі важливо зберігати баланс між традиціями та новаторством.',
             'Життя складається з маленьких моментів, які формують наш досвід та світогляд. Кожен день приносить нові враження та можливості для навчання. Важливо цінувати ці моменти та використовувати їх для особистого та професійного розвитку.',
             'У світі бізнесу та технологій важливо залишатися гнучким та відкритим до нових ідей. Успішні проекти часто народжуються з експериментів та сміливих рішень. Головне — не боятися помилок та вчитися на своєму досвіді.'
-        ],
-        quotes: [
-            'Успіх — це здатність крокувати від однієї невдачі до іншої, не втрачаючи ентузіазму',
-            'Найкращий спосіб передбачити майбутнє — створити його',
-            'Єдиний спосіб робити велику роботу — любити те, що ви робите',
-            'Ніколи не пізно стати тим, ким ти міг би бути',
-            'Життя — це те, що з тобою відбувається, поки ти будуєш інші плани',
-            'Найважливіше — не перестати запитувати',
-            'Кожна мрія дається з силами для її здійснення',
-            'Дорога в тисячу миль починається з першого кроку',
-            'Найкращі інвестиції — це інвестиції в себе',
-            'Ваш час обмежений, не витрачайте його, проживаючи чуже життя'
         ],
     },
     en: {
@@ -630,7 +638,13 @@ const data = {
             'Our team of experts develops innovative solutions to meet your needs. We combine technical expertise with creativity to deliver exceptional results.',
             'Through our customer-centric approach, we create customized solutions that perfectly align with your business objectives.',
             'Innovation is at the heart of our approach. We utilize the latest technologies to optimize your processes and maximize efficiency.',
-            'We are committed to delivering high-quality solutions that keep you competitive in an ever-evolving market.'
+            'We are committed to delivering high-quality solutions that keep you competitive in an ever-evolving market.',
+            'Our team of experts develops innovative solutions to meet your needs. We combine technical expertise with creativity to deliver exceptional results.',
+            'Through continuous improvement and dedication to excellence, we ensure the highest quality of service for our clients.',
+            'In today\'s rapidly evolving digital landscape, staying ahead requires innovative thinking and adaptable solutions.',
+            'We leverage cutting-edge technologies and industry best practices to create sustainable, scalable solutions that drive business growth and success.',
+            'Success in the modern business environment depends on the ability to harness technology effectively.',
+            'Our comprehensive approach combines strategic thinking with technical excellence, ensuring that every solution we deliver creates lasting value for our clients.'
         ],
         quotes: [
             'Success is not final, failure is not fatal: it is the courage to continue that counts.',
@@ -638,6 +652,18 @@ const data = {
             'Creativity is intelligence having fun.',
             'The best way to predict the future is to create it.',
             'Quality is never an accident; it is always the result of intelligent effort.'
+        ],
+        sentences: [
+            'Our innovative solutions transform businesses.',
+            'We deliver exceptional results through cutting-edge technology.',
+            'Experience the future of digital transformation.',
+            'Unlock your potential with our advanced solutions.',
+            'Leading the way in technological innovation.',
+            'Creating seamless experiences through smart design.',
+            'Building tomorrow\'s solutions today.',
+            'Empowering businesses with intelligent automation.',
+            'Revolutionizing the digital landscape.',
+            'Driving success through technological excellence.'
         ],
     },
     fr: {
@@ -715,8 +741,8 @@ const data = {
             'SARL', 'SA', 'SAS'
         ],
         companies: [
-            'TechFrance', 'InnovaSoft', 'NumériquePlus', 'SolutionsPro',
-            'DataFrance', 'WebExpert', 'CloudTech', 'SmartSolutions'
+            'TechFrance', 'InnovaSoft', 'DigitalPlus', 'LösungenPro',
+            'DatenTech', 'WebExpert', 'CloudTech', 'SmartSolutions'
         ],
         education: [
             'Licence en Informatique',
@@ -743,6 +769,23 @@ const data = {
             'BTS',
             'Diplôme d\'Ingénieur'
         ],
+        sentences: [
+            'Notre entreprise développe des solutions innovantes.',
+            'La qualité est au cœur de notre approche.',
+            'Nous créons des expériences uniques pour nos clients.',
+            'L\'innovation est notre moteur principal.',
+            'La satisfaction client est notre priorité absolue.',
+            'Nous transformons vos idées en réalité.',
+            'Notre équipe est passionnée par l\'excellence.',
+            'Nous repoussons les limites de la technologie.',
+            'Chaque projet est une nouvelle aventure.',
+            'La créativité guide nos solutions.',
+            'Nous investissons dans l\'avenir.',
+            'Notre expertise fait la différence.',
+            'La réussite est notre engagement.',
+            'Nous valorisons chaque collaboration.',
+            'L\'excellence est notre standard.'
+        ],
         specialties: [
             'Informatique',
             'Sciences des Données',
@@ -762,18 +805,103 @@ const data = {
             'en outre,', 'de plus,',
             'également', 'ainsi que'
         ],
-        paragraphs: [
-            'Notre équipe d\'experts développe des solutions innovantes pour répondre à vos besoins. Nous combinons l\'expertise technique avec la créativité pour livrer des résultats exceptionnels.',
-            'Grâce à notre approche centrée sur le client, nous créons des solutions personnalisées qui s\'alignent parfaitement sur vos objectifs commerciaux.',
-            'L\'innovation est au cœur de notre approche. Nous utilisons les dernières technologies pour optimiser vos processus et maximiser l\'efficacité.',
-            'Nous sommes engagés à livrer des solutions de haute qualité qui vous maintiennent compétitif dans un marché en constante évolution.'
+        quoteAuthors: [
+            'Chateaubriand',
+            'Antoine de Saint-Exupéry',
+            'Oscar Wilde',
+            'Bernard Fontenelle',
+            'Hegel',
+            'Mère Teresa',
+            'Albert Einstein',
+            'Montesquieu',
+            'Albert Schweitzer',
+            'Jean Jaurès',
+            'Victor Hugo',
+            'Honoré de Balzac',
+            'André Gide',
+            'Victor Hugo',
+            'George Sand',
+            'Victor Hugo',
+            'Antoine de Saint-Exupéry',
+            'Coluche',
+            'Nelson Mandela',
+            'Antoine de Saint-Exupéry'
+        ],
+        reviewAuthors: [
+            'Victor Hugo',
+            'Émile Zola',
+            'Marcel Proust',
+            'Albert Camus',
+            'Jean-Paul Sartre',
+            'Gustave Flaubert',
+            'Honoré de Balzac',
+            'Antoine de Saint-Exupéry',
+            'Molière',
+            'Voltaire',
+            'Stendhal',
+            'Charles Baudelaire',
+            'Paul Verlaine',
+            'Arthur Rimbaud',
+            'André Gide',
+            'Simone de Beauvoir',
+            'Alexandre Dumas',
+            'Jules Verne',
+            'Jean-Jacques Rousseau',
+            'Denis Diderot'
         ],
         quotes: [
-            'Le succès n\'est pas final, l\'échec n\'est pas fatal : c\'est le courage de continuer qui compte.',
-            'L\'innovation distingue un leader d\'un suiveur.',
-            'La créativité est l\'intelligence qui s\'amuse.',
-            'La meilleure façon de prédire l\'avenir est de le créer.',
-            'La qualité n\'est jamais un accident ; elle est toujours le résultat d\'un effort intelligent.'
+            'L\'innovation distingue un leader d\'un suiveur',
+            'Le succès n\'est pas final, l\'échec n\'est pas fatal : c\'est le courage de continuer qui compte',
+            'La créativité, c\'est l\'intelligence qui s\'amuse',
+            'La meilleure façon de prédire l\'avenir est de le créer',
+            'La qualité n\'est jamais un accident ; c\'est toujours le résultat d\'un effort intelligent',
+            'Le succès, c\'est d\'aller d\'échec en échec sans perdre son enthousiasme',
+            'L\'imagination est plus importante que le savoir',
+            'La simplicité est la sophistication suprême',
+            'La vie est courte, l\'art est long, l\'occasion fugitive',
+            'Le doute est le commencement de la sagesse',
+            'Le vrai bonheur coûte peu; s’il est cher, il n’est pas d’une bonne espèce. – Chateaubriand',
+            'On ne voit bien qu’avec le cœur. L’essentiel est invisible pour les yeux. – Antoine de Saint-Exupéry',
+            'Il faut toujours viser la lune, car même en cas d’échec, on atterrit dans les étoiles. – Oscar Wilde',
+            'Le plus grand secret pour le bonheur, c’est d’être bien avec soi. – Bernard Fontenelle',
+            'Rien de grand ne s’est accompli dans le monde sans passion. – Hegel',
+            'La vie est un défi à relever, un bonheur à mériter, une aventure à tenter. – Mère Teresa',
+            'L’imagination est plus importante que le savoir. – Albert Einstein',
+            'La liberté consiste moins à faire ce que l’on veut qu’à pouvoir faire ce que l’on doit. – Montesquieu',
+            'Le succès n’est pas la clé du bonheur. Le bonheur est la clé du succès. – Albert Schweitzer',
+            'Le courage, c’est de chercher la vérité et de la dire. – Jean Jaurès',
+            'Le bonheur est parfois caché dans l’inconnu. – Victor Hugo',
+            'L’amour est la poésie des sens. – Honoré de Balzac',
+            'Rien n’est jamais tout à fait perdu. – Andrei Tsygan',
+            'Il n’y a qu’un bonheur dans la vie, c’est d’aimer et d’être aimé. – George Sand',
+            'Il n’est rien dans ce monde d’aussi puissant qu’une idée dont l’heure est venue. – Victor Hugo',
+            'C’est le temps que tu as perdu pour ta rose qui rend ta rose importante. – Antoine de Saint-Exupéry',
+            'Pour critiquer les gens il faut les connaître, et pour les connaître, il faut les aimer. – Coluche',
+            'Fais de ta vie un rêve, et d’un rêve, une-REALITE. – Antoine de Saint-Exupéry'
+        ],
+        reviews: [
+            'Produit incroyable ! A dépassé toutes mes attentes. La qualité et l\'attention aux détails sont impressionnantes',
+            'Très satisfait de la collaboration. Approche professionnelle et excellents résultats',
+            'Je recommande vivement ! Qualité et service au plus haut niveau',
+            'Impressionné par la rapidité et la qualité du travail. Je réutiliserai certainement',
+            'Service exceptionnel ! L\'équipe est vraiment réactive et professionnelle',
+            'Une expérience client remarquable. Je suis pleinement satisfait du résultat',
+            'Excellent rapport qualité-prix. Le produit répond parfaitement à mes besoins',
+            'Un service client exemplaire et un produit de grande qualité',
+            'Très content de mon achat. Je recommande sans hésitation',
+            'Une équipe à l\'écoute et des solutions adaptées à mes besoins'
+        ],
+        paragraphs: [
+            'Notre équipe d\'experts développe des solutions innovantes pour répondre à vos besoins. Nous combinons expertise technique et créativité pour livrer des résultats exceptionnels.',
+            'Grâce à notre approche centrée sur le client, nous créons des solutions sur mesure parfaitement alignées avec vos objectifs commerciaux.',
+            'L\'innovation est au cœur de notre approche. Nous utilisons les dernières technologies pour optimiser vos processus et maximiser l\'efficacité.',
+            'Nous nous engageons à fournir des solutions de la plus haute qualité qui vous maintiennent compétitif dans un marché en constante évolution.',
+            'La satisfaction du client est notre priorité absolue. Nous travaillons sans relâche pour dépasser vos attentes et créer une expérience exceptionnelle.',
+            'Notre expertise nous permet de relever les défis les plus complexes. Nous transformons vos idées en solutions concrètes et efficaces.',
+            'La qualité est au cœur de tout ce que nous faisons. Chaque projet est une opportunité de démontrer notre engagement envers l\'excellence.',
+            'Nous croyons en l\'innovation continue et en l\'amélioration constante. Notre équipe reste à la pointe des dernières avancées technologiques.',
+            'La collaboration est la clé de notre succès. Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins uniques.',
+            'Notre approche personnalisée garantit que chaque solution est parfaitement adaptée à vos besoins spécifiques.'
         ],
     },
     de: {
@@ -788,26 +916,26 @@ const data = {
         femaleJobTitles: ['Softwareentwicklerin', 'Systemarchitektin', 'Projektleiterin', 'Analystin', 'Beraterin', 'DevOps-Ingenieurin', 'Technische Direktorin', 'UX-Designerin', 'Product Ownerin', 'Innovationsmanagerin', 'Technische Expertin'],
         headlines: {
             starts: [
-                'Neu', 'Innovativ', 'Revolutionär', 'Modern', 'Einzigartig',
-                'Führend', 'Beliebt', 'Exklusiv', 'Premium', 'Top',
-                'Zukunftsorientiert', 'Progressiv', 'Trendig', 'Intellektuell', 'Global'
+                "Neu", "Innovativ", "Revolutionär", "Modern", "Einzigartig",
+                "Führend", "Beliebt", "Exklusiv", "Premium", "Top",
+                "Zukunftsorientiert", "Progressiv", "Trendig", "Intellektuell", "Global"
             ],
             middles: [
-                'System für', 'Lösung für', 'Plattform für', 'Technologie für',
-                'Anwendung für', 'Service für', 'Produkt für', 'Tool für'
+                "System für", "Lösung für", "Plattform für", "Technologie für",
+                "Anwendung für", "Service für", "Produkt für", "Tool für"
             ],
             ends: [
-                'Entwicklung', 'Management', 'Optimierung', 'Innovation',
-                'Transformation', 'Zusammenarbeit', 'Produktivität', 'Leistung'
+                "Entwicklung", "Management", "Optimierung", "Innovation",
+                "Transformation", "Zusammenarbeit", "Produktivität", "Leistung"
             ],
             actions: [
-                'startet', 'präsentiert', 'führt ein', 'enthüllt', 'kündigt an',
-                'revolutioniert', 'transformiert', 'verbessert', 'optimiert'
+                "startet", "präsentiert", "führt ein", "enthüllt", "kündigt an",
+                "revolutioniert", "transformiert", "verbessert", "optimiert"
             ],
             templates: [
-                '{start} {middle} {end}',
-                'Ein {start} {middle} {end}',
-                '{start}: {action} {middle} {end}'
+                "{start} {middle} {end}",
+                "Ein {start} {middle} {end}",
+                "{start}: {action} {middle} {end}"
             ]
         },
         universities: [
@@ -900,18 +1028,105 @@ const data = {
             'in addition,', 'additionally,',
             'als auch', 'zusammen mit'
         ],
+        sentences: [
+            'Unser Unternehmen entwickelt innovative Lösungen.',
+            'Qualität steht im Mittelpunkt unseres Ansatzes.',
+            'Wir schaffen einzigartige Erlebnisse für unsere Kunden.',
+            'Innovation ist unser Hauptantrieb.',
+            'Kundenzufriedenheit hat für uns oberste Priorität.',
+            'Wir verwandeln Ihre Ideen in Realität.',
+            'Unser Team ist von Exzellenz begeistert.',
+            'Wir verschieben die Grenzen der Technologie.',
+            'Jedes Projekt ist ein neues Abenteuer.',
+            'Kreativität leitet unsere Lösungen.',
+            'Wir investieren in die Zukunft.',
+            'Unsere Expertise macht den Unterschied.',
+            'Erfolg ist unsere Verpflichtung.',
+            'Wir schätzen jede Zusammenarbeit.',
+            'Exzellenz ist unser Standard.'
+        ],
         paragraphs: [
             'Unser Team von Experten entwickelt innovative Lösungen, um Ihre Bedürfnisse zu erfüllen. Wir kombinieren technisches Know-how mit Kreativität, um außergewöhnliche Ergebnisse zu liefern.',
             'Durch unseren kundenorientierten Ansatz erstellen wir maßgeschneiderte Lösungen, die perfekt auf Ihre Geschäftsziele abgestimmt sind.',
             'Innovation steht im Mittelpunkt unseres Ansatzes. Wir nutzen die neuesten Technologien, um Ihre Prozesse zu optimieren und die Effizienz zu maximieren.',
-            'Wir sind verpflichtet, Lösungen von höchster Qualität zu liefern, die Sie in einem sich ständig verändernden Markt wettbewerbsfähig halten.'
+            'Wir sind verpflichtet, Lösungen von höchster Qualität zu liefern, die Sie in einem sich ständig verändernden Markt wettbewerbsfähig halten.',
+            'Unser Team von Experten entwickelt innovative Lösungen, um Ihre Bedürfnisse zu erfüllen. Wir kombinieren technisches Know-how mit Kreativität, um außergewöhnliche Ergebnisse zu liefern.',
+            'Wir sind überzeugt, dass Kreativität und Innovation die Schlüssel zum Erfolg in einer sich ständig verändernden Welt sind.',
+            'Wir sind stolz auf unsere Fähigkeit, innovative Lösungen zu entwickeln, die auf die Bedürfnisse unserer Kunden zugeschnitten sind.',
+            'Wir sind entschlossen, Lösungen von höchster Qualität zu liefern, die auf die Bedürfnisse unserer Kunden zugeschnitten sind.',
+            'Wir sind überzeugt, dass Kreativität und Innovation die Schlüssel zum Erfolg in einer sich ständig verändernden Welt sind.',
+            'Wir sind stolz auf unsere Fähigkeit, innovative Lösungen zu entwickeln, die auf die Bedürfnisse unserer Kunden zugeschnitten sind.'
+        ],
+        quoteAuthors: [
+            'Johann Wolfgang von Goethe',
+            'Friedrich Nietzsche',
+            'Immanuel Kant',
+            'Hermann Hesse',
+            'Albert Einstein',
+            'Bertolt Brecht',
+            'Thomas Mann',
+            'Rainer Maria Rilke',
+            'Arthur Schopenhauer',
+            'Ludwig van Beethoven',
+            'Heinrich Heine',
+            'Franz Kafka',
+            'Theodor Fontane',
+            'Georg Wilhelm Friedrich Hegel',
+            'Siegfried Lenz',
+            'Gotthold Ephraim Lessing',
+            'Friedrich Schiller',
+            'Max Frisch',
+            'Erich Kästner',
+            'Hannah Arendt'
+        ],
+        reviewAuthors: [
+            'Johann Wolfgang von Goethe',
+            'Friedrich Schiller',
+            'Thomas Mann',
+            'Hermann Hesse',
+            'Franz Kafka',
+            'Bertolt Brecht',
+            'Theodor Fontane',
+            'Erich Kästner',
+            'E.T.A. Hoffmann',
+            'Heinrich Heine',
+            'Friedrich Nietzsche',
+            'Stefan Zweig',
+            'Herta Müller',
+            'Siegfried Lenz',
+            'Günter Grass',
+            'Rainer Maria Rilke',
+            'Patrick Süskind',
+            'Ingeborg Bachmann',
+            'Christa Wolf',
+            'Heinrich Böll'
         ],
         quotes: [
             'Der Erfolg ist nicht endgültig, der Misserfolg ist nicht tödlich: es ist der Mut, weiterzumachen, der zählt.',
-            'Innovation unterscheidet einen Leader von einem Nachahmer.',
-            'Kreativität ist Intelligenz, die Spaß hat.',
+            'Innovation unterscheidet zwischen einem Anführer und einem Nachahmer.',
+            'Kreativität ist die Intelligenz, die Spaß hat.',
             'Die beste Art, die Zukunft vorherzusagen, ist, sie zu schaffen.',
-            'Qualität ist nie ein Zufall; sie ist immer das Ergebnis intelligenter Anstrengung.'
+            'Qualität ist nie ein Zufall; sie ist immer das Ergebnis intelligenter Anstrengung.',
+            'Wer sich nicht bewegt, spürt seine Fesseln nicht.',
+            'Das Glück ist das einzige, das sich verdoppelt, wenn man es teilt.',
+            'Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.',
+            'Alle Theorie ist grau, mein Freund, doch ewig grün ist der Baum des Lebens.',
+            'Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.',
+            'Der Weg ist das Ziel.',
+            'Ohne Musik wäre das Leben ein Irrtum.',
+            'Ein Leben ohne Freude ist wie eine weite Reise ohne Gasthaus.',
+            'Die Welt ist ein Buch. Wer nie reist, sieht nur eine Seite davon.',
+            'Wissen ist Macht.',
+            'Der Mensch ist nichts anderes, als was er aus sich macht.',
+            'Es ist nicht wenig Zeit, die wir haben, sondern es ist viel Zeit, die wir nicht nutzen.',
+            'Geduld ist die Kunst, nur langsam wütend zu werden.',
+            'Die Kunst ist, einmal mehr aufzustehen, als man umgeworfen wird.',
+            'Ein kluger Mann macht nicht alle Fehler selbst. Er gibt auch anderen eine Chance.',
+            'Der Anfang ist die Hälfte des Ganzen.',
+            'Die größten Ereignisse - das sind nicht unsere lautesten, sondern unsere stillsten Stunden.',
+            'Der Mensch ist frei geboren, und überall liegt er in Ketten.',
+            'Die beste Zeit für einen Neuanfang ist jetzt.',
+            'Es gibt nichts Gutes, außer man tut es.'
         ],
         words: [
             'Design', 'Projekt', 'Entwicklung', 'System', 'Technologie', 'Innovation', 'Lösung',
@@ -971,6 +1186,25 @@ data.en.femaleJobTitles = [
     'Art Director', 'Creative Director', 'Lead Designer', 'Brand Manager', 'Content Manager',
     'Marketing Manager', 'Digital Producer', 'Creative Producer', 'Innovation Manager', 'Strategy Manager'
 ];
+
+data.en.headlines = {
+    starts: [
+        "New", "Innovative", "Revolutionary", "Modern", "Unique",
+        "Leading", "Popular", "Exclusive", "Premium", "Top",
+        "Promising", "Progressive", "Trendy", "Smart", "Global"
+    ],
+    middles: [
+        "Solution for", "Approach to", "Way of", "Method of", "System for",
+        "Platform for", "Tool for", "Strategy for", "Framework for", "Technology for",
+        "Innovation in", "Breakthrough in", "Revolution in", "Evolution in", "Progress in"
+    ],
+    ends: [
+        "Business Growth", "Digital Transformation", "Market Success", "Future Development",
+        "Sustainable Progress", "Industry Leadership", "Professional Excellence", "Team Collaboration",
+        "Project Management", "Customer Satisfaction", "Innovation Management", "Quality Assurance",
+        "Process Optimization", "Resource Efficiency", "Performance Enhancement"
+    ]
+};
 
 // Утиліти
 function getRandomItem(array) {
@@ -1041,120 +1275,33 @@ figma.ui.onmessage = async (msg) => {
         return;
     }
 
-    if (msg.type === 'preview') {
-        const { options, language, gender, count } = msg;
-        console.log('Preview request:', { options, language, gender, count });
-        const previews = {
-            personal: [],
-            address: [],
-            text: [],
-            other: []
-        };
-
-        options.forEach(option => {
-            let value;
-            if (option === 'words' || option === 'sentence' || option === 'paragraph') {
-                value = generators[option](language, count);
-            } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
-                value = generators[option](language, gender);
-            } else {
-                value = generators[option](language);
-            }
-
-            if (['name', 'fullName', 'email', 'phone'].includes(option)) {
-                previews.personal.push(`${value}`);
-            } else if (['city', 'street', 'fullAddress', 'postalCode'].includes(option)) {
-                previews.address.push(`${value}`);
-            } else if (['words', 'sentence', 'paragraph'].includes(option)) {
-                previews.text.push(`${value.substring(0, 50)}...`);
-            } else {
-                previews.other.push(`${value}`);
-            }
-        });
-
-        figma.ui.postMessage({ 
-            type: 'preview', 
-            previews: {
-                personal: previews.personal.join('\n'),
-                address: previews.address.join('\n'),
-                text: previews.text.join('\n'),
-                other: previews.other.join('\n')
-            }
-        });
-        return;
-    }
-
     if (msg.type === 'generate') {
         const { options, language, gender, count } = msg;
-        console.log('Generating content:', { options, language, gender, count });
-        const selection = figma.currentPage.selection;
-        const textNodes = selection.filter(node => node.type === "TEXT");
+        console.log('Generate request:', { options, language, gender, count });
 
-        try {
-            // Завантажуємо шрифт один раз перед генерацією
-            await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+        // Отримуємо вибрані текстові вузли
+        const textNodes = figma.currentPage.selection.filter(node => node.type === "TEXT");
 
-            if (textNodes.length > 0) {
-                // Якщо є вибрані текстові елементи
-                for (const node of textNodes) {
-                    const option = options[0];
-                    let value;
-
-                    if (option === 'words' || option === 'sentence' || option === 'paragraph') {
-                        value = generators[option](language, count);
-                    } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
-                        value = generators[option](language, gender);
-                    } else {
-                        value = generators[option](language);
-                    }
-
-                    await figma.loadFontAsync(node.fontName);
-                    node.characters = value;
-                }
-                figma.notify(notifications[language].contentGenerated);
-            } else {
-                // Якщо нічого не вибрано, створюємо нові елементи
-                const elements = [];
-                
-                for (const option of options) {
-                    console.log('Creating new element for option:', option);
-                    const text = figma.createText();
-                    let value;
-                    // Передаємо параметри в залежності від типу генератора
-                    if (option === 'words' || option === 'sentence' || option === 'paragraph') {
-                        value = generators[option](language, parseInt(count) || 1);
-                    } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(option)) {
-                        console.log('Generating full name with parameters:', { language, gender });
-                        value = generators[option](language, gender);
-                    } else if (option === 'education') {
-                        value = generators[option](language);
-                    } else {
-                        value = generators[option](language);
-                    }
-                    console.log('Generated text:', value);
-                    text.characters = value;
-                    
-                    if (elements.length > 0) {
-                        const lastElement = elements[elements.length - 1];
-                        text.y = lastElement.y + lastElement.height + 10;
-                    } else {
-                        text.y = figma.viewport.center.y;
-                    }
-                    text.x = figma.viewport.center.x;
-                    
-                    elements.push(text);
-                }
-                
-                figma.currentPage.selection = elements;
-                if (elements.length > 0) {
-                    figma.viewport.scrollAndZoomIntoView(elements);
-                    figma.notify(notifications[language].newElementsCreated);
-                }
-            }
-        } catch (error) {
-            console.error('Помилка при генерації:', error);
-            figma.notify(notifications[language].error);
+        if (textNodes.length === 0) {
+            figma.notify('Будь ласка, виберіть текстові елементи для заповнення');
+            return;
         }
+
+        // Застосовуємо генератори до кожного вибраного текстового вузла
+        for (const node of textNodes) {
+            let value;
+            if (options.includes('words') || options.includes('sentence') || options.includes('paragraph') || options.includes('headline')) {
+                value = generators[options[0]](language, count);
+            } else if (['name', 'fullName', 'nickname', 'jobTitle'].includes(options[0])) {
+                value = generators[options[0]](language, gender);
+            } else {
+                value = generators[options[0]](language);
+            }
+            await figma.loadFontAsync(node.fontName);
+            node.characters = value;
+        }
+
+        figma.notify('Контент успішно згенеровано!');
     }
 };
 
@@ -1219,7 +1366,7 @@ const generators = {
             name = langData.femaleNames[Math.floor(Math.random() * langData.femaleNames.length)];
         } else {
             // Для режиму 'all' випадково вибираємо стать
-            name = Math.random() < 0.5
+            name = Math.random() < 0.5 
                 ? langData.maleNames[Math.floor(Math.random() * langData.maleNames.length)]
                 : langData.femaleNames[Math.floor(Math.random() * langData.femaleNames.length)];
         }
@@ -1227,12 +1374,16 @@ const generators = {
         // Транслітерація для української мови
         if (lang === 'uk') {
             name = transliterate(name.toLowerCase());
+        } else {
+            name = name.toLowerCase();
         }
+
+        const number = Math.random() < 0.5 ? Math.floor(Math.random() * 999) + 1 : '';
         
-        const number = getRandomNumber(1, 999);
+        // Випадково вибираємо домен
         const domains = ['gmail.com', 'outlook.com', 'yahoo.com', 'icloud.com'];
         const domain = domains[Math.floor(Math.random() * domains.length)];
-        return `${name.toLowerCase()}${number}@${domain}`;
+        return `${name}${number}@${domain}`;
     },
     
     phone: (lang) => {
@@ -1252,16 +1403,66 @@ const generators = {
 
     price: (lang) => {
         let price;
-        if (lang === 'uk') {
-            // Ціни в гривнях, більш реалістичні для України
-            price = Math.floor(Math.random() * 50000) + 99;
-        } else {
-            // Ціни в доларах, більш реалістичні для міжнародного ринку
-            price = Math.floor(Math.random() * 1000) + 9.99;
+        const random = Math.random();
+        
+        // Функція для генерації випадкової ціни в заданому діапазоні
+        const generatePrice = (min, max, hasDecimals = true) => {
+            let price = Math.random() * (max - min) + min;
+            return hasDecimals ? price : Math.floor(price);
+        };
+
+        switch (lang) {
+            case 'uk':
+                // Ціни в гривнях (від 10 до 100000)
+                if (random < 0.3) {
+                    price = generatePrice(10, 999); // Малі суми
+                } else if (random < 0.6) {
+                    price = generatePrice(1000, 9999); // Середні суми
+                } else if (random < 0.8) {
+                    price = generatePrice(10000, 49999); // Великі суми
+                } else {
+                    price = generatePrice(50000, 100000); // Дуже великі суми
+                }
+                break;
+
+            case 'en':
+                // Ціни в доларах (від $0.99 до $9999.99)
+                if (random < 0.2) {
+                    price = generatePrice(0.99, 9.99); // Малі суми
+                } else if (random < 0.5) {
+                    price = generatePrice(10, 99.99); // Середні суми
+                } else if (random < 0.7) {
+                    price = generatePrice(100, 999.99); // Великі суми
+                } else if (random < 0.9) {
+                    price = generatePrice(1000, 4999.99); // Дуже великі суми
+                } else {
+                    price = generatePrice(5000, 9999.99); // Преміум суми
+                }
+                break;
+
+            case 'fr':
+            case 'de':
+                // Ціни в євро (від €0.99 до €9999.99)
+                if (random < 0.2) {
+                    price = generatePrice(0.99, 9.99); // Малі суми
+                } else if (random < 0.5) {
+                    price = generatePrice(10, 99.99); // Середні суми
+                } else if (random < 0.7) {
+                    price = generatePrice(100, 999.99); // Великі суми
+                } else if (random < 0.9) {
+                    price = generatePrice(1000, 4999.99); // Дуже великі суми
+                } else {
+                    price = generatePrice(5000, 9999.99); // Преміум суми
+                }
+                break;
+
+            default:
+                price = generatePrice(10, 999.99);
         }
+
         return formatPrice(price, lang);
     },
-
+    
     fullAddress: (lang) => {
         const city = generators.city(lang);
         const street = generators.street(lang);
@@ -1290,21 +1491,15 @@ const generators = {
         return `${prefix} "${name}"`;
     },
     
-    headline: (lang) => {
-        const langData = data[lang] || data.en;
-        
-        if (!langData.headlines) {
-            return ''; // Повертаємо пустий рядок, якщо немає структури headlines
+    headline: (lang, count = 1) => {
+        const headlines = [];
+        for (let i = 0; i < count; i++) {
+            const start = getRandomItem(data[lang].headlines.starts);
+            const middle = getRandomItem(data[lang].headlines.middles);
+            const end = getRandomItem(data[lang].headlines.ends);
+            headlines.push(`${start} ${middle} ${end}`);
         }
-
-        const h = langData.headlines;
-        const template = getRandomItem(h.templates);
-        
-        return template
-            .replace('{start}', getRandomItem(h.starts))
-            .replace('{middle}', getRandomItem(h.middles))
-            .replace('{end}', getRandomItem(h.ends))
-            .replace('{action}', getRandomItem(h.actions));
+        return count === 1 ? headlines[0] : headlines.join('\n');
     },
     
     nickname: (lang, gender = 'all') => {
@@ -1396,107 +1591,87 @@ const generators = {
     },
     
     website: (language) => {
-        const langData = data[language];
-        const domains = language === 'uk' ? [
-            // Українські домени
-            'com.ua', 'ua', 'net.ua', 'org.ua', 'in.ua', 'pp.ua', 'kiev.ua',
-            // Міжнародні домени
-            'com', 'net', 'org', 'info', 'biz', 'online', 'site', 'xyz',
-            // Нові домени
-            'app', 'dev', 'tech', 'digital', 'store', 'shop', 'agency', 'studio'
-        ] : [
-            // Популярні домени
-            'com', 'net', 'org', 'io', 'co', 'app', 'dev',
-            // Бізнес домени
-            'biz', 'company', 'inc', 'ltd', 'group', 'corp',
-            // Технічні домени
-            'tech', 'digital', 'web', 'app', 'soft', 'dev', 'code', 'it',
-            'cloud', 'online', 'site'
-        ];
+        const domainZones = {
+            uk: ['.ua', '.com.ua', '.kiev.ua', '.org.ua', '.net.ua', '.edu.ua', '.gov.ua'],
+            en: ['.com', '.net', '.org', '.io', '.co', '.app', '.dev', '.tech', '.ai', '.digital'],
+            fr: ['.fr', '.com.fr', '.net.fr', '.org.fr', '.edu.fr', '.gouv.fr'],
+            de: ['.de', '.com.de', '.net.de', '.org.de', '.edu.de']
+        };
 
-        const prefixes = language === 'uk' ? [
-            // Бізнес
-            'business', 'company', 'corp', 'group', 'team', 'pro', 'expert',
-            // Технології
-            'tech', 'digital', 'web', 'app', 'soft', 'dev', 'code', 'it',
-            // Креатив
-            'creative', 'design', 'studio', 'art', 'media', 'brand', 'style',
-            // Інше
-            'smart', 'best', 'top', 'prime', 'elite', 'premium', 'ultra'
-        ] : [
-            // Business
-            'business', 'company', 'corp', 'group', 'team', 'pro', 'expert',
-            // Technology
-            'tech', 'digital', 'web', 'app', 'soft', 'dev', 'code', 'it',
-            // Creative
-            'creative', 'design', 'studio', 'art', 'media', 'brand', 'style',
-            // Other
-            'smart', 'best', 'top', 'prime', 'elite', 'premium', 'ultra'
-        ];
+        const prefixes = {
+            uk: [
+                'smart', 'tech', 'digital', 'cyber', 'web', 'net', 'info', 'data',
+                'ua', 'kyiv', 'lviv', 'odesa', 'kharkiv', 'dnipro',
+                'eco', 'bio', 'agro', 'food', 'shop', 'market', 'store',
+                'edu', 'learn', 'study', 'course', 'portal', 'hub',
+                'dev', 'code', 'soft', 'app', 'cloud', 'host',
+                'art', 'design', 'creative', 'media', 'studio',
+                'biz', 'trade', 'finance', 'bank', 'pay', 'money',
+                'travel', 'tour', 'hotel', 'rest', 'cafe', 'resto',
+                'health', 'med', 'clinic', 'doctor', 'pharma',
+                'sport', 'fit', 'gym', 'yoga', 'dance'
+            ],
+            en: [
+                'smart', 'tech', 'digital', 'cyber', 'web', 'net', 'data', 'cloud',
+                'app', 'dev', 'code', 'soft', 'sys', 'api', 'bit', 'byte',
+                'eco', 'green', 'bio', 'nature', 'earth', 'planet',
+                'shop', 'store', 'market', 'buy', 'sell', 'trade',
+                'learn', 'edu', 'study', 'course', 'skill', 'mind',
+                'art', 'design', 'create', 'make', 'craft', 'build',
+                'biz', 'corp', 'pro', 'work', 'office', 'team',
+                'health', 'med', 'care', 'life', 'vital', 'zen',
+                'food', 'eat', 'cook', 'recipe', 'meal', 'dish',
+                'travel', 'trip', 'journey', 'explore', 'venture'
+            ],
+            fr: [
+                'tech', 'digital', 'cyber', 'web', 'net', 'info',
+                'eco', 'bio', 'nature', 'vert', 'terre',
+                'boutique', 'magasin', 'marche', 'achat',
+                'edu', 'etude', 'cours', 'savoir',
+                'art', 'design', 'creation', 'studio',
+                'sante', 'med', 'docteur', 'pharma',
+                'voyage', 'tour', 'hotel', 'resto',
+                'sport', 'fitness', 'danse', 'yoga',
+                'mode', 'style', 'beaute', 'luxe',
+                'maison', 'jardin', 'deco', 'cuisine'
+            ],
+            de: [
+                'tech', 'digital', 'cyber', 'web', 'netz', 'info',
+                'öko', 'bio', 'natur', 'grün', 'erde',
+                'shop', 'markt', 'handel', 'kauf',
+                'bildung', 'lernen', 'schule', 'kurs',
+                'kunst', 'design', 'kreativ', 'studio',
+                'gesund', 'med', 'arzt', 'pharma',
+                'reise', 'tour', 'hotel', 'urlaub',
+                'sport', 'fitness', 'tanz', 'yoga',
+                'mode', 'stil', 'beauty', 'luxus',
+                'haus', 'garten', 'deko', 'küche'
+            ]
+        };
 
-        const words = language === 'uk' ? [
-            // Загальні
-            'system', 'project', 'service', 'portal', 'platform', 'solution',
-            // Бізнес
-            'business', 'company', 'group', 'partner', 'consulting', 'management',
-            // Технології
-            'technology', 'innovation', 'development', 'automation', 'digital',
-            // Продукти
-            'product', 'catalog', 'store', 'market', 'center', 'hub', 'space'
-        ] : [
-            // General
-            'system', 'project', 'service', 'portal', 'platform', 'solution',
-            // Business
-            'business', 'company', 'group', 'partner', 'consulting', 'management',
-            // Technology
-            'technology', 'innovation', 'development', 'automation', 'digital',
-            // Products
-            'product', 'catalog', 'store', 'market', 'center', 'hub', 'space'
-        ];
+        const suffixes = {
+            uk: ['hub', 'center', 'plus', 'pro', 'group', 'team', 'ua', 'ukraine', 'portal', 'space'],
+            en: ['hub', 'center', 'plus', 'pro', 'group', 'team', 'space', 'spot', 'zone', 'world'],
+            fr: ['plus', 'pro', 'groupe', 'equipe', 'espace', 'monde', 'centre', 'zone'],
+            de: ['plus', 'pro', 'gruppe', 'team', 'zentrum', 'welt', 'zone', 'platz']
+        };
 
-        const structure = Math.random();
-        const domain = getRandomItem(domains);
-        let result = '';
-
-        // Додаємо www або без нього (30% шанс)
-        const useWww = Math.random() < 0.3;
+        const prefix = getRandomItem(prefixes[language] || prefixes.en);
+        const domainZone = getRandomItem(domainZones[language] || domainZones.en);
         
-        if (structure < 0.25) {
-            // Формат: prefix-word.domain (example: smart-tech.com)
-            const prefix = getRandomItem(prefixes);
-            const word = getRandomItem(words);
-            result = `${prefix}-${word}`;
-        } else if (structure < 0.5) {
-            // Формат: word1word2.domain (example: techsolutions.com)
-            const word1 = getRandomItem(prefixes);
-            const word2 = getRandomItem(words);
-            result = `${word1}${word2}`;
-        } else if (structure < 0.75) {
-            // Формат: myword.domain (example: mycompany.com)
-            const word = getRandomItem(words);
-            result = `my${word}`;
-        } else {
-            // Формат: theword.domain (example: theplatform.com)
-            const word = getRandomItem(words);
-            result = `the${word}`;
-        }
+        // В 30% випадків додаємо суфікс
+        const shouldAddSuffix = Math.random() < 0.3;
+        const suffix = shouldAddSuffix ? getRandomItem(suffixes[language] || suffixes.en) : '';
+        
+        // Формуємо домен
+        const domain = shouldAddSuffix 
+            ? `${prefix}-${suffix}${domainZone}`
+            : `${prefix}${domainZone}`;
 
-        // Транслітеруємо для української мови
-        if (language === 'uk') {
-            result = transliterate(result.toLowerCase());
-        } else {
-            result = result.toLowerCase();
-        }
-
-        // Додаємо випадкові цифри (10% шанс)
-        if (Math.random() < 0.1) {
-            result += Math.floor(Math.random() * 1000);
-        }
-
-        return `${useWww ? 'www.' : ''}${result}.${domain}`;
+        return domain.toLowerCase();
     },
     
-    education: (lang = 'uk') => {
+    education: (lang) => {
         const degree = getRandomItem(data[lang].degrees);
         const specialty = getRandomItem(data[lang].specialties);
         const university = getRandomItem(data[lang].universities);
@@ -1572,15 +1747,37 @@ const generators = {
         const author = getRandomItem(authors);
         return `"${review}" - ${author}`;
     },
+    creditCard(lang) {
+        // Генеруємо номер картки в форматі XXXX XXXX XXXX XXXX
+        const generateNumber = () => {
+            const numbers = [];
+            for (let i = 0; i < 4; i++) {
+                numbers.push(Math.floor(1000 + Math.random() * 9000));
+            }
+            return numbers.join(' ');
+        };
+
+        // Різні формати для різних мов
+        switch(lang) {
+            case 'uk':
+                return generateNumber();
+            case 'fr':
+                return generateNumber().replace(/ /g, '-');
+            case 'de':
+                return generateNumber();
+            default: // en
+                return generateNumber();
+        }
+    },
 };
 
 // Утиліти для форматування
 function formatPrice(number, lang) {
     const formats = {
-        uk: { currency: '₴', separator: ' ', decimal: ',' },
-        en: { currency: '$', separator: ',', decimal: '.' },
-        fr: { currency: '€', separator: ' ', decimal: ',' },
-        de: { currency: '€', separator: '.', decimal: ',' }
+        uk: { currency: '₴', separator: ' ', decimal: ',', prefix: false },
+        en: { currency: '$', separator: ',', decimal: '.', prefix: true },
+        fr: { currency: '€', separator: '.', decimal: ',', prefix: false },
+        de: { currency: '€', separator: '.', decimal: ',', prefix: false }
     };
 
     const format = formats[lang] || formats.en;
@@ -1588,28 +1785,29 @@ function formatPrice(number, lang) {
     const parts = number.toFixed(2).split('.');
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, format.separator);
     
-    return lang === 'uk' ? `${parts.join(format.decimal)} ${format.currency}` : format.currency + parts.join(format.decimal);
+    // Додаємо тонкий пробіл для гривні та євро
+    const needsSpace = format.currency === '€' || format.currency === '₴';
+    const thinSpace = '\u2009'; // Тонкий пробіл
+    return format.prefix 
+        ? format.currency + parts.join(format.decimal)
+        : `${parts.join(format.decimal)}${needsSpace ? thinSpace : ''}${format.currency}`;
 }
 
 function formatDate(date, lang) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    let locale;
-    
-    switch(lang) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+
+    switch (lang) {
         case 'uk':
-            locale = 'uk-UA';
-            break;
+            return `${day}.${month}.${year}`;
         case 'fr':
-            locale = 'fr-FR';
-            break;
+            return `${day}/${month}/${year}`;
         case 'de':
-            locale = 'de-DE';
-            break;
+            return `${day}.${month}.${year}`;
         default:
-            locale = 'en-US';
+            return `${month}/${day}/${year}`;
     }
-    
-    return date.toLocaleDateString(locale, options);
 }
 
 function formatPhone(lang) {
@@ -1643,7 +1841,7 @@ function formatPostalCode(lang) {
             return frPrefix + frSuffix;
         case 'de':
             // Німецький формат: 5 цифр (01000-99999)
-            return String(Math.floor(1000 + Math.random() * 98999)).padStart(5, '0');
+            return String(Math.floor(10000 + Math.random() * 90000)).padStart(5, '0');
         default: // en - США
             // Американський формат: NNNNN або NNNNN-NNNN
             const zip = String(Math.floor(10000 + Math.random() * 90000));
@@ -1747,3 +1945,47 @@ testHeadlineGeneration();
 testCompanyGeneration();
 testJobTitleGeneration();
 testPostalCodeGeneration();
+
+// Тестування форматування цін
+function testPriceFormatting() {
+    console.log('=== Testing USD Price Formatting ===');
+    const testCases = [
+        19.99,      // базовий випадок
+        1000.50,    // тисячі
+        9.90,       // центи
+        1234567.89, // мільйони
+        0.99,       // менше долара
+        10.00       // рівна сума
+    ];
+
+    testCases.forEach(price => {
+        console.log(`Price ${price} formatted as: ${formatPrice(price, 'en')}`);
+    });
+}
+
+// Запускаємо тест при ініціалізації плагіна
+testPriceFormatting();
+
+function formatDate(date, lang) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+
+    // Масив скорочених назв місяців англійською
+    const monthNamesEn = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+
+    switch(lang) {
+        case 'uk':
+            return `${day}.${month}.${year}`;
+        case 'fr':
+            return `${day}/${month}/${year}`;
+        case 'de':
+            return `${day}.${month}.${year}`;
+        default: // en
+            const monthName = monthNamesEn[date.getMonth()];
+            return `${monthName} ${parseInt(day)}, ${year}`; // parseInt прибирає ведучий нуль
+    }
+}

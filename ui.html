@@ -19,12 +19,16 @@
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         html, body {
-            margin: 0;
-            padding: 0;
             height: 100%;
             min-height: 100%;
         }
@@ -562,6 +566,9 @@
                 <div class="option" data-type="website">
                     <span data-i18n="website">Веб-сайт</span>
                 </div>
+                <div class="option" data-type="creditCard">
+                    <span data-i18n="creditCard">Номер картки</span>
+                </div>
             </div>
             <div class="preview" id="otherPreview"></div>
         </div>
@@ -632,7 +639,8 @@
                 quantity: 'Кількість',
                 education: 'Освіта',
                 quote: 'Цитата',
-                review: 'Відгук'
+                review: 'Відгук',
+                creditCard: 'Номер картки'
             },
             en: {
                 personal: 'Personal Data',
@@ -670,7 +678,8 @@
                 quantity: 'Quantity',
                 education: 'Education',
                 quote: 'Quote',
-                review: 'Review'
+                review: 'Review',
+                creditCard: 'Card Number'
             },
             fr: {
                 personal: 'Données Personnelles',
@@ -708,7 +717,8 @@
                 quantity: 'Quantité',
                 education: 'Éducation',
                 quote: 'Citation',
-                review: 'Avis'
+                review: 'Avis',
+                creditCard: 'Numéro de carte'
             },
             de: {
                 personal: 'Persönliche Daten',
@@ -746,7 +756,8 @@
                 quantity: 'Anzahl',
                 education: 'Bildung',
                 quote: 'Zitat',
-                review: 'Bewertung'
+                review: 'Bewertung',
+                creditCard: 'Kartennummer'
             }
         };
 
