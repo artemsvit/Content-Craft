@@ -761,16 +761,10 @@
         // Обробка кліків по опціях
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', () => {
-                if (hasTextSelection) {
-                    // Якщо є виділений текст - тільки одна опція
-                    document.querySelectorAll('.option').forEach(opt => {
-                        opt.classList.remove('active');
-                    });
-                    option.classList.add('active');
-                } else {
-                    // Якщо немає виділення - множинний вибір
-                    option.classList.toggle('active');
-                }
+                // Знімаємо активний клас з усіх опцій
+                document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+                // Додаємо активний клас тільки вибраній опції
+                option.classList.add('active');
             });
         });
 
