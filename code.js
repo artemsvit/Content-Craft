@@ -620,6 +620,28 @@ const data = {
             'San Francisco', 'Seattle', 'Austin', 'Boston', 'Portland', 'Boulder', 'Raleigh', 'Pittsburgh',
             'Minneapolis', 'Nashville'
         ],
+        nicknamePrefixes: [
+            // Технологічні
+            'Tech', 'Cyber', 'Digital', 'Web', 'Dev', 'Code', 'Pixel', 'Net', 'Data', 'Bot',
+            'AI', 'Smart', 'System', 'Logic', 'Quantum', 'Cloud', 'Mobile', 'App', 'Software', 'Hardware',
+            // Креативні
+            'Creative', 'Art', 'Design', 'Visual', 'Color', 'Style', 'Dream', 'Idea', 'Mind', 'Soul',
+            'Spirit', 'Flow', 'Wave', 'Light', 'Shadow', 'Space', 'Star', 'Moon', 'Sun', 'Sky',
+            // Ігрові
+            'Game', 'Play', 'Level', 'Quest', 'Boss', 'Hero', 'Legend', 'Epic', 'Magic', 'Power',
+            'Force', 'Ultra', 'Mega', 'Super', 'Hyper', 'Thunder', 'Storm', 'Fire', 'Ice', 'Dragon'
+        ],
+        nicknameSuffixes: [
+            // Професійні
+            'Master', 'Pro', 'Expert', 'Guru', 'Ninja', 'Wizard', 'Scholar', 'Sage', 'Chief', 'Lead',
+            'Creator', 'Builder', 'Maker', 'Smith', 'Engineer', 'Architect', 'Designer', 'Artist', 'Crafter', 'Developer',
+            // Статусні
+            'King', 'Lord', 'Boss', 'Captain', 'Commander', 'Leader', 'Champion', 'Winner', 'Star', 'Hero',
+            'Legend', 'Titan', 'Giant', 'Master', 'Elite', 'Prime', 'Alpha', 'Omega', 'Phoenix', 'Dragon',
+            // Характерні
+            'Mind', 'Soul', 'Heart', 'Spirit', 'Brain', 'Genius', 'Prodigy', 'Talent', 'Skills', 'Power',
+            'Force', 'Energy', 'Light', 'Shadow', 'Storm', 'Thunder', 'Flame', 'Frost', 'Wave', 'Pulse'
+        ],
         streets: [
             'Main St.', 'Broadway', 'Wall Street', 'Fifth Avenue', 'Pennsylvania Avenue',
             'Bourbon Street', 'Beale Street', 'Ocean Drive', 'Lombard Street', 'Michigan Avenue',
